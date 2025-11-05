@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>Neutral Evidence (Public-Redacted, No IDs)</title>
+<link rel="stylesheet" href="assets/css/main.css"/></head>
+<body><div class="container">
+
+<div class="card">
+  <h1 class="i18n" data-en="Neutral Evidence (Public-Redacted, No IDs)" data-ja="中立エビデンス（公開版／ID非公開）" data-es="Evidencia Neutral (Pública, sin IDs)">Neutral Evidence (Public-Redacted, No IDs)</h1>
+  <p class="small">JST 2025-11-05 20:40 UTC+09:00 / UTC 2025-11-05 11:40 UTC</p>
+  <div class="notice i18n" data-en="Personal and product identifiers are removed in this public edition."
+       data-ja="この公開版では個人情報とプロダクト識別子を削除しています。"
+       data-es="Esta edición pública elimina identificadores personales y de producto.">Personal and product identifiers are removed in this public edition.</div>
+  <div style="margin-top:10px">
+    <button id="toggle-redact" class="btn">Show redactions</button>
+    <a href="evidence.html" class="btn">Evidence</a>
+    <a href="docs/AC55ID_Public_Redacted_NoIDs_2025-11-05.pdf" class="btn">Download PDF</a>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Hosting & Infra Signals</h2>
+  <dl class="kv">
+    <dt>Domains</dt><dd>ac55id.com (host), www.acidnation.com (app)</dd>
+    <dt>DNS</dt><dd>Amazon Route 53 (awsdns)</dd>
+    <dt>ac55id.com → ALB</dt><dd><code>HTTP/2 301; server: awselb/2.0; location: https://www.acidnation.com:443/</code></dd>
+    <dt>www.acidnation.com → CloudFront</dt><dd><code>x-cache: Miss from cloudfront; via: *.cloudfront.net; x-amz-cf-pop: NRT12-P9; server: nginx</code></dd>
+  </dl>
+  <p class="small">Observed: JST 2025-11-05 / UTC 2025-11-05</p>
+</div>
+
+<div class="card">
+  <h2 class="i18n" data-en="Requested Actions" data-ja="要請事項" data-es="Acciones solicitadas">Requested Actions</h2>
+  <ul>
+    <li>Temporarily restrict CloudFront for <code>www.acidnation.com</code> and suspend ALB listeners for <code>ac55id.com</code>.</li>
+    <li>Preserve logs (CloudFront/ALB/Route 53/CloudTrail) from 2025-04-01 to present.</li>
+  </ul>
+</div>
+
+</div><script src="assets/js/main.js"></script></body></html>

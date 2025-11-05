@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# (サイトマップを置く場合)
+# Sitemap: https://factualist.org/sitemap.xml

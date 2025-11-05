@@ -1,0 +1,11 @@
+:root{--bg:#0b0e11;--fg:#e6eaef;--muted:#aab3bf;--accent:#4dd0e1;--card:#12161a;--border:#1f262d}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui}
+.container{max-width:960px;margin:32px auto;padding:0 20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin:16px 0}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:#12161a;color:var(--fg)}
+.small{font-size:12px;color:#aab3bf}
+.kv{display:grid;grid-template-columns:180px 1fr;gap:8px}
+.redact{background:#000;color:#000;padding:0 .35em;border-radius:3px}
+.watermark{position:relative;overflow:hidden}
+.watermark::after{content:"PUBLIC-REDACTED (NO IDs) — 2025-11-05 20:40 UTC+09:00 / 2025-11-05 11:40 UTC";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.18);font-weight:700;font-size:28px;transform:rotate(-18deg)}
+.notice{background:#0e1318;border-left:4px solid #ffc107;padding:12px;border-radius:8px}

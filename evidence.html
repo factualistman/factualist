@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>Evidence — Public-Redacted, No IDs</title>
+<link rel="stylesheet" href="assets/css/main.css"/></head>
+<body><div class="container">
+
+<div class="card">
+  <h1>Evidence Pack</h1>
+  <p class="small">JST 2025-11-05 20:40 UTC+09:00 / UTC 2025-11-05 11:40 UTC</p>
+  <div class="notice">All private fields and product identifiers are redacted. Screenshots include watermark.</div>
+</div>
+
+<div class="card watermark">
+  <h3>UPS tracking (public)</h3>
+  <p>Status: <code>Label Created — No Pickup/No Scans</code></p>
+  <p>Tracking: <code>1ZX<span class="redact">••••••••••••</span></code></p>
+  <img src="assets/img/ups_redacted.png" alt="UPS tracking showing 'Label Created' with no scans" style="width:100%;max-width:720px;border-radius:8px"/>
+</div>
+
+<div class="card watermark">
+  <h3>Archived product page</h3>
+  <p>Archive: <code>https://www.ac55id.com<span class="redact">/release/&lt;redacted&gt;</span></code></p>
+  <p>Snapshot: <code>Timestamp available (path redacted)</code></p>
+  <img src="assets/img/wayback_redacted.png" alt="Archived product page (path redacted)" style="width:100%;max-width:720px;border-radius:8px"/>
+</div>
+
+<div class="card watermark">
+  <h3>HTTP headers (HEAD)</h3>
+  <pre>ac55id.com → HTTP/2 301; server: awselb/2.0; location: https://www.acidnation.com:443/
+www.acidnation.com → server: nginx/1.20.1; x-cache: Miss from cloudfront; via: *.cloudfront.net; x-amz-cf-pop: NRT12-P9</pre>
+</div>
+
+<div class="card">
+  <a href="index.html" class="btn">Back</a>
+</div>
+
+</div><script src="assets/js/main.js"></script></body></html>
