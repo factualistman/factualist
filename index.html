@@ -1,40 +1,65 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="robots" content="noindex,nofollow"/>
-<title>Neutral Evidence (Public-Redacted, No IDs)</title>
-<link rel="stylesheet" href="assets/css/main.css"/></head>
-<body><div class="container">
-
-<div class="card">
-  <h1 class="i18n" data-en="Neutral Evidence (Public-Redacted, No IDs)" data-ja="中立エビデンス（公開版／ID非公開）" data-es="Evidencia Neutral (Pública, sin IDs)">Neutral Evidence (Public-Redacted, No IDs)</h1>
-  <p class="small">JST 2025-11-05 20:40 UTC+09:00 / UTC 2025-11-05 11:40 UTC</p>
-  <div class="notice i18n" data-en="Personal and product identifiers are removed in this public edition."
-       data-ja="この公開版では個人情報とプロダクト識別子を削除しています。"
-       data-es="Esta edición pública elimina identificadores personales y de producto.">Personal and product identifiers are removed in this public edition.</div>
-  <div style="margin-top:10px">
-    <button id="toggle-redact" class="btn">Show redactions</button>
-    <a href="evidence.html" class="btn">Evidence</a>
-    <a href="docs/AC55ID_Public_Redacted_NoIDs_2025-11-05.pdf" class="btn">Download PDF</a>
-  </div>
-</div>
-
-<div class="card">
-  <h2>Hosting & Infra Signals</h2>
-  <dl class="kv">
-    <dt>Domains</dt><dd>ac55id.com (host), www.acidnation.com (app)</dd>
-    <dt>DNS</dt><dd>Amazon Route 53 (awsdns)</dd>
-    <dt>ac55id.com → ALB</dt><dd><code>HTTP/2 301; server: awselb/2.0; location: https://www.acidnation.com:443/</code></dd>
-    <dt>www.acidnation.com → CloudFront</dt><dd><code>x-cache: Miss from cloudfront; via: *.cloudfront.net; x-amz-cf-pop: NRT12-P9; server: nginx</code></dd>
-  </dl>
-  <p class="small">Observed: JST 2025-11-05 / UTC 2025-11-05</p>
-</div>
-
-<div class="card">
-  <h2 class="i18n" data-en="Requested Actions" data-ja="要請事項" data-es="Acciones solicitadas">Requested Actions</h2>
-  <ul>
-    <li>Temporarily restrict CloudFront for <code>www.acidnation.com</code> and suspend ALB listeners for <code>ac55id.com</code>.</li>
-    <li>Preserve logs (CloudFront/ALB/Route 53/CloudTrail) from 2025-04-01 to present.</li>
-  </ul>
-</div>
-
-</div><script src="assets/js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Factualist Direct Access</title>
+  <meta name="description" content="Direct access gateway. Search engines should index reviewed public record pages only.">
+  <link rel="canonical" href="https://factualist.org/">
+  <link rel="alternate" hreflang="en" href="https://factualist.org/">
+  <link rel="alternate" hreflang="x-default" href="https://factualist.org/">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#f3c623">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://factualist.org/#organization",
+        "name": "Factualist",
+        "url": "https://factualist.org/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://factualist.org/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Factualist",
+            "item": "https://factualist.org/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root{--bg:#0b0b0b;--fg:#f5f1e6;--muted:#c7bfae;--accent:#f3c623;--line:#2a2a2a;--font:"Space Grotesk","Manrope","Trebuchet MS",sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font);background:radial-gradient(800px 400px at 15% -10%, rgba(243,198,35,.2), transparent 60%),#0b0b0b;color:var(--fg);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .gate{max-width:760px;width:100%;text-align:center;border:1px solid var(--line);border-radius:18px;padding:32px;background:#111}
+    .eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:12px;color:var(--accent);margin:0 0 12px}
+    h1{font-family:"Bebas Neue","Oswald","Impact","Haettenschweiler",sans-serif;font-size:clamp(34px,6vw,64px);letter-spacing:.04em;margin:0 0 12px}
+    p{margin:0 0 16px;color:var(--muted)}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:10px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:#151515;color:var(--fg);text-decoration:none;font-weight:600}
+    .btn.primary{background:var(--accent);color:#0b0b0b;border-color:#c59f1c}
+    .fine{font-size:12px;margin-top:18px}
+  </style>
+</head>
+<body>
+  <main class="gate">
+    <p class="eyebrow">Direct access</p>
+    <h1>Factualist Records</h1>
+    <p>Search engines should index reviewed public record pages only. Use the record directory to access public records.</p>
+    <div class="actions">
+      <a class="btn primary" href="/records/">Open record directory</a>
+      <a class="btn" href="/records/ac55id-2025/">Go to AC55ID-2025 record</a>
+    </div>
+    <p class="fine">If you were sent here, follow the record link provided to you.</p>
+  </main>
+</body>
+</html>

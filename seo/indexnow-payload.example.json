@@ -1,0 +1,21 @@
+{
+  "host": "factualist.org",
+  "key": "REPLACE_WITH_INDEXNOW_KEY",
+  "keyLocation": "https://factualist.org/REPLACE_WITH_INDEXNOW_KEY.txt",
+  "urlList": [
+    "https://factualist.org/",
+    "https://factualist.org/records/",
+    "https://factualist.org/records/ac55id-2025/",
+    "https://factualist.org/ja/",
+    "https://factualist.org/ja/methodology/",
+    "https://factualist.org/ja/records/",
+    "https://factualist.org/ja/correction/",
+    "https://factualist.org/ja/redaction-policy/",
+    "https://factualist.org/ja/editorial-standard/",
+    "https://factualist.org/ja/notes/",
+    "https://factualist.org/records/ac55id-2025/ja/",
+    "https://factualist.org/records/ac55id-2025/relationship-map/?lang=ja",
+    "https://factualist.org/cases/",
+    "https://factualist.org/cases/ac55id/"
+  ]
+}

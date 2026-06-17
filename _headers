@@ -6,8 +6,38 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
-  Content-Security-Policy: default-src 'self'; base-uri 'none'; frame-ancestors 'none'; object-src 'none'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'none'; form-action 'none'
+  Content-Security-Policy: default-src 'self'; base-uri 'none'; frame-ancestors 'none'; object-src 'none'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'sha256-K9DiDpJgRCn8713JBByvfgSiCJMWxzxQFsP8R2VR88Q=' 'sha256-knFF8nrNGX94BAMPudTzCMv9phJn0PoE8hmcmb6xVvc=' 'sha256-S7Q4ht2e2X2U6zip5ufLBqQ7BB65qT18rxm4fKmIoF0=' 'sha256-tXf5v77Nht+6on6vo8mAZ43udCL+7RlqGUbAWXidm3E='; form-action 'none'
   Cache-Control: no-store
+
+/cases/*
+  X-Robots-Tag: noindex, follow
+
+/cases/
+  X-Robots-Tag: noindex, follow
+
+/cases
+  X-Robots-Tag: noindex, follow
+
+/ja/*
+  X-Robots-Tag: noindex, follow
+
+/ja/
+  X-Robots-Tag: noindex, follow
+
+/ja
+  X-Robots-Tag: noindex, follow
+
+/records/*/ja/*
+  X-Robots-Tag: noindex, follow
+
+/records/*/ja/
+  X-Robots-Tag: noindex, follow
+
+/records/
+  X-Robots-Tag: index, follow
+
+/records/ac55id-2025/
+  X-Robots-Tag: index, follow
 
 /img/*
   Cache-Control: public, max-age=604800, immutable

@@ -1,0 +1,19 @@
+# Submit these in Bing Webmaster Tools Content Removal / Outdated Cache Removal.
+# If Bing shows a URL with tracking parameters, submit the exact URL shown in Bing.
+
+https://factualist.org/ja/
+https://factualist.org/ja/methodology/
+https://factualist.org/ja/records/
+https://factualist.org/ja/correction/
+https://factualist.org/ja/redaction-policy/
+https://factualist.org/ja/editorial-standard/
+https://factualist.org/ja/notes/
+https://factualist.org/records/ac55id-2025/ja/
+https://factualist.org/records/ac55id-2025/relationship-map/?lang=ja
+https://factualist.org/records/ac55id-2025/?lang=ja
+https://factualist.org/records/ac55id-2025/?hl=ja
+https://factualist.org/records/ac55id-2025/?locale=ja
+https://factualist.org/records/ac55id-2025/?language=ja
+https://factualist.org/cases/
+https://factualist.org/cases/ac55id/
+https://factualist.org/cases/ac55id/evidence.html

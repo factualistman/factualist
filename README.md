@@ -3,7 +3,7 @@
 This repository hosts the static site sources for **factualist.org**, a small,
 evidence-driven “fact hub” operated by an independent label.
 
-The first live case focuses on **AC55ID / “Acid Nation”** and their vinyl
+The first live record focuses on **AC55ID / “Acid Nation”** and their vinyl
 pre-order campaign.
 
 The goal is *not* to attack individuals, but to:
@@ -27,7 +27,7 @@ Static files are organised roughly as:
 - `/docs` — Markdown / HTML sources for GitHub Pages.
   - `index.md` → site landing page
   - `ac55id-vinyl-facts.md` → AC55ID / Acid Nation facts & timeline
-  - `evidence-index.md` → Evidence list for the AC55ID case
+  - `evidence-index.md` → Evidence list for the AC55ID record
   - `principles.md` → Notes on “free project” claims & reliance damages
   - `for-artists.md` → Guidance for artists / labels
   - `for-platforms.md` → Signals for Stripe / PayPal / AWS / UPS / BBB / IC3
@@ -40,7 +40,7 @@ Static files are organised roughly as:
 
 ## Primary sources (AC55ID / Acid Nation)
 
-The AC55ID case is built from the following source sets:
+The AC55ID record is built from the following source sets:
 
 - **Evidence bundle (Dropbox)** — emails, PDFs, screenshots, memos  
   *(restricted share link, not mirrored here)*
@@ -95,4 +95,4 @@ requested at that time, not as new demands.
       `/ac55id-vinyl-facts`, `/evidence-index`, `/principles`,
       `/for-artists`, `/for-platforms`.
 - [ ] Phase 3 — Styling + publishing via GitHub Pages.
-- [ ] Phase 4 — Optional additional cases (other labels, platforms, etc.).
+- [ ] Phase 4 — Optional additional records (other labels, platforms, etc.).

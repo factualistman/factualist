@@ -1,4 +1,9 @@
 User-agent: *
-Allow: /
-# (サイトマップを置く場合)
-# Sitemap: https://factualist.org/sitemap.xml
+Disallow: /index.html
+Disallow: /404.html
+Disallow: /docs/
+Disallow: /css/
+Disallow: /img/
+Disallow: /og/
+Disallow: /records/*/docs/
+Sitemap: https://factualist.org/sitemap.xml

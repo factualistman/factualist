@@ -7,13 +7,13 @@ title: factualist.org
 *A small, evidence-based fact hub operated by an independent label in East Asia.*
 
 This site collects **timelines, evidence indexes, and neutral-ish notes** about
-cases where there are serious questions around:
+records where there are serious questions around:
 
 - What was promised vs. what was delivered.
 - How pre-orders, manufacturing, and shipping were represented to buyers.
 - How payment, hosting, and logistics platforms reacted (or did not react).
 
-The first live case is:
+The first live record is:
 
 > **AC55ID / “Acid Nation” — vinyl pre-orders and non-delivery concerns**
 
@@ -23,7 +23,7 @@ platforms** run their own assessments.
 
 ---
 
-## AC55ID / “Acid Nation” vinyl case
+## AC55ID / “Acid Nation” vinyl record
 
 - **Facts & timeline**  
   → [`/ac55id-vinyl-facts`](./ac55id-vinyl-facts.md)
@@ -60,7 +60,7 @@ platforms** run their own assessments.
 
 ## Principles & context
 
-Some parts of this case are not unique to one merchant.  
+Some parts of this record are not unique to one merchant.  
 The following pages explain the more general ideas:
 
 - **Principles**  
