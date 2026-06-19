@@ -1307,6 +1307,164 @@ function explainerText(key, lang) {
   return homeTranslations.explainer?.[lang]?.[key] || local(explainer[key], lang);
 }
 
+const heroDisplayTitles = {
+  en: "2021 Music Commissioning Authority & Rights Record",
+  ja: "2021年 音楽制作発注・権利処理記録",
+  es: "Registro 2021 de autoridad de encargo y derechos musicales",
+  de: "2021 Protokoll zu Musikauftrag und Rechteklärung",
+  fr: "Dossier 2021 sur commande musicale et droits",
+  sk: "Záznam 2021 o hudobnom zadaní a právach"
+};
+
+const answerSummaries = {
+  en: [
+    "This public record is an evidence-separated review of a 2021 music commissioning process involving Nichion Co., Ltd. and VALSE Inc. as public subject organisations.",
+    "It answers who communicated, what work and rights topics were discussed, where authority and budget approval remain unresolved, and why final written terms matter for independent music work.",
+    "The page does not publish the Reporting Party's identity, raw correspondence, email headers, message IDs, signatures, exact times, demos or private creator identifiers."
+  ],
+  ja: [
+    "本公開記録は、株式会社日音及びVALSE Inc.を公開上の対象組織として、2021年の音楽制作発注過程を証拠と評価を分けて整理するものです。",
+    "誰が連絡し、どの作業・権利論点が協議され、発注権限・予算承認・最終書面条件のどこが未解決なのかを、第三者が確認しやすい形で示します。",
+    "申告者の氏名、レーベル名、アーティスト名義、メール、ヘッダー、メッセージ識別子、署名、正確な時刻、デモ、非公開作家識別情報は掲載しません。"
+  ],
+  es: [
+    "Este registro público separa pruebas y evaluación en un proceso de encargo musical de 2021 con Nichion Co., Ltd. y VALSE Inc. como organizaciones públicas objeto del registro.",
+    "Responde quién comunicó, qué trabajo y derechos se discutieron, dónde siguen abiertas la autoridad y la aprobación presupuestaria, y por qué importan los términos escritos finales.",
+    "No publica identidad de la Parte Informante, correspondencia cruda, cabeceras, identificadores de mensajes, firmas, horas exactas, demos ni identificadores privados de creadores."
+  ],
+  de: [
+    "Dieses öffentliche Protokoll trennt Belege und Bewertung in einem Musikbeauftragungsprozess von 2021 mit Nichion Co., Ltd. und VALSE Inc. als öffentlich benannten Gegenstandsorganisationen.",
+    "Es beantwortet, wer kommunizierte, welche Arbeiten und Rechtefragen besprochen wurden, wo Befugnis und Budgetfreigabe offen bleiben und warum endgültige schriftliche Bedingungen wichtig sind.",
+    "Identität der meldenden Partei, Rohkorrespondenz, Header, Nachrichtenkennungen, Signaturen, genaue Uhrzeiten, Demos und private Urheberkennungen werden nicht veröffentlicht."
+  ],
+  fr: [
+    "Ce dossier public sépare les preuves et l'évaluation dans un processus de commande musicale de 2021 impliquant Nichion Co., Ltd. et VALSE Inc. comme organisations publiquement concernées.",
+    "Il répond à qui a communiqué, quels travaux et droits ont été discutés, où l'autorité et l'approbation budgétaire restent ouvertes, et pourquoi les conditions écrites finales comptent.",
+    "Il ne publie pas l'identité de la Partie déclarante, la correspondance brute, les en-têtes, identifiants de message, signatures, heures exactes, démos ou identifiants privés de créateurs."
+  ],
+  sk: [
+    "Tento verejný záznam oddeľuje dôkazy a hodnotenie v procese hudobného zadania z roku 2021 s Nichion Co., Ltd. a VALSE Inc. ako verejne uvedenými predmetnými organizáciami.",
+    "Odpovedá, kto komunikoval, aké práce a otázky práv boli diskutované, kde zostáva otvorená právomoc a schválenie rozpočtu a prečo sú konečné písomné podmienky dôležité.",
+    "Nezverejňuje identitu Oznamujúcej strany, surovú korešpondenciu, hlavičky, identifikátory správ, podpisy, presné časy, demá ani súkromné identifikátory tvorcov."
+  ]
+};
+
+const searchIntentItems = {
+  en: [
+    "Nichion VALSE 2021 music commissioning record",
+    "music production scope before written terms",
+    "creator outreach and rights clearance evidence ledger",
+    "independent music contractor payment and cancellation risk"
+  ],
+  ja: [
+    "日音 VALSE 2021 音楽制作 発注記録",
+    "書面条件前の音楽制作 業務範囲",
+    "作家連絡 権利処理 証拠台帳",
+    "独立事業者 音楽制作 報酬 中止リスク"
+  ],
+  es: [
+    "registro de encargo musical Nichion VALSE 2021",
+    "producción musical antes de términos escritos",
+    "contacto con creadores y aclaración de derechos",
+    "riesgo de pago y cancelación para contratistas musicales"
+  ],
+  de: [
+    "Nichion VALSE 2021 Musikauftrag Protokoll",
+    "Musikproduktion vor schriftlichen Bedingungen",
+    "Urheberkontakt und Rechteklärung Evidenzregister",
+    "Zahlungs- und Kündigungsrisiko für unabhängige Musikauftragnehmer"
+  ],
+  fr: [
+    "dossier de commande musicale Nichion VALSE 2021",
+    "production musicale avant conditions écrites",
+    "contact créateurs et clarification des droits",
+    "risque paiement annulation indépendant musique"
+  ],
+  sk: [
+    "Nichion VALSE 2021 záznam o hudobnom zadaní",
+    "hudobná produkcia pred písomnými podmienkami",
+    "kontakt tvorcov a vyjasnenie práv",
+    "riziko platby a zrušenia pre nezávislých hudobných dodávateľov"
+  ]
+};
+
+const recordFaqs = {
+  en: [
+    ["What is this record about?", "It is a public-safe record of a 2021 music commissioning process, focused on authority, scope, compensation, rights clearance and unresolved documentary gaps."],
+    ["Does the record identify the Reporting Party?", "No. The Reporting Party is described only by a public-safe role label. Private identifiers are withheld."],
+    ["Does the record make a legal conclusion?", "No. It separates documented facts, context, disputed issues and open questions. It does not determine liability, intent or wrongdoing."],
+    ["Why are Nichion and VALSE named?", "They are public subject organisations for the record. Public company context is used only as context unless supported by record-specific evidence."],
+    ["Where should corrections be sent?", "The right-of-reply page provides a route for corrections, contextual documents and formal responses before any publication decision."]
+  ],
+  ja: [
+    ["この記録は何を扱うものですか。", "2021年の音楽制作発注過程について、発注権限、業務範囲、報酬、権利処理、未解決の書面上の空白を公開安全な形で整理する記録です。"],
+    ["申告者は特定されますか。", "いいえ。申告者は公開安全な役割名でのみ表示し、氏名、レーベル名、アーティスト名義、メール等は掲載しません。"],
+    ["法的結論を示していますか。", "いいえ。記録済み事実、背景情報、争点、未解決事項を分けて表示します。責任、故意、不正行為を断定しません。"],
+    ["なぜ日音とVALSEの名前を出すのですか。", "本記録の公開上の対象組織だからです。公式会社情報は、本件固有証拠で支えられない限り背景情報としてのみ扱います。"],
+    ["訂正や反論はどこから出せますか。", "反論・訂正ページから、訂正、文脈資料、正式回答を提出する経路を確認できます。"]
+  ],
+  es: [
+    ["¿De qué trata este registro?", "Es un registro público seguro de un proceso de encargo musical de 2021, centrado en autoridad, alcance, compensación, aclaración de derechos y vacíos documentales no resueltos."],
+    ["¿Identifica el registro a la Parte Informante?", "No. La Parte Informante se describe solo mediante una etiqueta de rol pública segura. Los identificadores privados se omiten."],
+    ["¿El registro formula una conclusión legal?", "No. Separa hechos documentados, contexto, cuestiones disputadas y preguntas abiertas. No determina responsabilidad, intención ni conducta indebida."],
+    ["¿Por qué se nombran Nichion y VALSE?", "Son organizaciones públicas objeto del registro. El contexto empresarial público se usa solo como contexto salvo que esté respaldado por evidencia específica del registro."],
+    ["¿Dónde se envían correcciones?", "La página de derecho de respuesta ofrece una vía para correcciones, documentos contextuales y respuestas formales antes de cualquier decisión de publicación."]
+  ],
+  de: [
+    ["Worum geht es in diesem Protokoll?", "Es ist ein öffentlich sicheres Protokoll eines Musikbeauftragungsprozesses von 2021 mit Fokus auf Befugnis, Umfang, Vergütung, Rechteklärung und ungelöste Dokumentationslücken."],
+    ["Identifiziert das Protokoll die meldende Partei?", "Nein. Die meldende Partei wird nur mit einer öffentlich sicheren Rollenbezeichnung beschrieben. Private Kennungen werden zurückgehalten."],
+    ["Trifft das Protokoll eine rechtliche Schlussfolgerung?", "Nein. Es trennt dokumentierte Tatsachen, Kontext, Streitfragen und offene Fragen. Es stellt keine Haftung, Absicht oder Fehlverhalten fest."],
+    ["Warum werden Nichion und VALSE genannt?", "Sie sind öffentlich benannte Gegenstandsorganisationen des Protokolls. Öffentlicher Unternehmenskontext wird nur als Kontext verwendet, sofern er nicht durch protokollspezifische Belege gestützt ist."],
+    ["Wo können Korrekturen eingereicht werden?", "Die Seite zum Recht auf Erwiderung bietet einen Weg für Korrekturen, Kontextdokumente und formelle Antworten vor jeder Veröffentlichungsentscheidung."]
+  ],
+  fr: [
+    ["De quoi traite ce dossier ?", "Il s'agit d'un dossier public sécurisé sur un processus de commande musicale de 2021, centré sur l'autorité, le périmètre, la rémunération, la clarification des droits et les lacunes documentaires non résolues."],
+    ["Le dossier identifie-t-il la Partie déclarante ?", "Non. La Partie déclarante est décrite uniquement par une étiquette de rôle publique sécurisée. Les identifiants privés sont retenus."],
+    ["Le dossier formule-t-il une conclusion juridique ?", "Non. Il sépare faits documentés, contexte, points contestés et questions ouvertes. Il ne détermine pas responsabilité, intention ou faute."],
+    ["Pourquoi Nichion et VALSE sont-ils nommés ?", "Ce sont les organisations publiquement concernées par le dossier. Le contexte public d'entreprise est utilisé uniquement comme contexte sauf s'il est appuyé par des preuves propres au dossier."],
+    ["Où envoyer des corrections ?", "La page du droit de réponse fournit une voie pour les corrections, documents contextuels et réponses formelles avant toute décision de publication."]
+  ],
+  sk: [
+    ["O čom je tento záznam?", "Je to verejne bezpečný záznam o procese hudobného zadania z roku 2021 so zameraním na právomoc, rozsah, odmenu, vyjasnenie práv a nevyriešené dokumentačné medzery."],
+    ["Identifikuje záznam Oznamujúcu stranu?", "Nie. Oznamujúca strana je opísaná iba verejne bezpečným označením roly. Súkromné identifikátory sú zadržané."],
+    ["Robí záznam právny záver?", "Nie. Oddeľuje zdokumentované fakty, kontext, sporné otázky a otvorené otázky. Neurčuje zodpovednosť, úmysel ani protiprávne konanie."],
+    ["Prečo sú uvedené Nichion a VALSE?", "Sú to verejne uvedené predmetné organizácie záznamu. Verejný firemný kontext sa používa iba ako kontext, pokiaľ nie je podložený dôkazmi špecifickými pre záznam."],
+    ["Kam možno poslať opravy?", "Stránka práva na odpoveď poskytuje cestu pre opravy, kontextové dokumenty a formálne odpovede pred akýmkoľvek rozhodnutím o zverejnení."]
+  ]
+};
+
+function localizedFaqs(lang) {
+  return recordFaqs[lang] || recordFaqs.en;
+}
+
+function AnswerSummary(lang = currentLang) {
+  return `<div class="summary-stack">${(answerSummaries[lang] || answerSummaries.en).map((item) => `<p class="notice">${escapeHtml(item)}</p>`).join("")}</div>`;
+}
+
+function SearchIntentPanel(lang = currentLang) {
+  return `<div class="grid two">${(searchIntentItems[lang] || searchIntentItems.en).map((item) => `
+    <article class="card">
+      ${EvidenceBadge("CONTEXT_ONLY", lang)}
+      <p>${escapeHtml(item)}</p>
+    </article>
+  `).join("")}</div>`;
+}
+
+function FaqPanel(lang = currentLang) {
+  return `<div class="summary-stack">${localizedFaqs(lang).map(([question, answer]) => `
+    <details class="notice">
+      <summary>${escapeHtml(question)}</summary>
+      <p>${escapeHtml(answer)}</p>
+    </details>
+  `).join("")}</div>`;
+}
+
+function seoKeywords(lang = currentLang) {
+  return (searchIntentItems[lang] || searchIntentItems.en).concat([
+    "Nichion", "VALSE", "music commissioning", "rights clearance", "evidence ledger", "right of reply"
+  ]).join(", ");
+}
+
 function wrapSvgText(text, maxChars = 18) {
   const clean = String(text);
   if (!clean.includes(" ")) {
@@ -1585,7 +1743,7 @@ function pageHero(page, lang = currentLang, extra = "") {
 }
 
 function homePage(lang = currentLang) {
-  const heroTitle = local(pageById.index.title, lang);
+  const heroTitle = heroDisplayTitles[lang] || heroDisplayTitles.en;
   const heroPills = {
     en: ["Authority", "Scope", "Compensation", "Rights", "Documentary Gaps"],
     ja: ["発注権限", "業務範囲", "報酬", "権利", "書面上の空白"],
@@ -1633,6 +1791,18 @@ function homePage(lang = currentLang) {
     { id: "counterparty-people", badge: "DOCUMENTED" }
   );
 
+  const answerSummary = section(
+    tr(lang, { en: "Answer Summary", ja: "回答要約", es: "Resumen de respuesta", de: "Antwortzusammenfassung", fr: "Résumé de réponse", sk: "Súhrn odpovede" }),
+    AnswerSummary(lang),
+    { id: "answer-summary", badge: "DOCUMENTED" }
+  );
+
+  const searchIntent = section(
+    tr(lang, { en: "Search Entry Points", ja: "検索入口", es: "Entradas de búsqueda", de: "Sucheinstiege", fr: "Points d'entrée de recherche", sk: "Vstupy pre vyhľadávanie" }),
+    SearchIntentPanel(lang),
+    { id: "search-entry-points", badge: "CONTEXT_ONLY" }
+  );
+
   const examines = section(copy[lang].whatExamines, `<div class="grid">${findings.examines.map((item, index) => `
     <article class="card">
       ${EvidenceBadge(item.status, lang)}
@@ -1666,9 +1836,14 @@ function homePage(lang = currentLang) {
   const transactionStructure = section(tr(lang, { en: "Transaction Structure", ja: "取引構造", es: "Estructura de la transacción", de: "Transaktionsstruktur", fr: "Structure transactionnelle", sk: "Transakčná štruktúra" }), TransactionStructure(lang), { id: "transaction-structure", badge: "OPEN_QUESTION" });
   const mapPreview = section(tr(lang, { en: "Structure Maps", ja: "構造マップ", es: "Mapas de estructura", de: "Strukturkarten", fr: "Cartes de structure", sk: "Mapy štruktúry" }), MapPreview(lang), { id: "structure-maps", badge: "DOCUMENTED" });
   const questions = section(copy[lang].openQuestions, `<div class="grid two">${openQuestions.map((question, index) => OpenQuestionCard(homeText("openQuestions", lang, index, null, question), index, lang)).join("")}</div>`, { id: "open-questions" });
+  const faq = section(
+    tr(lang, { en: "Answer Engine FAQ", ja: "回答エンジン向けFAQ", es: "FAQ para motores de respuesta", de: "FAQ für Antwortmaschinen", fr: "FAQ pour moteurs de réponse", sk: "FAQ pre odpovedacie systémy" }),
+    FaqPanel(lang),
+    { id: "faq", badge: "DOCUMENTED" }
+  );
   const navigation = section(copy[lang].detailPages, navCards(lang), { id: "pages" });
 
-  return `${hero}<main class="main">${subjectEntities}${counterpartyPeople}${replyNotice}${thesis}${transactionStructure}${mapPreview}${examines}${summary}${sequence}${keyFindings}${questions}${navigation}${PrivacyNotice(lang)}</main>`;
+  return `${hero}<main class="main">${subjectEntities}${counterpartyPeople}${replyNotice}${answerSummary}${thesis}${transactionStructure}${mapPreview}${examines}${summary}${sequence}${keyFindings}${questions}${faq}${searchIntent}${navigation}${PrivacyNotice(lang)}</main>`;
 }
 
 function chronologyPage(lang = currentLang) {
@@ -1896,8 +2071,7 @@ function layout(page, lang, body) {
   const pageTitle = local(page.title, lang);
   const title = page.id === "index" ? pageTitle : `${pageTitle} | ${local(pageById.index.title, lang)}`;
   const canonical = absUrl(lang, page.slug);
-  const schema = {
-    "@context": "https://schema.org",
+  const baseSchema = {
     "@type": page.id === "index" ? ["Article", "Report"] : "WebPage",
     "@id": `${canonical}#${page.id}`,
     headline: title,
@@ -1918,6 +2092,32 @@ function layout(page, lang, body) {
     }),
     inLanguage: lang
   };
+  const schema = page.id === "index"
+    ? {
+        "@context": "https://schema.org",
+        "@graph": [
+          baseSchema,
+          {
+            "@type": "FAQPage",
+            "@id": `${canonical}#faq`,
+            mainEntity: localizedFaqs(lang).map(([question, answer]) => ({
+              "@type": "Question",
+              name: question,
+              acceptedAnswer: { "@type": "Answer", text: answer }
+            }))
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": `${canonical}#breadcrumb`,
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Factualist", item: `${siteBase}/` },
+              { "@type": "ListItem", position: 2, name: "Records", item: `${siteBase}/records/` },
+              { "@type": "ListItem", position: 3, name: title, item: canonical }
+            ]
+          }
+        ]
+      }
+    : { "@context": "https://schema.org", ...baseSchema };
   return `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -1926,6 +2126,7 @@ function layout(page, lang, body) {
   <meta name="robots" content="index,follow">
   <title>${escapeHtml(title)} | Factualist</title>
   <meta name="description" content="${escapeHtml(copy[lang].description)}">
+  <meta name="keywords" content="${escapeHtml(seoKeywords(lang))}">
   <link rel="canonical" href="${canonical}">
   ${languages.map((language) => `<link rel="alternate" hreflang="${language.code}" href="${absUrl(language.code, page.slug)}">`).join("\n  ")}
   <link rel="alternate" hreflang="x-default" href="${absUrl("en", page.slug)}">
@@ -1969,6 +2170,7 @@ function sitemapEntry(url) {
 async function writeSitemap() {
   const otherPaths = [
     "/records/",
+    "/records/music-commissioning-authority-2021/",
     "/records/ac55id-2025/",
     "/records/ac55id-2025/relationship-map/",
     "/records/epm-music-2026/",

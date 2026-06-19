@@ -1,20 +1,19 @@
 {
   "host": "factualist.org",
-  "key": "REPLACE_WITH_INDEXNOW_KEY",
-  "keyLocation": "https://factualist.org/REPLACE_WITH_INDEXNOW_KEY.txt",
+  "key": "7f1f1a1e23c04c8fbbadfb919ac09d81c8f0ad38d768e3e862cab98cf7d1a92f",
+  "keyLocation": "https://factualist.org/7f1f1a1e23c04c8fbbadfb919ac09d81c8f0ad38d768e3e862cab98cf7d1a92f.txt",
   "urlList": [
-    "https://factualist.org/",
     "https://factualist.org/records/",
     "https://factualist.org/records/music-commissioning-authority-2021/",
-    "https://factualist.org/records/ac55id-2025/",
-    "https://factualist.org/records/ac55id-2025/relationship-map/",
     "https://factualist.org/records/nichion-valse-2021/",
     "https://factualist.org/records/nichion-valse-2021/ja/",
     "https://factualist.org/records/nichion-valse-2021/es/",
     "https://factualist.org/records/nichion-valse-2021/de/",
     "https://factualist.org/records/nichion-valse-2021/fr/",
     "https://factualist.org/records/nichion-valse-2021/sk/",
-    "https://factualist.org/records/epm-music-2026/",
-    "https://factualist.org/records/epm-music-2026/cron-job/"
+    "https://factualist.org/records/nichion-valse-2021/evidence/",
+    "https://factualist.org/records/nichion-valse-2021/commissioning-chain/",
+    "https://factualist.org/records/nichion-valse-2021/network/",
+    "https://factualist.org/records/nichion-valse-2021/right-of-reply/"
   ]
 }
