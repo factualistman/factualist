@@ -4,8 +4,8 @@
     "ja": "最終書面条件が確認される前に、作家連絡、権利確認、調整、支払実務が進行した状況で、権限、予算、書面作成責任はどのように配分されていたのか。"
   },
   "rightOfReplyNotice": {
-    "en": "Nichion, VALSE and any named participant may submit corrections, contextual documents or a formal response. Submissions will be preserved and reviewed before any publication.",
-    "ja": "日音、VALSE及び本記録に表示された相手方人物・組織は、訂正、文脈資料又は正式回答を提出できます。提出内容は保存され、公開前に確認されます。"
+    "en": "株式会社日音, 株式会社ヴァルス and any named participant may submit corrections, contextual documents or a formal response. Submissions will be preserved and reviewed before any publication.",
+    "ja": "株式会社日音、株式会社ヴァルス及び本記録に表示された相手方人物・組織は、訂正、文脈資料又は正式回答を提出できます。提出内容は保存され、公開前に確認されます。"
   },
   "transactionStructure": [
     {
@@ -14,8 +14,8 @@
         "ja": "紹介 / 橋渡し"
       },
       "body": {
-        "en": "A VALSE-side representative is documented as part of the introduction and project communication path.",
-        "ja": "VALSE側担当者は、紹介及び企画連絡経路の一部として記録されています。"
+        "en": "A 株式会社ヴァルス-side representative is documented as part of the introduction and project communication path.",
+        "ja": "株式会社ヴァルス側担当者は、紹介及び企画連絡経路の一部として記録されています。"
       },
       "status": "DOCUMENTED"
     },
@@ -25,7 +25,7 @@
         "ja": "企画協議"
       },
       "body": {
-        "en": "Nichion-side personnel and the Reporting Party appear in project communications by role.",
+        "en": "株式会社日音-side personnel and the Reporting Party appear in project communications by role.",
         "ja": "日音側関係者と申告者は、役割単位で企画連絡に現れます。"
       },
       "status": "DOCUMENTED"
@@ -71,8 +71,8 @@
         "ja": "発注主体"
       },
       "documented": {
-        "en": "Project communications involved Nichion-side and VALSE-side roles.",
-        "ja": "企画連絡には日音側及びVALSE側の役割が含まれています。"
+        "en": "Project communications involved 株式会社日音-side and 株式会社ヴァルス-side roles.",
+        "ja": "企画連絡には株式会社日音側及び株式会社ヴァルス側の役割が含まれています。"
       },
       "unresolved": {
         "en": "The final legal commissioning entity and accountable signatory are not established by a located final written order.",
@@ -206,24 +206,24 @@
   "networkHighlights": [
     {
       "title": {
-        "en": "Nichion ownership context",
-        "ja": "日音の所有関係背景"
+        "en": "株式会社日音 ownership context",
+        "ja": "株式会社日音の所有関係背景"
       },
       "body": {
-        "en": "Nichion's public company page states that TBS Holdings is the 100% shareholder. This is ownership context, not proof of record-specific decision-making.",
-        "ja": "日音の公式会社概要は、TBSホールディングスが100%株主であると示しています。これは所有関係の背景であり、本件固有の決裁を示すものではありません。"
+        "en": "株式会社日音's public company page states that TBS Holdings is the 100% shareholder. This is ownership context, not proof of record-specific decision-making.",
+        "ja": "株式会社日音の公式会社概要は、TBSホールディングスが100%株主であると示しています。これは所有関係の背景であり、本件固有の決裁を示すものではありません。"
       },
       "sourceUrl": "https://www.nichion.co.jp/corporate/",
       "status": "CONTEXT_ONLY"
     },
     {
       "title": {
-        "en": "Nichion rights and production capacity",
-        "ja": "日音の権利・制作能力"
+        "en": "株式会社日音 rights and production capacity",
+        "ja": "株式会社日音の権利・制作能力"
       },
       "body": {
-        "en": "Nichion publicly describes copyright administration, administration services, master production, sound library, programme production, advertising, events and artist/songwriter development.",
-        "ja": "日音は公式に、著作権管理、管理業務代行、原盤企画・制作、サウンズライブラリー、番組制作、広告、イベント、作家・アーティスト育成を掲げています。"
+        "en": "株式会社日音 publicly describes copyright administration, administration services, master production, sound library, programme production, advertising, events and artist/songwriter development.",
+        "ja": "株式会社日音は公式に、著作権管理、管理業務代行、原盤企画・制作、サウンズライブラリー、番組制作、広告、イベント、作家・アーティスト育成を掲げています。"
       },
       "sourceUrl": "https://www.nichion.co.jp/corporate/",
       "status": "CONTEXT_ONLY"
@@ -234,20 +234,20 @@
         "ja": "管理業務代行の規模"
       },
       "body": {
-        "en": "Nichion publicly states that it provides administration services for about 140 domestic music publishers. This indicates business capability, not case-specific authority.",
-        "ja": "日音は、約140社に及ぶ国内音楽出版社の管理業務を代行していると公式に説明しています。これは事業能力を示す背景であり、本件固有の権限ではありません。"
+        "en": "株式会社日音 publicly states that it provides administration services for about 140 domestic music publishers. This indicates business capability, not case-specific authority.",
+        "ja": "株式会社日音は、約140社に及ぶ国内音楽出版社の管理業務を代行していると公式に説明しています。これは事業能力を示す背景であり、本件固有の権限ではありません。"
       },
       "sourceUrl": "https://www.nichion.co.jp/",
       "status": "CONTEXT_ONLY"
     },
     {
       "title": {
-        "en": "VALSE facility and business context",
-        "ja": "VALSEの施設・事業背景"
+        "en": "株式会社ヴァルス facility and business context",
+        "ja": "株式会社ヴァルスの施設・事業背景"
       },
       "body": {
-        "en": "VALSE's public company page lists a Fuji Television building MA studio and business lines including music selection, sound effects, sports DJ, broadcast MA and music production. Facility location is not treated as subsidiary status.",
-        "ja": "VALSEの公式会社概要は、フジテレビジョン建物内のMAスタジオ、選曲、音響効果、スポーツDJ、放送用MA、音楽制作プロデュースを掲げています。施設所在地は子会社関係として扱いません。"
+        "en": "株式会社ヴァルス's public company page lists a Fuji Television building MA studio and business lines including music selection, sound effects, sports DJ, broadcast MA and music production. Facility location is not treated as subsidiary status.",
+        "ja": "株式会社ヴァルスの公式会社概要は、フジテレビジョン建物内のMAスタジオ、選曲、音響効果、スポーツDJ、放送用MA、音楽制作プロデュースを掲げています。施設所在地は子会社関係として扱いません。"
       },
       "sourceUrl": "https://www.valse.jp/sp/company/",
       "status": "CONTEXT_ONLY"

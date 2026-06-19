@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Nichion–VALSE 2021 Commissioning Record</title>
+  <title id="title">株式会社日音 / 株式会社ヴァルス 2021 Commissioning Record</title>
   <desc id="desc">Public-safe abstract OG image for authority, scope, compensation and rights questions.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
@@ -28,7 +28,7 @@
     <circle cx="812" cy="234" r="9"/>
   </g>
   <text x="70" y="118" fill="#0f7a3a" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="4">FACTUALIST RECORD</text>
-  <text x="70" y="224" fill="#16201a" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="900">Nichion–VALSE</text>
+  <text x="70" y="220" fill="#16201a" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="900">株式会社日音 / 株式会社ヴァルス</text>
   <text x="70" y="308" fill="#16201a" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="900">2021 Commissioning Record</text>
   <text x="70" y="394" fill="#5d6f64" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Authority / Scope / Compensation / Rights</text>
   <rect x="70" y="464" width="800" height="58" rx="8" fill="#16a34a" fill-opacity=".06" stroke="#16a34a"/>

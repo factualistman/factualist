@@ -19,7 +19,7 @@
     {
       "id": "nichion-personnel",
       "label": {
-        "en": "Nichion Personnel",
+        "en": "株式会社日音-side personnel",
         "ja": "日音関係者"
       },
       "role": {
@@ -27,7 +27,7 @@
         "ja": "依頼、権利確認又は事務側の役割別関係者"
       },
       "description": {
-        "en": "Grouped role label for communications attributed to Nichion-side personnel in the public-safe record.",
+        "en": "Grouped role label for communications attributed to 株式会社日音-side personnel in the public-safe record.",
         "ja": "公開安全化された記録における日音側関係者の連絡をまとめる役割表示です。"
       },
       "status": "DOCUMENTED"
@@ -121,8 +121,8 @@
         "ja": "東藤雅人"
       },
       "organisation": {
-        "en": "VALSE Inc.",
-        "ja": "VALSE Inc."
+        "en": "株式会社ヴァルス",
+        "ja": "株式会社ヴァルス"
       },
       "publicRole": {
         "en": "VALSE representative / intermediary-side executive",
@@ -145,11 +145,11 @@
         "ja": "武藤勉"
       },
       "organisation": {
-        "en": "Nichion Co., Ltd.",
-        "ja": "株式会社 日音"
+        "en": "株式会社日音",
+        "ja": "株式会社日音"
       },
       "publicRole": {
-        "en": "Nichion representative / project and contract-side personnel",
+        "en": "株式会社日音 representative / project and contract-side personnel",
         "ja": "日音側担当者 / 企画・契約側関係者"
       },
       "recordRole": {
@@ -169,11 +169,11 @@
         "ja": "水田大介"
       },
       "organisation": {
-        "en": "Nichion Co., Ltd.",
-        "ja": "株式会社 日音"
+        "en": "株式会社日音",
+        "ja": "株式会社日音"
       },
       "publicRole": {
-        "en": "Nichion production-side representative",
+        "en": "株式会社日音 production-side representative",
         "ja": "日音側制作担当者"
       },
       "recordRole": {
@@ -193,11 +193,11 @@
         "ja": "金房仁子"
       },
       "organisation": {
-        "en": "Nichion Co., Ltd.",
-        "ja": "株式会社 日音"
+        "en": "株式会社日音",
+        "ja": "株式会社日音"
       },
       "publicRole": {
-        "en": "Nichion administrative or production-side personnel",
+        "en": "株式会社日音 administrative or production-side personnel",
         "ja": "日音側事務又は制作関係者"
       },
       "recordRole": {
@@ -217,11 +217,11 @@
         "ja": "相楽春奈"
       },
       "organisation": {
-        "en": "Nichion Co., Ltd.",
-        "ja": "株式会社 日音"
+        "en": "株式会社日音",
+        "ja": "株式会社日音"
       },
       "publicRole": {
-        "en": "Nichion administrative or production-side personnel",
+        "en": "株式会社日音 administrative or production-side personnel",
         "ja": "日音側事務又は制作関係者"
       },
       "recordRole": {
@@ -241,11 +241,11 @@
         "ja": "早瀬暁美"
       },
       "organisation": {
-        "en": "Nichion Co., Ltd.",
-        "ja": "株式会社 日音"
+        "en": "株式会社日音",
+        "ja": "株式会社日音"
       },
       "publicRole": {
-        "en": "Nichion administrative or production-side personnel",
+        "en": "株式会社日音 administrative or production-side personnel",
         "ja": "日音側事務又は制作関係者"
       },
       "recordRole": {
@@ -268,7 +268,7 @@
       },
       "category": "Holding Company",
       "description": {
-        "en": "Public ownership context stated on Nichion's company profile. It is not treated as proof of record-specific decision-making.",
+        "en": "Public ownership context stated on the 株式会社日音 company profile. It is not treated as proof of record-specific decision-making.",
         "ja": "日音の会社概要に示された公開上の所有関係背景です。本件固有の決裁を示すものとして扱いません。"
       },
       "status": "CONTEXT_ONLY",
@@ -277,8 +277,8 @@
     {
       "id": "nichion",
       "label": {
-        "en": "Nichion Co., Ltd.",
-        "ja": "株式会社 日音"
+        "en": "株式会社日音",
+        "ja": "株式会社日音"
       },
       "category": "Music Publisher",
       "description": {
@@ -291,8 +291,8 @@
     {
       "id": "valse",
       "label": {
-        "en": "VALSE Inc.",
-        "ja": "VALSE Inc."
+        "en": "株式会社ヴァルス",
+        "ja": "株式会社ヴァルス"
       },
       "category": "Production Company",
       "description": {

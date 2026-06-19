@@ -44,12 +44,12 @@ const pages = [
     slug: "",
     nav: { en: "Record", ja: "記録", es: "Registro", de: "Akte", fr: "Dossier", sk: "Záznam" },
     title: {
-      en: "Nichion–VALSE 2021 Commissioning Record",
-      ja: "日音・VALSE 2021年発注記録",
-      es: "Registro de encargo Nichion–VALSE 2021",
-      de: "Nichion–VALSE 2021 Auftragsprotokoll",
-      fr: "Dossier de commande Nichion–VALSE 2021",
-      sk: "Záznam o zadaní Nichion–VALSE 2021"
+      en: "株式会社日音 / 株式会社ヴァルス 2021 Commissioning Record",
+      ja: "株式会社日音 / 株式会社ヴァルス 2021年発注記録",
+      es: "Registro de encargo 株式会社日音 / 株式会社ヴァルス 2021",
+      de: "株式会社日音 / 株式会社ヴァルス 2021 Auftragsprotokoll",
+      fr: "Dossier de commande 株式会社日音 / 株式会社ヴァルス 2021",
+      sk: "Záznam o zadaní 株式会社日音 / 株式会社ヴァルス 2021"
     }
   },
   {
@@ -603,6 +603,10 @@ function esc(value) {
   return escapeHtml(local(value, currentLang));
 }
 
+function jsonForScript(value) {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
+}
+
 let currentLang = "en";
 
 function urlFor(lang, slug = "") {
@@ -965,14 +969,6 @@ function subjectEntityStrip(lang = currentLang) {
     fr: "Organisations publiquement concernées",
     sk: "Verejne uvedené predmetné organizácie"
   });
-  const via = tr(lang, {
-    en: "via company name",
-    ja: "via 会社名",
-    es: "vía nombre de empresa",
-    de: "über Firmenname",
-    fr: "via nom de société",
-    sk: "cez názov spoločnosti"
-  });
   return `
     <div class="grid two">
       <article class="card">
@@ -983,7 +979,7 @@ function subjectEntityStrip(lang = currentLang) {
       </article>
       <article class="card">
         ${EvidenceBadge("CONTEXT_ONLY", lang)}
-        <h3>${escapeHtml(via)} ${escapeHtml(local(valse.label, lang))}</h3>
+        <h3>${escapeHtml(local(valse.label, lang))}</h3>
         <p>${escapeHtml(label)}</p>
         <p class="muted"><a href="${escapeHtml(valse.sourceUrl)}" rel="noopener">${escapeHtml(valse.sourceUrl)}</a></p>
       </article>
@@ -1000,7 +996,7 @@ function subjectOrganizationNodes(lang = currentLang) {
       "@type": "Organization",
       "@id": `${siteBase}${recordBase}/#organization-nichion`,
       name: local(nichion.label, lang),
-      alternateName: ["Nichion", "Nichion Co., Ltd.", "株式会社 日音", "株式会社日音"],
+      alternateName: ["Nichion", "Nichion Co., Ltd.", "株式会社日音"],
       url: "https://www.nichion.co.jp/",
       sameAs: ["https://www.nichion.co.jp/", nichion.sourceUrl],
       description: local(nichion.description, lang)
@@ -1009,7 +1005,7 @@ function subjectOrganizationNodes(lang = currentLang) {
       "@type": "Organization",
       "@id": `${siteBase}${recordBase}/#organization-valse`,
       name: local(valse.label, lang),
-      alternateName: ["VALSE", "VALSE Inc.", "会社名 VALSE Inc."],
+      alternateName: ["VALSE", "VALSE Inc.", "株式会社ヴァルス"],
       url: valse.sourceUrl,
       sameAs: ["https://www.valse.jp/", valse.sourceUrl],
       description: local(valse.description, lang)
@@ -1158,19 +1154,19 @@ const homeTranslations = {
   explainer: {
     es: {
       centralQuestion: "¿Cómo se asignaron la autoridad, el presupuesto y la responsabilidad documental cuando el contacto con creadores, las consultas de derechos, la coordinación y la logística de pago avanzaron antes de localizar términos escritos finales?",
-      rightOfReplyNotice: "Nichion, VALSE y cualquier participante nombrado pueden presentar correcciones, documentos de contexto o una respuesta formal. Las presentaciones se conservarán y revisarán antes de cualquier publicación."
+      rightOfReplyNotice: "株式会社日音, 株式会社ヴァルス y cualquier participante nombrado pueden presentar correcciones, documentos de contexto o una respuesta formal. Las presentaciones se conservarán y revisarán antes de cualquier publicación."
     },
     de: {
       centralQuestion: "Wie wurden Befugnis, Budget und Dokumentationsverantwortung verteilt, als Urheberkontakt, Rechterückfragen, Koordination und Zahlungslogistik vor Auffinden endgültiger schriftlicher Bedingungen voranschritten?",
-      rightOfReplyNotice: "Nichion, VALSE und alle namentlich genannten Beteiligten können Korrekturen, Kontextdokumente oder eine formelle Antwort einreichen. Einreichungen werden vor jeder Veröffentlichung aufbewahrt und geprüft."
+      rightOfReplyNotice: "株式会社日音, 株式会社ヴァルス und alle namentlich genannten Beteiligten können Korrekturen, Kontextdokumente oder eine formelle Antwort einreichen. Einreichungen werden vor jeder Veröffentlichung aufbewahrt und geprüft."
     },
     fr: {
       centralQuestion: "Comment l'autorité, le budget et la responsabilité documentaire étaient-ils répartis lorsque le contact avec les créateurs, les questions de droits, la coordination et la logistique de paiement ont avancé avant que des conditions écrites finales ne soient localisées ?",
-      rightOfReplyNotice: "Nichion, VALSE et tout participant nommé peuvent soumettre des corrections, des documents contextuels ou une réponse formelle. Les soumissions seront conservées et examinées avant toute publication."
+      rightOfReplyNotice: "株式会社日音, 株式会社ヴァルス et tout participant nommé peuvent soumettre des corrections, des documents contextuels ou une réponse formelle. Les soumissions seront conservées et examinées avant toute publication."
     },
     sk: {
       centralQuestion: "Ako boli rozdelené právomoc, rozpočet a dokumentačná zodpovednosť, keď kontaktovanie tvorcov, otázky práv, koordinácia a platobná logistika napredovali pred nájdením konečných písomných podmienok?",
-      rightOfReplyNotice: "Nichion, VALSE a každý menovaný účastník môžu predložiť opravy, kontextové dokumenty alebo formálnu odpoveď. Podania budú uchované a skontrolované pred akýmkoľvek zverejnením."
+      rightOfReplyNotice: "株式会社日音, 株式会社ヴァルス a každý menovaný účastník môžu predložiť opravy, kontextové dokumenty alebo formálnu odpoveď. Podania budú uchované a skontrolované pred akýmkoľvek zverejnením."
     }
   },
   examines: {
@@ -1306,28 +1302,28 @@ const homeTranslations = {
   transactionStructure: {
     es: [
       { label: "Introducción / puente", body: "Un representante del lado de VALSE está documentado como parte de la vía de introducción y comunicación del proyecto." },
-      { label: "Discusión del proyecto", body: "Personal del lado de Nichion y la Parte Informante aparecen por rol en las comunicaciones del proyecto." },
+      { label: "Discusión del proyecto", body: "Personal del lado de 株式会社日音 y la Parte Informante aparecen por rol en las comunicaciones del proyecto." },
       { label: "Actividad de trabajo", body: "El contacto con creadores, las consultas de derechos, el manejo de demos/materiales y la logística de pago aparecen en el registro revisado." },
       { label: "Vacío documental", body: "El alcance escrito final, la autoridad de encargo, la tarifa aprobada y el tratamiento de cancelación siguen sin resolverse en el corpus revisado." },
       { label: "Encuadre posterior de honorarios", body: "Se refleja una propuesta de honorarios en una etapa posterior, pero la autoridad, la base y la aceptación mutua no quedan establecidas por el registro seguro para publicación." }
     ],
     de: [
       { label: "Einführung / Brücke", body: "Ein VALSE-seitiger Vertreter ist als Teil des Einführungs- und Projektkommunikationswegs dokumentiert." },
-      { label: "Projektdiskussion", body: "Nichion-seitiges Personal und die meldende Partei erscheinen in der Projektkommunikation nach Rollen." },
+      { label: "Projektdiskussion", body: "株式会社日音-seitiges Personal und die meldende Partei erscheinen in der Projektkommunikation nach Rollen." },
       { label: "Arbeitsaktivität", body: "Urheberkontakt, Rechterückfragen, Demo-/Materialbearbeitung und Zahlungslogistik spiegeln sich im geprüften Protokoll wider." },
       { label: "Dokumentationslücke", body: "Endgültiger schriftlicher Umfang, Beauftragungsbefugnis, genehmigte Vergütung und Kündigungsbehandlung bleiben im geprüften Korpus ungelöst." },
       { label: "Spätere Honorardarstellung", body: "Ein späterer Honorarvorschlag ist abgebildet, aber Befugnis, Grundlage und gegenseitige Annahme werden durch das öffentlich sichere Protokoll nicht festgestellt." }
     ],
     fr: [
       { label: "Introduction / passerelle", body: "Un représentant côté VALSE est documenté comme faisant partie du chemin d'introduction et de communication du projet." },
-      { label: "Discussion du projet", body: "Le personnel côté Nichion et la Partie déclarante apparaissent par rôle dans les communications du projet." },
+      { label: "Discussion du projet", body: "Le personnel côté 株式会社日音 et la Partie déclarante apparaissent par rôle dans les communications du projet." },
       { label: "Activité de travail", body: "Le contact avec les créateurs, les demandes sur les droits, le traitement des démos/matériaux et la logistique de paiement figurent dans le dossier examiné." },
       { label: "Lacune documentaire", body: "Le périmètre écrit final, l'autorité de commande, les honoraires approuvés et le traitement de l'annulation restent non résolus dans le corpus examiné." },
       { label: "Qualification ultérieure des honoraires", body: "Une proposition d'honoraires ultérieure est reflétée, mais l'autorité, la base et l'acceptation mutuelle ne sont pas établies par le dossier publiquement sûr." }
     ],
     sk: [
       { label: "Predstavenie / prepojenie", body: "Zástupca na strane VALSE je zdokumentovaný ako súčasť cesty predstavenia a projektovej komunikácie." },
-      { label: "Diskusia o projekte", body: "Personál na strane Nichion a Oznamujúca strana sa v projektovej komunikácii objavujú podľa rolí." },
+      { label: "Diskusia o projekte", body: "Personál na strane 株式会社日音 a Oznamujúca strana sa v projektovej komunikácii objavujú podľa rolí." },
       { label: "Pracovná aktivita", body: "Kontaktovanie tvorcov, otázky práv, nakladanie s demami/materiálmi a platobná logistika sa odrážajú v preskúmanom zázname." },
       { label: "Dokumentačná medzera", body: "Konečný písomný rozsah, zadávacia právomoc, schválená odmena a zaobchádzanie pri zrušení zostávajú v preskúmanom korpuse nevyriešené." },
       { label: "Neskoršie rámcovanie honoráru", body: "Neskorší návrh honoráru je zachytený, ale právomoc, základ a vzájomné prijatie nie sú verejne bezpečným záznamom preukázané." }
@@ -1347,42 +1343,42 @@ function explainerText(key, lang) {
 }
 
 const heroDisplayTitles = {
-  en: "2021 Music Commissioning Authority & Rights Record",
-  ja: "2021年 音楽制作発注・権利処理記録",
-  es: "Registro 2021 de autoridad de encargo y derechos musicales",
-  de: "2021 Protokoll zu Musikauftrag und Rechteklärung",
-  fr: "Dossier 2021 sur commande musicale et droits",
-  sk: "Záznam 2021 o hudobnom zadaní a právach"
+  en: "株式会社日音 / 株式会社ヴァルス 2021 Music Commissioning Record",
+  ja: "株式会社日音 / 株式会社ヴァルス 2021年 音楽制作発注・権利処理記録",
+  es: "株式会社日音 / 株式会社ヴァルス Registro 2021 de encargo musical",
+  de: "株式会社日音 / 株式会社ヴァルス 2021 Protokoll zum Musikauftrag",
+  fr: "株式会社日音 / 株式会社ヴァルス Dossier 2021 de commande musicale",
+  sk: "株式会社日音 / 株式会社ヴァルス Záznam 2021 o hudobnom zadaní"
 };
 
 const answerSummaries = {
   en: [
-    "This public record is an evidence-separated review of a 2021 music commissioning process involving Nichion Co., Ltd. and VALSE Inc. as public subject organisations.",
+    "This public record is an evidence-separated review of a 2021 music commissioning process involving 株式会社日音 and 株式会社ヴァルス as public subject organisations.",
     "It answers who communicated, what work and rights topics were discussed, where authority and budget approval remain unresolved, and why final written terms matter for independent music work.",
     "The page does not publish the Reporting Party's identity, raw correspondence, email headers, message IDs, signatures, exact times, demos or private creator identifiers."
   ],
   ja: [
-    "本公開記録は、株式会社日音及びVALSE Inc.を公開上の対象組織として、2021年の音楽制作発注過程を証拠と評価を分けて整理するものです。",
+    "本公開記録は、株式会社日音及び株式会社ヴァルスを公開上の対象組織として、2021年の音楽制作発注過程を証拠と評価を分けて整理するものです。",
     "誰が連絡し、どの作業・権利論点が協議され、発注権限・予算承認・最終書面条件のどこが未解決なのかを、第三者が確認しやすい形で示します。",
     "申告者の氏名、レーベル名、アーティスト名義、メール、ヘッダー、メッセージ識別子、署名、正確な時刻、デモ、非公開作家識別情報は掲載しません。"
   ],
   es: [
-    "Este registro público separa pruebas y evaluación en un proceso de encargo musical de 2021 con Nichion Co., Ltd. y VALSE Inc. como organizaciones públicas objeto del registro.",
+    "Este registro público separa pruebas y evaluación en un proceso de encargo musical de 2021 con 株式会社日音 y 株式会社ヴァルス como organizaciones públicas objeto del registro.",
     "Responde quién comunicó, qué trabajo y derechos se discutieron, dónde siguen abiertas la autoridad y la aprobación presupuestaria, y por qué importan los términos escritos finales.",
     "No publica identidad de la Parte Informante, correspondencia cruda, cabeceras, identificadores de mensajes, firmas, horas exactas, demos ni identificadores privados de creadores."
   ],
   de: [
-    "Dieses öffentliche Protokoll trennt Belege und Bewertung in einem Musikbeauftragungsprozess von 2021 mit Nichion Co., Ltd. und VALSE Inc. als öffentlich benannten Gegenstandsorganisationen.",
+    "Dieses öffentliche Protokoll trennt Belege und Bewertung in einem Musikbeauftragungsprozess von 2021 mit 株式会社日音 und 株式会社ヴァルス als öffentlich benannten Gegenstandsorganisationen.",
     "Es beantwortet, wer kommunizierte, welche Arbeiten und Rechtefragen besprochen wurden, wo Befugnis und Budgetfreigabe offen bleiben und warum endgültige schriftliche Bedingungen wichtig sind.",
     "Identität der meldenden Partei, Rohkorrespondenz, Header, Nachrichtenkennungen, Signaturen, genaue Uhrzeiten, Demos und private Urheberkennungen werden nicht veröffentlicht."
   ],
   fr: [
-    "Ce dossier public sépare les preuves et l'évaluation dans un processus de commande musicale de 2021 impliquant Nichion Co., Ltd. et VALSE Inc. comme organisations publiquement concernées.",
+    "Ce dossier public sépare les preuves et l'évaluation dans un processus de commande musicale de 2021 impliquant 株式会社日音 et 株式会社ヴァルス comme organisations publiquement concernées.",
     "Il répond à qui a communiqué, quels travaux et droits ont été discutés, où l'autorité et l'approbation budgétaire restent ouvertes, et pourquoi les conditions écrites finales comptent.",
     "Il ne publie pas l'identité de la Partie déclarante, la correspondance brute, les en-têtes, identifiants de message, signatures, heures exactes, démos ou identifiants privés de créateurs."
   ],
   sk: [
-    "Tento verejný záznam oddeľuje dôkazy a hodnotenie v procese hudobného zadania z roku 2021 s Nichion Co., Ltd. a VALSE Inc. ako verejne uvedenými predmetnými organizáciami.",
+    "Tento verejný záznam oddeľuje dôkazy a hodnotenie v procese hudobného zadania z roku 2021 s 株式会社日音 a 株式会社ヴァルス ako verejne uvedenými predmetnými organizáciami.",
     "Odpovedá, kto komunikoval, aké práce a otázky práv boli diskutované, kde zostáva otvorená právomoc a schválenie rozpočtu a prečo sú konečné písomné podmienky dôležité.",
     "Nezverejňuje identitu Oznamujúcej strany, surovú korešpondenciu, hlavičky, identifikátory správ, podpisy, presné časy, demá ani súkromné identifikátory tvorcov."
   ]
@@ -1390,7 +1386,7 @@ const answerSummaries = {
 
 const searchIntentItems = {
   en: [
-    "Nichion VALSE 2021 music commissioning record",
+    "株式会社日音 株式会社ヴァルス 2021 music commissioning record",
     "music production scope before written terms",
     "creator outreach and rights clearance evidence ledger",
     "independent music contractor payment and cancellation risk"
@@ -1402,25 +1398,25 @@ const searchIntentItems = {
     "独立事業者 音楽制作 報酬 中止リスク"
   ],
   es: [
-    "registro de encargo musical Nichion VALSE 2021",
+    "registro de encargo musical 株式会社日音 株式会社ヴァルス 2021",
     "producción musical antes de términos escritos",
     "contacto con creadores y aclaración de derechos",
     "riesgo de pago y cancelación para contratistas musicales"
   ],
   de: [
-    "Nichion VALSE 2021 Musikauftrag Protokoll",
+    "株式会社日音 株式会社ヴァルス 2021 Musikauftrag Protokoll",
     "Musikproduktion vor schriftlichen Bedingungen",
     "Urheberkontakt und Rechteklärung Evidenzregister",
     "Zahlungs- und Kündigungsrisiko für unabhängige Musikauftragnehmer"
   ],
   fr: [
-    "dossier de commande musicale Nichion VALSE 2021",
+    "dossier de commande musicale 株式会社日音 株式会社ヴァルス 2021",
     "production musicale avant conditions écrites",
     "contact créateurs et clarification des droits",
     "risque paiement annulation indépendant musique"
   ],
   sk: [
-    "Nichion VALSE 2021 záznam o hudobnom zadaní",
+    "株式会社日音 株式会社ヴァルス 2021 záznam o hudobnom zadaní",
     "hudobná produkcia pred písomnými podmienkami",
     "kontakt tvorcov a vyjasnenie práv",
     "riziko platby a zrušenia pre nezávislých hudobných dodávateľov"
@@ -1432,42 +1428,42 @@ const recordFaqs = {
     ["What is this record about?", "It is a public-safe record of a 2021 music commissioning process, focused on authority, scope, compensation, rights clearance and unresolved documentary gaps."],
     ["Does the record identify the Reporting Party?", "No. The Reporting Party is described only by a public-safe role label. Private identifiers are withheld."],
     ["Does the record make a legal conclusion?", "No. It separates documented facts, context, disputed issues and open questions. It does not determine liability, intent or wrongdoing."],
-    ["Why are Nichion and VALSE named?", "They are public subject organisations for the record. Public company context is used only as context unless supported by record-specific evidence."],
+    ["Why are 株式会社日音 and 株式会社ヴァルス named?", "They are public subject organisations for the record. Public company context is used only as context unless supported by record-specific evidence."],
     ["Where should corrections be sent?", "The right-of-reply page provides a route for corrections, contextual documents and formal responses before any publication decision."]
   ],
   ja: [
     ["この記録は何を扱うものですか。", "2021年の音楽制作発注過程について、発注権限、業務範囲、報酬、権利処理、未解決の書面上の空白を公開安全な形で整理する記録です。"],
     ["申告者は特定されますか。", "いいえ。申告者は公開安全な役割名でのみ表示し、氏名、レーベル名、アーティスト名義、メール等は掲載しません。"],
     ["法的結論を示していますか。", "いいえ。記録済み事実、背景情報、争点、未解決事項を分けて表示します。責任、故意、不正行為を断定しません。"],
-    ["なぜ日音とVALSEの名前を出すのですか。", "本記録の公開上の対象組織だからです。公式会社情報は、本件固有証拠で支えられない限り背景情報としてのみ扱います。"],
+    ["なぜ株式会社日音と株式会社ヴァルスの名前を出すのですか。", "本記録の公開上の対象組織だからです。公式会社情報は、本件固有証拠で支えられない限り背景情報としてのみ扱います。"],
     ["訂正や反論はどこから出せますか。", "反論・訂正ページから、訂正、文脈資料、正式回答を提出する経路を確認できます。"]
   ],
   es: [
     ["¿De qué trata este registro?", "Es un registro público seguro de un proceso de encargo musical de 2021, centrado en autoridad, alcance, compensación, aclaración de derechos y vacíos documentales no resueltos."],
     ["¿Identifica el registro a la Parte Informante?", "No. La Parte Informante se describe solo mediante una etiqueta de rol pública segura. Los identificadores privados se omiten."],
     ["¿El registro formula una conclusión legal?", "No. Separa hechos documentados, contexto, cuestiones disputadas y preguntas abiertas. No determina responsabilidad, intención ni conducta indebida."],
-    ["¿Por qué se nombran Nichion y VALSE?", "Son organizaciones públicas objeto del registro. El contexto empresarial público se usa solo como contexto salvo que esté respaldado por evidencia específica del registro."],
+    ["¿Por qué se nombran 株式会社日音 y 株式会社ヴァルス?", "Son organizaciones públicas objeto del registro. El contexto empresarial público se usa solo como contexto salvo que esté respaldado por evidencia específica del registro."],
     ["¿Dónde se envían correcciones?", "La página de derecho de respuesta ofrece una vía para correcciones, documentos contextuales y respuestas formales antes de cualquier decisión de publicación."]
   ],
   de: [
     ["Worum geht es in diesem Protokoll?", "Es ist ein öffentlich sicheres Protokoll eines Musikbeauftragungsprozesses von 2021 mit Fokus auf Befugnis, Umfang, Vergütung, Rechteklärung und ungelöste Dokumentationslücken."],
     ["Identifiziert das Protokoll die meldende Partei?", "Nein. Die meldende Partei wird nur mit einer öffentlich sicheren Rollenbezeichnung beschrieben. Private Kennungen werden zurückgehalten."],
     ["Trifft das Protokoll eine rechtliche Schlussfolgerung?", "Nein. Es trennt dokumentierte Tatsachen, Kontext, Streitfragen und offene Fragen. Es stellt keine Haftung, Absicht oder Fehlverhalten fest."],
-    ["Warum werden Nichion und VALSE genannt?", "Sie sind öffentlich benannte Gegenstandsorganisationen des Protokolls. Öffentlicher Unternehmenskontext wird nur als Kontext verwendet, sofern er nicht durch protokollspezifische Belege gestützt ist."],
+    ["Warum werden 株式会社日音 und 株式会社ヴァルス genannt?", "Sie sind öffentlich benannte Gegenstandsorganisationen des Protokolls. Öffentlicher Unternehmenskontext wird nur als Kontext verwendet, sofern er nicht durch protokollspezifische Belege gestützt ist."],
     ["Wo können Korrekturen eingereicht werden?", "Die Seite zum Recht auf Erwiderung bietet einen Weg für Korrekturen, Kontextdokumente und formelle Antworten vor jeder Veröffentlichungsentscheidung."]
   ],
   fr: [
     ["De quoi traite ce dossier ?", "Il s'agit d'un dossier public sécurisé sur un processus de commande musicale de 2021, centré sur l'autorité, le périmètre, la rémunération, la clarification des droits et les lacunes documentaires non résolues."],
     ["Le dossier identifie-t-il la Partie déclarante ?", "Non. La Partie déclarante est décrite uniquement par une étiquette de rôle publique sécurisée. Les identifiants privés sont retenus."],
     ["Le dossier formule-t-il une conclusion juridique ?", "Non. Il sépare faits documentés, contexte, points contestés et questions ouvertes. Il ne détermine pas responsabilité, intention ou faute."],
-    ["Pourquoi Nichion et VALSE sont-ils nommés ?", "Ce sont les organisations publiquement concernées par le dossier. Le contexte public d'entreprise est utilisé uniquement comme contexte sauf s'il est appuyé par des preuves propres au dossier."],
+    ["Pourquoi 株式会社日音 et 株式会社ヴァルス sont-ils nommés ?", "Ce sont les organisations publiquement concernées par le dossier. Le contexte public d'entreprise est utilisé uniquement comme contexte sauf s'il est appuyé par des preuves propres au dossier."],
     ["Où envoyer des corrections ?", "La page du droit de réponse fournit une voie pour les corrections, documents contextuels et réponses formelles avant toute décision de publication."]
   ],
   sk: [
     ["O čom je tento záznam?", "Je to verejne bezpečný záznam o procese hudobného zadania z roku 2021 so zameraním na právomoc, rozsah, odmenu, vyjasnenie práv a nevyriešené dokumentačné medzery."],
     ["Identifikuje záznam Oznamujúcu stranu?", "Nie. Oznamujúca strana je opísaná iba verejne bezpečným označením roly. Súkromné identifikátory sú zadržané."],
     ["Robí záznam právny záver?", "Nie. Oddeľuje zdokumentované fakty, kontext, sporné otázky a otvorené otázky. Neurčuje zodpovednosť, úmysel ani protiprávne konanie."],
-    ["Prečo sú uvedené Nichion a VALSE?", "Sú to verejne uvedené predmetné organizácie záznamu. Verejný firemný kontext sa používa iba ako kontext, pokiaľ nie je podložený dôkazmi špecifickými pre záznam."],
+    ["Prečo sú uvedené 株式会社日音 a 株式会社ヴァルス?", "Sú to verejne uvedené predmetné organizácie záznamu. Verejný firemný kontext sa používa iba ako kontext, pokiaľ nie je podložený dôkazmi špecifickými pre záznam."],
     ["Kam možno poslať opravy?", "Stránka práva na odpoveď poskytuje cestu pre opravy, kontextové dokumenty a formálne odpovede pred akýmkoľvek rozhodnutím o zverejnení."]
   ]
 };
@@ -1500,7 +1496,7 @@ function FaqPanel(lang = currentLang) {
 
 function seoKeywords(lang = currentLang) {
   return (searchIntentItems[lang] || searchIntentItems.en).concat([
-    "Nichion", "VALSE", "music commissioning", "rights clearance", "evidence ledger", "right of reply"
+    "株式会社日音", "Nichion", "株式会社ヴァルス", "VALSE", "music commissioning", "rights clearance", "evidence ledger", "right of reply"
   ]).join(", ");
 }
 
@@ -1664,6 +1660,575 @@ function MapPreview(lang = currentLang) {
   `;
 }
 
+function verificationMapCopy(lang = currentLang) {
+  return {
+    title: tr(lang, {
+      en: "Relationship and Verification Map",
+      ja: "関係・検証マップ",
+      es: "Mapa de relación y verificación",
+      de: "Beziehungs- und Prüfkarte",
+      fr: "Carte relationnelle et de vérification",
+      sk: "Mapa vzťahov a overenia"
+    }),
+    lead: tr(lang, {
+      en: "A neutral public-redacted map of the 2021 production engagement: organisations, role-based participants, documents and open questions. Click a node to read its note. No legal conclusion is made.",
+      ja: "2021年の制作案件について、組織、役割ベースの関係者、資料、未解決論点を公開安全な形で整理した中立マップです。ノードをクリックすると注記を確認できます。法的結論は示しません。",
+      es: "Mapa neutral y redactado para publicación del encargo de producción de 2021: organizaciones, participantes por rol, documentos y preguntas abiertas. Haga clic en un nodo para leer la nota. No se formula una conclusión legal.",
+      de: "Neutrale, öffentlich redigierte Karte des Produktionsauftrags von 2021: Organisationen, rollenbasierte Beteiligte, Dokumente und offene Fragen. Klicken Sie auf einen Knoten, um die Notiz zu lesen. Es wird keine rechtliche Schlussfolgerung gezogen.",
+      fr: "Carte neutre et expurgée pour publication de l'engagement de production de 2021 : organisations, participants par rôle, documents et questions ouvertes. Cliquez sur un noeud pour lire sa note. Aucune conclusion juridique n'est formulée.",
+      sk: "Neutrálna verejne redigovaná mapa produkčného zadania z roku 2021: organizácie, účastníci podľa rolí, dokumenty a otvorené otázky. Kliknutím na uzol zobrazíte poznámku. Neuvádza sa právny záver."
+    }),
+    chips: tr(lang, {
+      en: ["Parties shown by role", "No legal conclusion", "Right of reply open"],
+      ja: ["人物は役割で表示", "法的結論なし", "反論・訂正受付中"],
+      es: ["Partes mostradas por rol", "Sin conclusión legal", "Derecho de respuesta abierto"],
+      de: ["Parteien nach Rolle", "Keine rechtliche Schlussfolgerung", "Erwiderung offen"],
+      fr: ["Parties affichées par rôle", "Aucune conclusion juridique", "Droit de réponse ouvert"],
+      sk: ["Strany zobrazené podľa roly", "Bez právneho záveru", "Právo na odpoveď otvorené"]
+    }),
+    kicker: tr(lang, {
+      en: "RELATIONSHIP & VERIFICATION MAP",
+      ja: "関係・検証マップ",
+      es: "MAPA DE RELACIÓN Y VERIFICACIÓN",
+      de: "BEZIEHUNGS- UND PRÜFKARTE",
+      fr: "CARTE RELATIONNELLE ET DE VÉRIFICATION",
+      sk: "MAPA VZŤAHOV A OVERENIA"
+    }),
+    deck: tr(lang, {
+      en: "株式会社日音 / 株式会社ヴァルス · 2021 record · no legal conclusion",
+      ja: "株式会社日音 / 株式会社ヴァルス · 2021年記録 · 法的結論なし",
+      es: "株式会社日音 / 株式会社ヴァルス · Registro 2021 · sin conclusión legal",
+      de: "株式会社日音 / 株式会社ヴァルス · Protokoll 2021 · keine rechtliche Schlussfolgerung",
+      fr: "株式会社日音 / 株式会社ヴァルス · Dossier 2021 · aucune conclusion juridique",
+      sk: "株式会社日音 / 株式会社ヴァルス · Záznam 2021 · bez právneho záveru"
+    }),
+    hint: tr(lang, {
+      en: "drag · hover to expand · click a node for its note",
+      ja: "ドラッグ · ホバーで拡大 · クリックで注記",
+      es: "arrastre · pase el cursor para ampliar · clic para nota",
+      de: "ziehen · Hover zum Erweitern · Klick für Notiz",
+      fr: "glisser · survol pour agrandir · clic pour la note",
+      sk: "ťahať · hover na zväčšenie · klik pre poznámku"
+    }),
+    reset: tr(lang, { en: "Shuffle", ja: "再配置", es: "Reordenar", de: "Neu anordnen", fr: "Réorganiser", sk: "Premiešať" }),
+    legendTitle: tr(lang, { en: "EDGE = RELATION + STATUS", ja: "線 = 関係 + 状態", es: "ARISTA = RELACIÓN + ESTADO", de: "KANTE = BEZIEHUNG + STATUS", fr: "LIEN = RELATION + STATUT", sk: "HRANA = VZŤAH + STAV" }),
+    legend: tr(lang, {
+      en: ["Documented relation", "Open / unverified", "Verification gap", "Context only - no responsibility"],
+      ja: ["記録済み関係", "未解決 / 未検証", "検証上の空白", "背景のみ - 責任関係なし"],
+      es: ["Relación documentada", "Abierto / no verificado", "Vacío de verificación", "Solo contexto - sin responsabilidad"],
+      de: ["Dokumentierte Beziehung", "Offen / ungeprüft", "Prüflücke", "Nur Kontext - keine Verantwortung"],
+      fr: ["Relation documentée", "Ouvert / non vérifié", "Lacune de vérification", "Contexte seulement - pas de responsabilité"],
+      sk: ["Zdokumentovaný vzťah", "Otvorené / neoverené", "Medzera v overení", "Iba kontext - bez zodpovednosti"]
+    }),
+    privacy: tr(lang, {
+      en: "People are shown by role; individual staff names and reporting-side identity are omitted. No endorsement, knowledge, control, fault or responsibility is established for any party.",
+      ja: "人物は役割で表示し、個別の担当者名及び申告側の識別情報は省略します。いずれの当事者についても、承認、認識、支配、過失又は責任を認定するものではありません。",
+      es: "Las personas se muestran por rol; se omiten nombres individuales e identidad de la parte informante. No se establece aprobación, conocimiento, control, culpa ni responsabilidad de ninguna parte.",
+      de: "Personen werden nach Rollen angezeigt; einzelne Mitarbeiternamen und die Identität der meldenden Seite werden ausgelassen. Für keine Partei werden Billigung, Kenntnis, Kontrolle, Verschulden oder Verantwortung festgestellt.",
+      fr: "Les personnes sont affichées par rôle ; les noms individuels et l'identité de la partie déclarante sont omis. Aucune approbation, connaissance, maîtrise, faute ou responsabilité n'est établie pour une partie.",
+      sk: "Osoby sú zobrazené podľa rolí; mená jednotlivých pracovníkov a identita oznamujúcej strany sú vynechané. Nepreukazuje sa schválenie, vedomosť, kontrola, vina ani zodpovednosť žiadnej strany."
+    }),
+    nodeListTitle: tr(lang, { en: "All nodes - text record", ja: "全ノード - テキスト記録", es: "Todos los nodos - registro textual", de: "Alle Knoten - Textprotokoll", fr: "Tous les noeuds - enregistrement texte", sk: "Všetky uzly - textový záznam" }),
+    sourceType: tr(lang, { en: "Source type", ja: "情報源種別", es: "Tipo de fuente", de: "Quellentyp", fr: "Type de source", sk: "Typ zdroja" }),
+    noteLabel: tr(lang, { en: "Note", ja: "注記", es: "Nota", de: "Notiz", fr: "Note", sk: "Poznámka" }),
+    openRelated: tr(lang, { en: "Open related page", ja: "関連ページを開く", es: "Abrir página relacionada", de: "Zugehörige Seite öffnen", fr: "Ouvrir la page liée", sk: "Otvoriť súvisiacu stránku" }),
+    categories: tr(lang, {
+      en: { subject: "Subject", org: "Organisation", role: "Role (name withheld)", doc: "Documented", open: "Open question", ctx: "Context", reporting: "Reviewing party" },
+      ja: { subject: "対象", org: "組織", role: "役割(氏名非表示)", doc: "記録済み", open: "未解決論点", ctx: "背景", reporting: "確認側" },
+      es: { subject: "Objeto", org: "Organización", role: "Rol (nombre omitido)", doc: "Documentado", open: "Pregunta abierta", ctx: "Contexto", reporting: "Parte revisora" },
+      de: { subject: "Gegenstand", org: "Organisation", role: "Rolle (Name zurückgehalten)", doc: "Dokumentiert", open: "Offene Frage", ctx: "Kontext", reporting: "Prüfende Seite" },
+      fr: { subject: "Objet", org: "Organisation", role: "Rôle (nom retenu)", doc: "Documenté", open: "Question ouverte", ctx: "Contexte", reporting: "Partie examinatrice" },
+      sk: { subject: "Predmet", org: "Organizácia", role: "Rola (meno zadržané)", doc: "Zdokumentované", open: "Otázka otvorená", ctx: "Kontext", reporting: "Kontrolujúca strana" }
+    })
+  };
+}
+
+function verificationMapNodes(lang = currentLang) {
+  return [
+    {
+      id: "project",
+      cat: "subject",
+      r: 30,
+      label: tr(lang, { en: "2021 production engagement", ja: "2021年制作案件", es: "Encargo de producción 2021", de: "Produktionsauftrag 2021", fr: "Engagement de production 2021", sk: "Produkčné zadanie 2021" }),
+      role: tr(lang, { en: "Library-music production work begun in 2021.", ja: "2021年に開始されたライブラリ音楽制作作業。", es: "Trabajo de producción de música de librería iniciado en 2021.", de: "2021 begonnene Library-Music-Produktionsarbeit.", fr: "Travail de production de musique de bibliothèque commencé en 2021.", sk: "Produkčná práca library music začatá v roku 2021." }),
+      source: tr(lang, { en: "Reviewed 2021 correspondence", ja: "確認済み2021年通信", es: "Correspondencia revisada de 2021", de: "Geprüfte Korrespondenz 2021", fr: "Correspondance 2021 examinée", sk: "Skontrolovaná korešpondencia z roku 2021" }),
+      q: tr(lang, { en: "Work scope, creator coordination and direction are described in dated correspondence; no signed written contract was located.", ja: "業務範囲、作家調整、ディレクションは日付付き通信に記録されていますが、署名済み書面契約は確認されていません。", es: "El alcance, la coordinación de creadores y la dirección figuran en correspondencia fechada; no se localizó contrato escrito firmado.", de: "Umfang, Urheberkoordination und Direction sind in datierter Korrespondenz beschrieben; ein unterschriebener schriftlicher Vertrag wurde nicht gefunden.", fr: "Le périmètre, la coordination des créateurs et la direction figurent dans une correspondance datée ; aucun contrat écrit signé n'a été localisé.", sk: "Rozsah práce, koordinácia tvorcov a vedenie sú opísané v datovanej korešpondencii; podpísaná písomná zmluva sa nenašla." }),
+      href: urlFor(lang)
+    },
+    {
+      id: "nichion",
+      cat: "org",
+      r: 23,
+      label: tr(lang, { en: "株式会社日音", ja: "株式会社日音", es: "株式会社日音", de: "株式会社日音", fr: "株式会社日音", sk: "株式会社日音" }),
+      role: tr(lang, { en: "Music publisher; commissioning and rights-side context.", ja: "音楽出版社。発注・権利処理側の背景。", es: "Editorial musical; contexto del lado de encargo y derechos.", de: "Musikverlag; Kontext der Beauftragung und Rechte.", fr: "Éditeur musical ; contexte côté commande et droits.", sk: "Hudobné vydavateľstvo; kontext zadania a práv." }),
+      source: tr(lang, { en: "Public company site and reviewed correspondence", ja: "公式会社情報及び確認済み通信", es: "Sitio oficial y correspondencia revisada", de: "Öffentliche Unternehmensseite und geprüfte Korrespondenz", fr: "Site officiel et correspondance examinée", sk: "Verejná firemná stránka a skontrolovaná korešpondencia" }),
+      q: tr(lang, { en: "Referenced as a public subject organisation. Context only unless supported by record-specific evidence.", ja: "公開上の対象組織として表示します。本件固有証拠に支えられない限り背景情報です。", es: "Se muestra como organización pública objeto del registro. Es contexto salvo respaldo específico del expediente.", de: "Als öffentlich benannte Gegenstandsorganisation aufgeführt. Kontext, sofern nicht durch fallspezifische Belege gestützt.", fr: "Affichée comme organisation publiquement concernée. Contexte sauf preuve propre au dossier.", sk: "Uvedená ako verejne uvedená predmetná organizácia. Ide o kontext, ak nie je podložená dôkazmi záznamu." }),
+      href: urlFor(lang)
+    },
+    {
+      id: "valse",
+      cat: "org",
+      r: 23,
+      label: "株式会社ヴァルス",
+      role: tr(lang, { en: "Broadcast audio-production company; introduction and coordination context.", ja: "放送音響制作会社。紹介・調整の背景。", es: "Empresa de producción de audio para emisión; contexto de introducción y coordinación.", de: "Broadcast-Audioproduktionsunternehmen; Kontext von Einführung und Koordination.", fr: "Société de production audio pour diffusion ; contexte d'introduction et de coordination.", sk: "Spoločnosť pre broadcast audio produkciu; kontext predstavenia a koordinácie." }),
+      source: tr(lang, { en: "Public company site and reviewed correspondence", ja: "公式会社情報及び確認済み通信", es: "Sitio oficial y correspondencia revisada", de: "Öffentliche Unternehmensseite und geprüfte Korrespondenz", fr: "Site officiel et correspondance examinée", sk: "Verejná firemná stránka a skontrolovaná korešpondencia" }),
+      q: tr(lang, { en: "The official company profile lists VALSE Inc. and 株式会社ヴァルス. The primary public label here is 株式会社ヴァルス.", ja: "公式会社概要には VALSE Inc. 株式会社ヴァルス と記載されています。本記録の主表示は株式会社ヴァルスです。", es: "El perfil oficial indica VALSE Inc. y 株式会社ヴァルス. La etiqueta principal aquí es 株式会社ヴァルス.", de: "Das offizielle Profil nennt VALSE Inc. und 株式会社ヴァルス. Die primäre Bezeichnung hier ist 株式会社ヴァルス.", fr: "Le profil officiel indique VALSE Inc. et 株式会社ヴァルス. L'intitulé principal ici est 株式会社ヴァルス.", sk: "Oficiálny profil uvádza VALSE Inc. a 株式会社ヴァルス. Hlavné označenie tu je 株式会社ヴァルス." }),
+      href: urlFor(lang)
+    },
+    {
+      id: "reviewing",
+      cat: "reporting",
+      r: 21,
+      label: tr(lang, { en: "Reviewing party", ja: "確認側", es: "Parte revisora", de: "Prüfende Seite", fr: "Partie examinatrice", sk: "Kontrolujúca strana" }),
+      role: tr(lang, { en: "Independent production / coordination side. Identity withheld.", ja: "独立した制作・調整側。識別情報は非公開。", es: "Lado independiente de producción / coordinación. Identidad omitida.", de: "Unabhängige Produktions- / Koordinationsseite. Identität zurückgehalten.", fr: "Côté production / coordination indépendant. Identité retenue.", sk: "Nezávislá produkčná / koordinačná strana. Identita zadržaná." }),
+      source: tr(lang, { en: "Reviewed correspondence", ja: "確認済み通信", es: "Correspondencia revisada", de: "Geprüfte Korrespondenz", fr: "Correspondance examinée", sk: "Skontrolovaná korešpondencia" }),
+      q: tr(lang, { en: "Reporting-side identity, label name, artist identity, private email and location are withheld.", ja: "申告側の氏名、レーベル名、アーティスト名義、非公開メール、所在地は掲載しません。", es: "Se omiten identidad, sello, nombre artístico, correo privado y ubicación de la parte informante.", de: "Identität, Labelname, Künstlername, private E-Mail und Standort der meldenden Seite werden zurückgehalten.", fr: "L'identité, le label, le nom artistique, l'e-mail privé et la localisation de la partie déclarante sont retenus.", sk: "Identita, label, umelecké meno, súkromný e-mail a lokalita oznamujúcej strany sú zadržané." }),
+      href: urlFor(lang)
+    },
+    {
+      id: "nichionContacts",
+      cat: "role",
+      r: 19,
+      label: tr(lang, { en: "株式会社日音 contacts (role)", ja: "株式会社日音側連絡者(役割)", es: "Contactos de 株式会社日音 (rol)", de: "株式会社日音-Kontakte (Rolle)", fr: "Contacts 株式会社日音 (rôle)", sk: "Kontakty 株式会社日音 (rola)" }),
+      role: tr(lang, { en: "Coordination, contract and production-side communications by role.", ja: "調整、契約、制作側連絡を役割で表示。", es: "Comunicaciones de coordinación, contrato y producción por rol.", de: "Koordinations-, Vertrags- und Produktionskommunikation nach Rolle.", fr: "Communications de coordination, contrat et production par rôle.", sk: "Koordinačná, zmluvná a produkčná komunikácia podľa roly." }),
+      source: tr(lang, { en: "Reviewed correspondence", ja: "確認済み通信", es: "Correspondencia revisada", de: "Geprüfte Korrespondenz", fr: "Correspondance examinée", sk: "Skontrolovaná korešpondencia" }),
+      q: tr(lang, { en: "Individual communications are represented by organisational role in the map.", ja: "個別の通信は、このマップでは組織上の役割として表示します。", es: "Las comunicaciones individuales se representan por rol organizativo.", de: "Einzelkommunikation wird in der Karte als organisatorische Rolle dargestellt.", fr: "Les communications individuelles sont représentées par rôle organisationnel.", sk: "Jednotlivá komunikácia je na mape zobrazená ako organizačná rola." }),
+      href: urlFor(lang, "commissioning-chain")
+    },
+    {
+      id: "valseRep",
+      cat: "role",
+      r: 19,
+      label: tr(lang, { en: "株式会社ヴァルス representative (role)", ja: "株式会社ヴァルス側担当者(役割)", es: "Representante de 株式会社ヴァルス (rol)", de: "Vertretung von 株式会社ヴァルス (Rolle)", fr: "Représentant de 株式会社ヴァルス (rôle)", sk: "Zástupca 株式会社ヴァルス (rola)" }),
+      role: tr(lang, { en: "Introduction and project-side communication role.", ja: "紹介及び企画側連絡の役割。", es: "Rol de introducción y comunicación del proyecto.", de: "Rolle für Einführung und Projektkommunikation.", fr: "Rôle d'introduction et de communication de projet.", sk: "Rola predstavenia a projektovej komunikácie." }),
+      source: tr(lang, { en: "Reviewed correspondence", ja: "確認済み通信", es: "Correspondencia revisada", de: "Geprüfte Korrespondenz", fr: "Correspondance examinée", sk: "Skontrolovaná korešpondencia" }),
+      q: tr(lang, { en: "Shown as role context; the organisation is identified as 株式会社ヴァルス.", ja: "役割上の背景として表示します。組織名は株式会社ヴァルスとして表示します。", es: "Se muestra como contexto de rol; la organización se identifica como 株式会社ヴァルス.", de: "Als Rollenkontext dargestellt; die Organisation wird als 株式会社ヴァルス bezeichnet.", fr: "Affiché comme contexte de rôle ; l'organisation est identifiée comme 株式会社ヴァルス.", sk: "Zobrazené ako kontext roly; organizácia je označená ako 株式会社ヴァルス." }),
+      href: urlFor(lang, "commissioning-chain")
+    },
+    {
+      id: "emails",
+      cat: "doc",
+      r: 20,
+      label: tr(lang, { en: "2021 correspondence", ja: "2021年通信記録", es: "Correspondencia 2021", de: "Korrespondenz 2021", fr: "Correspondance 2021", sk: "Korešpondencia 2021" }),
+      role: tr(lang, { en: "Primary record of scope, requests and negotiation sequence.", ja: "範囲、依頼、交渉経過を示す主要記録。", es: "Registro principal de alcance, solicitudes y secuencia de negociación.", de: "Hauptnachweis für Umfang, Anfragen und Verhandlungsfolge.", fr: "Preuve principale du périmètre, des demandes et de la séquence de négociation.", sk: "Hlavný záznam rozsahu, žiadostí a priebehu rokovaní." }),
+      source: tr(lang, { en: "Reviewed emails / PDFs", ja: "確認済みメール / PDF", es: "Correos / PDF revisados", de: "Geprüfte E-Mails / PDFs", fr: "E-mails / PDF examinés", sk: "Skontrolované e-maily / PDF" }),
+      q: tr(lang, { en: "Raw correspondence, private addresses and message metadata are not published.", ja: "通信原文、非公開アドレス、メッセージメタデータは公開しません。", es: "No se publican correspondencia bruta, direcciones privadas ni metadatos.", de: "Rohkorrespondenz, private Adressen und Metadaten werden nicht veröffentlicht.", fr: "La correspondance brute, les adresses privées et les métadonnées ne sont pas publiées.", sk: "Surová korešpondencia, súkromné adresy a metadáta správ sa nezverejňujú." }),
+      href: urlFor(lang, "evidence")
+    },
+    {
+      id: "contract",
+      cat: "open",
+      r: 19,
+      label: tr(lang, { en: "Written-contract formation", ja: "書面契約の成立", es: "Formación de contrato escrito", de: "Schriftlicher Vertragsschluss", fr: "Formation du contrat écrit", sk: "Vznik písomnej zmluvy" }),
+      role: tr(lang, { en: "Open question.", ja: "未解決論点。", es: "Pregunta abierta.", de: "Offene Frage.", fr: "Question ouverte.", sk: "Otázka otvorená." }),
+      source: tr(lang, { en: "Reviewed 2021 correspondence", ja: "確認済み2021年通信", es: "Correspondencia revisada de 2021", de: "Geprüfte Korrespondenz 2021", fr: "Correspondance 2021 examinée", sk: "Skontrolovaná korešpondencia z roku 2021" }),
+      q: tr(lang, { en: "No signed final written order or commissioning agreement was located in the reviewed corpus.", ja: "確認済み資料内では、署名済みの最終発注書又は発注契約は確認されていません。", es: "No se localizó orden final firmada ni acuerdo de encargo en el corpus revisado.", de: "Im geprüften Bestand wurde keine unterzeichnete finale Bestellung oder Beauftragungsvereinbarung gefunden.", fr: "Aucun bon de commande final signé ni accord de commande n'a été localisé dans le corpus examiné.", sk: "V skontrolovanom súbore sa nenašla podpísaná finálna objednávka ani dohoda o zadaní." }),
+      href: urlFor(lang, "work-before-terms")
+    },
+    {
+      id: "payment",
+      cat: "open",
+      r: 20,
+      label: tr(lang, { en: "Compensation confirmation", ja: "報酬確認", es: "Confirmación de compensación", de: "Vergütungsbestätigung", fr: "Confirmation de rémunération", sk: "Potvrdenie odmeny" }),
+      role: tr(lang, { en: "Open question.", ja: "未解決論点。", es: "Pregunta abierta.", de: "Offene Frage.", fr: "Question ouverte.", sk: "Otázka otvorená." }),
+      source: tr(lang, { en: "Reviewed 2021 correspondence", ja: "確認済み2021年通信", es: "Correspondencia revisada de 2021", de: "Geprüfte Korrespondenz 2021", fr: "Correspondance 2021 examinée", sk: "Skontrolovaná korešpondencia z roku 2021" }),
+      q: tr(lang, { en: "Compensation discussions are documented; final payment resolution is not established in the public record.", ja: "報酬協議は記録されていますが、最終的な支払解決は公開記録上では確定していません。", es: "Las conversaciones de compensación están documentadas; la resolución final de pago no queda establecida en el registro público.", de: "Vergütungsabsprachen sind dokumentiert; die finale Zahlungsregelung ist im öffentlichen Protokoll nicht festgestellt.", fr: "Les discussions de rémunération sont documentées ; le règlement final du paiement n'est pas établi dans le dossier public.", sk: "Diskusie o odmene sú zdokumentované; konečné vyriešenie platby nie je vo verejnom zázname potvrdené." }),
+      href: urlFor(lang, "compensation-and-rights")
+    },
+    {
+      id: "work",
+      cat: "open",
+      r: 19,
+      label: tr(lang, { en: "Work recognition / deliverables", ja: "作業認識 / 成果物", es: "Reconocimiento del trabajo / entregables", de: "Anerkennung der Arbeit / Liefergegenstände", fr: "Reconnaissance du travail / livrables", sk: "Uznanie práce / výstupy" }),
+      role: tr(lang, { en: "Open question.", ja: "未解決論点。", es: "Pregunta abierta.", de: "Offene Frage.", fr: "Question ouverte.", sk: "Otázka otvorená." }),
+      source: tr(lang, { en: "Reviewed correspondence", ja: "確認済み通信", es: "Correspondencia revisada", de: "Geprüfte Korrespondenz", fr: "Correspondance examinée", sk: "Skontrolovaná korešpondencia" }),
+      q: tr(lang, { en: "Coordination, direction and demo-related work are described; recognition and settlement remain unresolved in the reviewed public record.", ja: "調整、ディレクション、デモ関連作業は記録されていますが、その認識及び精算は確認済み公開記録上未解決です。", es: "Se describen coordinación, dirección y trabajo relacionado con demos; reconocimiento y liquidación siguen abiertos.", de: "Koordination, Direction und demo-bezogene Arbeit sind beschrieben; Anerkennung und Abrechnung bleiben offen.", fr: "Coordination, direction et travail lié aux maquettes sont décrits ; reconnaissance et règlement restent ouverts.", sk: "Koordinácia, vedenie a práca s demami sú opísané; uznanie a vyrovnanie zostávajú otvorené." }),
+      href: urlFor(lang, "work-before-terms")
+    },
+    {
+      id: "rights",
+      cat: "ctx",
+      r: 18,
+      label: tr(lang, { en: "Rights / licensing context", ja: "権利 / ライセンス背景", es: "Contexto de derechos / licencias", de: "Rechte- / Lizenzkontext", fr: "Contexte droits / licences", sk: "Kontext práv / licencií" }),
+      role: tr(lang, { en: "Context.", ja: "背景。", es: "Contexto.", de: "Kontext.", fr: "Contexte.", sk: "Kontext." }),
+      source: tr(lang, { en: "Public industry practice and correspondence", ja: "業界慣行及び通信", es: "Práctica del sector y correspondencia", de: "Branchenpraxis und Korrespondenz", fr: "Pratique sectorielle et correspondance", sk: "Odvetvová prax a korešpondencia" }),
+      q: tr(lang, { en: "Master/copyright handling and writer agreements are recorded as context, not as a finding of wrongdoing.", ja: "原盤・著作権処理及び作家契約は背景として記録し、不正行為の認定ではありません。", es: "Gestión de máster/derechos y acuerdos con autores se registran como contexto, no como hallazgo de irregularidad.", de: "Master-/Urheberrechtsbehandlung und Autorenvereinbarungen werden als Kontext festgehalten, nicht als Fehlverhalten.", fr: "Gestion master/droits et accords auteurs sont enregistrés comme contexte, non comme constat d'irrégularité.", sk: "Správa master/autorských práv a dohody s autormi sú uvedené ako kontext, nie ako zistenie protiprávnosti." }),
+      href: urlFor(lang, "compensation-and-rights")
+    },
+    {
+      id: "tbs",
+      cat: "ctx",
+      r: 19,
+      label: tr(lang, { en: "TBS Holdings context", ja: "TBSホールディングス背景", es: "Contexto de TBS Holdings", de: "Kontext TBS Holdings", fr: "Contexte TBS Holdings", sk: "Kontext TBS Holdings" }),
+      role: tr(lang, { en: "Public corporate-affiliation context.", ja: "公開上の企業関係背景。", es: "Contexto público de afiliación corporativa.", de: "Öffentlicher Unternehmenszugehörigkeitskontext.", fr: "Contexte public d'affiliation d'entreprise.", sk: "Verejný kontext firemnej príslušnosti." }),
+      source: tr(lang, { en: "Public corporate records", ja: "公開会社情報", es: "Registros corporativos públicos", de: "Öffentliche Unternehmensangaben", fr: "Documents d'entreprise publics", sk: "Verejné firemné záznamy" }),
+      q: tr(lang, { en: "Recorded as corporate context only; no knowledge, involvement, control or responsibility is asserted.", ja: "企業背景としてのみ記録し、認識、関与、支配又は責任を主張しません。", es: "Registrado solo como contexto corporativo; no se afirma conocimiento, participación, control ni responsabilidad.", de: "Nur als Unternehmenskontext festgehalten; Kenntnis, Beteiligung, Kontrolle oder Verantwortung werden nicht behauptet.", fr: "Enregistré uniquement comme contexte d'entreprise ; aucune connaissance, implication, maîtrise ou responsabilité n'est affirmée.", sk: "Zaznamenané iba ako firemný kontext; netvrdí sa vedomosť, účasť, kontrola ani zodpovednosť." }),
+      href: urlFor(lang, "network")
+    },
+    {
+      id: "broadcast",
+      cat: "ctx",
+      r: 18,
+      label: tr(lang, { en: "Broadcast-audio work context", ja: "放送音響業務背景", es: "Contexto de audio para emisión", de: "Broadcast-Audiokontext", fr: "Contexte audio de diffusion", sk: "Kontext broadcast audio práce" }),
+      role: tr(lang, { en: "General business context for 株式会社ヴァルス.", ja: "株式会社ヴァルスの一般的な事業背景。", es: "Contexto general de negocio de 株式会社ヴァルス.", de: "Allgemeiner Geschäftskontext von 株式会社ヴァルス.", fr: "Contexte général d'activité de 株式会社ヴァルス.", sk: "Všeobecný obchodný kontext 株式会社ヴァルス." }),
+      source: tr(lang, { en: "Public company profile", ja: "公式会社概要", es: "Perfil oficial de empresa", de: "Öffentliches Unternehmensprofil", fr: "Profil officiel de l'entreprise", sk: "Verejný firemný profil" }),
+      q: tr(lang, { en: "Recorded as public business context only; no broadcaster involvement is asserted.", ja: "公開された事業背景としてのみ記録し、放送局の関与は主張しません。", es: "Registrado solo como contexto público de negocio; no se afirma participación de una emisora.", de: "Nur als öffentlicher Geschäftskontext festgehalten; eine Beteiligung eines Senders wird nicht behauptet.", fr: "Enregistré uniquement comme contexte d'activité public ; aucune implication de diffuseur n'est affirmée.", sk: "Zaznamenané iba ako verejný obchodný kontext; netvrdí sa účasť vysielateľa." }),
+      href: urlFor(lang, "network")
+    }
+  ];
+}
+
+function VerificationMap(lang = currentLang) {
+  const text = verificationMapCopy(lang);
+  const nodes = verificationMapNodes(lang);
+  const edgeLabel = {
+    introduced: tr(lang, { en: "introduced", ja: "紹介", es: "introducción", de: "Einführung", fr: "introduction", sk: "predstavenie" }),
+    engagement: tr(lang, { en: "engagement", ja: "関与", es: "encargo", de: "Auftrag", fr: "engagement", sk: "zadanie" }),
+    representative: tr(lang, { en: "representative", ja: "担当", es: "representante", de: "Vertretung", fr: "représentant", sk: "zástupca" }),
+    staff: tr(lang, { en: "staff", ja: "担当者", es: "personal", de: "Personal", fr: "personnel", sk: "pracovníci" }),
+    commissioning: tr(lang, { en: "commissioning", ja: "発注", es: "encargo", de: "Beauftragung", fr: "commande", sk: "zadanie" }),
+    production: tr(lang, { en: "production", ja: "制作", es: "producción", de: "Produktion", fr: "production", sk: "produkcia" }),
+    evidence: tr(lang, { en: "evidence", ja: "証拠", es: "prueba", de: "Beleg", fr: "preuve", sk: "dôkaz" }),
+    scope: tr(lang, { en: "scope", ja: "範囲", es: "alcance", de: "Umfang", fr: "périmètre", sk: "rozsah" }),
+    offer: tr(lang, { en: "offer", ja: "提示", es: "oferta", de: "Angebot", fr: "offre", sk: "ponuka" }),
+    deliverables: tr(lang, { en: "deliverables", ja: "成果物", es: "entregables", de: "Liefergegenstände", fr: "livrables", sk: "výstupy" }),
+    licensing: tr(lang, { en: "licensing", ja: "権利処理", es: "licencias", de: "Lizenzierung", fr: "licences", sk: "licencovanie" }),
+    parentGroup: tr(lang, { en: "parent group", ja: "親会社背景", es: "grupo matriz", de: "Muttergruppe", fr: "groupe parent", sk: "materská skupina" }),
+    broadcastWork: tr(lang, { en: "broadcast work", ja: "放送音響業務", es: "trabajo de emisión", de: "Broadcast-Arbeit", fr: "travail de diffusion", sk: "broadcast práca" })
+  };
+  const edges = [
+    ["valse", "reviewing", edgeLabel.introduced, "doc"],
+    ["valse", "nichion", edgeLabel.introduced, "doc"],
+    ["reviewing", "nichion", edgeLabel.engagement, "doc"],
+    ["valse", "valseRep", edgeLabel.representative, "ctx"],
+    ["nichion", "nichionContacts", edgeLabel.staff, "ctx"],
+    ["project", "nichion", edgeLabel.commissioning, "doc"],
+    ["project", "reviewing", edgeLabel.production, "doc"],
+    ["project", "emails", edgeLabel.evidence, "doc"],
+    ["emails", "contract", edgeLabel.scope, "open"],
+    ["emails", "payment", edgeLabel.offer, "open"],
+    ["emails", "work", edgeLabel.deliverables, "open"],
+    ["nichion", "rights", edgeLabel.licensing, "ctx"],
+    ["nichion", "tbs", edgeLabel.parentGroup, "ctx"],
+    ["valse", "broadcast", edgeLabel.broadcastWork, "ctx"]
+  ];
+  return `
+    <div class="verification-map">
+      <p class="verification-lead">${escapeHtml(text.lead)}</p>
+      <div class="verification-note-bar">
+        ${text.chips.map((chip) => `<span>${escapeHtml(chip)}</span>`).join("")}
+      </div>
+      <div class="verification-panel">
+        <div class="verification-top">
+          <p>${escapeHtml(text.kicker)}</p>
+          <strong>${escapeHtml(text.deck)}</strong>
+        </div>
+        <canvas data-verification-canvas role="img" aria-label="${escapeHtml(text.title)}"></canvas>
+        <button class="verification-reset" type="button">${escapeHtml(text.reset)}</button>
+        <div class="verification-hint">${escapeHtml(text.hint)}</div>
+        <aside class="verification-info" aria-live="polite"></aside>
+        <div class="verification-legend" aria-label="${escapeHtml(text.legendTitle)}">
+          <p>${escapeHtml(text.legendTitle)}</p>
+          <div>
+            <span><i style="border-color:#35d07f"></i>${escapeHtml(text.legend[0])}</span>
+            <span><i style="border-color:#e0b53c"></i>${escapeHtml(text.legend[1])}</span>
+            <span><i style="border-color:#e0563f"></i>${escapeHtml(text.legend[2])}</span>
+            <span><i style="border-color:#5d6f64;border-top-style:dashed"></i>${escapeHtml(text.legend[3])}</span>
+          </div>
+        </div>
+      </div>
+      <p class="verification-privacy">${escapeHtml(text.privacy)}</p>
+      <div class="verification-node-list">
+        <h3>${escapeHtml(text.nodeListTitle)}</h3>
+        <div class="verification-nodes" data-verification-list></div>
+      </div>
+    </div>
+    <script>
+    (() => {
+      const root = document.currentScript.previousElementSibling;
+      if (!root || !root.classList.contains("verification-map")) return;
+      const C = root.querySelector("[data-verification-canvas]");
+      const X = C && C.getContext("2d");
+      const panel = root.querySelector(".verification-panel");
+      const info = root.querySelector(".verification-info");
+      const hintEl = root.querySelector(".verification-hint");
+      const reset = root.querySelector(".verification-reset");
+      const listRoot = root.querySelector("[data-verification-list]");
+      if (!C || !X || !panel || !info || !listRoot) return;
+      const TXT = ${jsonForScript(text)};
+      const COL = { doc: "#35d07f", open: "#e0b53c", gap: "#e0563f", ctx: "#5d6f64" };
+      const CATCOL = { subject: "#35d07f", org: "#4d9bff", role: "#9aa8a0", doc: "#35d07f", open: "#e0b53c", ctx: "#5d6f64", reporting: "#5d6f64" };
+      const N = ${jsonForScript(nodes)};
+      const E = ${jsonForScript(edges)};
+      const byId = {};
+      N.forEach((n) => { byId[n.id] = n; n.x = 0; n.y = 0; n.vx = 0; n.vy = 0; n.scale = 1; n.sv = 0; });
+      const adj = {};
+      N.forEach((n) => { adj[n.id] = []; });
+      E.forEach((e) => { adj[e[0]].push(e[1]); adj[e[1]].push(e[0]); });
+      let HW = 760, HH = 620, DPR = 1, t = 0, hover = null, mouse = null, drag = null;
+      const R = 150;
+      function h(value) {
+        return String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
+      }
+      function size() {
+        DPR = Math.min(2, devicePixelRatio || 1);
+        HW = panel.clientWidth;
+        HH = panel.clientHeight;
+        C.width = Math.round(HW * DPR);
+        C.height = Math.round(HH * DPR);
+        C.style.width = HW + "px";
+        C.style.height = HH + "px";
+      }
+      function seed() {
+        const cx = HW / 2;
+        const cy = HH / 2 + 8;
+        const rr = Math.min(HW, HH) * 0.33;
+        N.forEach((n, i) => {
+          if (n.cat === "subject") {
+            n.x = cx;
+            n.y = cy;
+          } else {
+            const a = (i / N.length) * Math.PI * 2;
+            n.x = cx + Math.cos(a) * rr + (Math.random() - 0.5) * 26;
+            n.y = cy + Math.sin(a) * rr + (Math.random() - 0.5) * 26;
+          }
+          n.vx = (Math.random() - 0.5) * 0.3;
+          n.vy = (Math.random() - 0.5) * 0.3;
+        });
+      }
+      function tick() {
+        for (let i = 0; i < N.length; i += 1) {
+          const a = N[i];
+          for (let j = i + 1; j < N.length; j += 1) {
+            const b = N[j];
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            const d2 = dx * dx + dy * dy || 1;
+            const d = Math.sqrt(d2);
+            const rep = Math.min(2800 / d2, 1.6);
+            const ux = dx / d;
+            const uy = dy / d;
+            a.vx += ux * rep;
+            a.vy += uy * rep;
+            b.vx -= ux * rep;
+            b.vy -= uy * rep;
+          }
+          a.vx += (HW / 2 - a.x) * 0.0013;
+          a.vy += (HH / 2 + 8 - a.y) * 0.0013;
+        }
+        E.forEach((e) => {
+          const a = byId[e[0]];
+          const b = byId[e[1]];
+          const dx = b.x - a.x;
+          const dy = b.y - a.y;
+          const d = Math.sqrt(dx * dx + dy * dy) || 1;
+          const target = Math.min(HW, HH) * 0.24;
+          const f = (d - target) * 0.003;
+          const ux = dx / d;
+          const uy = dy / d;
+          a.vx += ux * f;
+          a.vy += uy * f;
+          b.vx -= ux * f;
+          b.vy -= uy * f;
+        });
+        N.forEach((n) => {
+          if (n !== drag) {
+            n.vx *= 0.86;
+            n.vy *= 0.86;
+            const mv = 2.4;
+            n.vx = Math.max(-mv, Math.min(mv, n.vx));
+            n.vy = Math.max(-mv, Math.min(mv, n.vy));
+            n.x += n.vx;
+            n.y += n.vy;
+            n.x = Math.max(80, Math.min(HW - 80, n.x));
+            n.y = Math.max(92, Math.min(HH - 100, n.y));
+          }
+          let tg = 1;
+          if (mouse) {
+            const d = Math.hypot(n.x - mouse.x, n.y - mouse.y);
+            if (d < R) tg = 1 + (1 - d / R) * 0.7;
+          }
+          n.sv += (tg - n.scale) * 0.22;
+          n.sv *= 0.58;
+          n.scale += n.sv;
+        });
+      }
+      function rrect(x, y, w, h, r) {
+        X.beginPath();
+        X.moveTo(x + r, y);
+        X.arcTo(x + w, y, x + w, y + h, r);
+        X.arcTo(x + w, y + h, x, y + h, r);
+        X.arcTo(x, y + h, x, y, r);
+        X.arcTo(x, y, x + w, y, r);
+        X.closePath();
+      }
+      function chip(text, cx, cy, bold, alpha) {
+        X.font = (bold ? "700 11px " : "10px ") + "system-ui,-apple-system,sans-serif";
+        X.textAlign = "center";
+        X.textBaseline = "middle";
+        const w = X.measureText(text).width;
+        const pad = 7;
+        X.globalAlpha = alpha;
+        X.fillStyle = "rgba(7,11,9,.84)";
+        rrect(cx - w / 2 - pad, cy - 9, w + pad * 2, 18, 7);
+        X.fill();
+        X.strokeStyle = "rgba(255,255,255,.06)";
+        X.lineWidth = 1;
+        X.stroke();
+        X.fillStyle = "#e9f1ec";
+        X.fillText(text, cx, cy + 1);
+        X.globalAlpha = 1;
+      }
+      function draw() {
+        t += 0.016;
+        X.setTransform(DPR, 0, 0, DPR, 0, 0);
+        X.clearRect(0, 0, HW, HH);
+        E.forEach((e) => {
+          const a = byId[e[0]];
+          const b = byId[e[1]];
+          const st = e[3];
+          const lit = hover && (hover === e[0] || hover === e[1]);
+          const dim = hover && !lit;
+          const c = COL[st];
+          const breath = 0.06 * Math.sin(t * 1.5 + e[0].length + e[1].length);
+          X.save();
+          X.globalAlpha = dim ? 0.1 : (lit ? 1 : 0.46 + breath);
+          X.strokeStyle = c;
+          X.lineWidth = lit ? 2.6 : 1.5;
+          if (st === "ctx") X.setLineDash([5, 6]);
+          X.shadowColor = c;
+          X.shadowBlur = lit ? 16 : 5;
+          const mx = (a.x + b.x) / 2;
+          const my = (a.y + b.y) / 2 - 18;
+          X.beginPath();
+          X.moveTo(a.x, a.y);
+          X.quadraticCurveTo(mx, my, b.x, b.y);
+          X.stroke();
+          X.restore();
+          const speed = st === "doc" ? 0.18 : (st === "open" ? 0.15 : 0.11);
+          const p = (t * speed + (e[0].length + e[1].length) * 0.1) % 1;
+          if (st !== "ctx" && !dim) {
+            const px = (1 - p) * (1 - p) * a.x + 2 * (1 - p) * p * mx + p * p * b.x;
+            const py = (1 - p) * (1 - p) * a.y + 2 * (1 - p) * p * my + p * p * b.y;
+            X.globalAlpha = lit ? 0.85 : 0.4;
+            X.fillStyle = c;
+            X.shadowColor = c;
+            X.shadowBlur = 9;
+            X.beginPath();
+            X.arc(px, py, lit ? 3 : 2.2, 0, 7);
+            X.fill();
+            X.shadowBlur = 0;
+            X.globalAlpha = 1;
+          }
+        });
+        if (hover) {
+          E.forEach((e) => {
+            if (e[0] !== hover && e[1] !== hover) return;
+            const a = byId[e[0]];
+            const b = byId[e[1]];
+            chip(e[2], (a.x + b.x) / 2, (a.y + b.y) / 2 - 18, false, 1);
+          });
+        }
+        N.forEach((n) => {
+          const lit = hover && (hover === n.id || (adj[hover] || []).includes(n.id));
+          const dim = hover && !lit;
+          const c = CATCOL[n.cat];
+          const rr = n.r * n.scale;
+          X.globalAlpha = dim ? 0.18 : 1;
+          const pr = n.cat === "subject" ? 6 + Math.sin(t * 1.6) * 2 : 0;
+          X.beginPath();
+          X.arc(n.x, n.y, rr + pr, 0, 7);
+          X.fillStyle = n.cat === "reporting" ? "#0e1712" : c + "22";
+          X.shadowColor = c;
+          X.shadowBlur = (n.cat === "subject" ? 26 : (lit ? 18 : 8)) * n.scale;
+          X.fill();
+          X.shadowBlur = 0;
+          X.beginPath();
+          X.arc(n.x, n.y, rr, 0, 7);
+          X.fillStyle = n.cat === "reporting" ? "#0e1712" : "#0b140f";
+          X.strokeStyle = n.cat === "reporting" ? "#5d6f64" : c;
+          X.lineWidth = n.cat === "subject" ? 3 : 2;
+          if (n.cat === "reporting") X.setLineDash([3, 3]);
+          X.fill();
+          X.stroke();
+          X.setLineDash([]);
+          if (n.cat === "reporting") {
+            X.fillStyle = "#5d6f64";
+            X.fillRect(n.x - rr * 0.7, n.y - 3, rr * 1.4, 6);
+          }
+          X.globalAlpha = 1;
+        });
+        N.forEach((n) => {
+          const lit = hover && (hover === n.id || (adj[hover] || []).includes(n.id));
+          const a = hover ? (lit ? 1 : 0.25) : 1;
+          chip(n.label, n.x, n.y + n.r * n.scale + 14, n.cat === "subject", a);
+        });
+      }
+      function loop() {
+        tick();
+        draw();
+        requestAnimationFrame(loop);
+      }
+      function hideInfo() {
+        info.classList.remove("show");
+      }
+      function showInfo(n) {
+        if (hintEl) hintEl.style.display = "none";
+        const pc = CATCOL[n.cat] || "#7c8b95";
+        info.innerHTML = '<button class="verification-close" type="button" aria-label="Close">x</button><span class="verification-pri" style="background:' + pc + '">' + h(TXT.categories[n.cat] || "Note") + '</span><h3>' + h(n.label) + '</h3><p class="verification-role">' + h(n.role) + '</p><div class="verification-field"><b>' + h(TXT.sourceType) + '</b><span>' + h(n.source) + '</span></div><div class="verification-field"><b>' + h(TXT.noteLabel) + '</b><span>' + h(n.q) + '</span></div><a class="verification-open" href="' + h(n.href) + '">' + h(TXT.openRelated) + '</a>';
+        const close = info.querySelector(".verification-close");
+        if (close) close.addEventListener("click", hideInfo);
+        info.classList.add("show");
+      }
+      function nodeAt(mx, my) {
+        for (let i = N.length - 1; i >= 0; i -= 1) {
+          const n = N[i];
+          if (Math.hypot(n.x - mx, n.y - my) <= n.r * n.scale + 5) return n;
+        }
+        return null;
+      }
+      function rel(e) {
+        const r = C.getBoundingClientRect();
+        return { x: e.clientX - r.left, y: e.clientY - r.top };
+      }
+      C.addEventListener("mousemove", (e) => {
+        const m = rel(e);
+        mouse = m;
+        if (drag) {
+          drag.x = m.x;
+          drag.y = m.y;
+          drag.vx = 0;
+          drag.vy = 0;
+          return;
+        }
+        const n = nodeAt(m.x, m.y);
+        hover = n ? n.id : null;
+        C.style.cursor = n ? "pointer" : "default";
+      });
+      C.addEventListener("mouseleave", () => { mouse = null; hover = null; });
+      C.addEventListener("mousedown", (e) => { const m = rel(e); const n = nodeAt(m.x, m.y); if (n) drag = n; });
+      addEventListener("mouseup", () => { drag = null; });
+      C.addEventListener("click", (e) => { const m = rel(e); const n = nodeAt(m.x, m.y); if (n) showInfo(n); else hideInfo(); });
+      C.addEventListener("touchstart", (e) => { const t0 = e.touches[0]; const m = rel(t0); mouse = m; const n = nodeAt(m.x, m.y); if (n) { drag = n; hover = n.id; showInfo(n); } }, { passive: true });
+      C.addEventListener("touchmove", (e) => { const t0 = e.touches[0]; const m = rel(t0); mouse = m; if (drag) { drag.x = m.x; drag.y = m.y; drag.vx = 0; drag.vy = 0; } }, { passive: true });
+      addEventListener("touchend", () => { drag = null; mouse = null; });
+      function buildList() {
+        listRoot.innerHTML = N.map((n) => {
+          const pc = CATCOL[n.cat] || "#7c8b95";
+          return '<details class="verification-node"><summary><span class="verification-node-name">' + h(n.label) + '</span><p class="verification-node-role" style="border-left:3px solid ' + pc + '">' + h(n.role) + '</p></summary><div class="verification-node-body"><div class="verification-field"><b>' + h(TXT.sourceType) + '</b><span>' + h(n.source) + '</span></div><div class="verification-field"><b>' + h(TXT.noteLabel) + '</b><span>' + h(n.q) + '</span></div><a class="verification-open" href="' + h(n.href) + '">' + h(TXT.openRelated) + '</a></div></details>';
+        }).join("");
+      }
+      buildList();
+      size();
+      seed();
+      loop();
+      addEventListener("resize", () => { size(); seed(); });
+      if (reset) reset.addEventListener("click", () => { seed(); });
+    })();
+    </script>
+  `;
+}
+
 function WorkBeforeTermsFlow(lang = currentLang) {
   const labels = [
     ["CONTACT", "連絡"],
@@ -1783,26 +2348,6 @@ function pageHero(page, lang = currentLang, extra = "") {
 
 function homePage(lang = currentLang) {
   const heroTitle = heroDisplayTitles[lang] || heroDisplayTitles.en;
-  const heroPills = {
-    en: ["Authority", "Scope", "Compensation", "Rights", "Documentary Gaps"],
-    ja: ["発注権限", "業務範囲", "報酬", "権利", "書面上の空白"],
-    es: ["Autoridad", "Alcance", "Compensación", "Derechos", "Vacíos documentales"],
-    de: ["Befugnis", "Umfang", "Vergütung", "Rechte", "Dokumentationslücken"],
-    fr: ["Autorité", "Périmètre", "Rémunération", "Droits", "Lacunes documentaires"],
-    sk: ["Právomoc", "Rozsah", "Odmena", "Práva", "Dokumentačné medzery"]
-  };
-  const hero = `
-    <header class="record-hero">
-      <div class="hero-content">
-        <p class="eyebrow">${escapeHtml(copy[lang].recordEyebrow)}</p>
-        <h1 class="display">${escapeHtml(heroTitle)}</h1>
-        <p class="lede">${escapeHtml(copy[lang].homeSubtitle)}</p>
-        <div class="pill-row">
-          ${(heroPills[lang] || heroPills.en).map((item) => `<span class="pill">${escapeHtml(item)}</span>`).join("")}
-        </div>
-      </div>
-    </header>
-  `;
 
   const thesis = section(
     tr(lang, { en: "Record Thesis", ja: "中心命題", es: "Tesis del registro", de: "These des Protokolls", fr: "Thèse du dossier", sk: "Téza záznamu" }),
@@ -1842,6 +2387,20 @@ function homePage(lang = currentLang) {
     { id: "search-entry-points", badge: "CONTEXT_ONLY" }
   );
 
+  const verificationMap = `
+    <section class="panel" id="relationship-map">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">${escapeHtml(copy[lang].recordEyebrow)}</p>
+          <h1 class="section-title">${escapeHtml(heroTitle)}</h1>
+          <p class="muted">${escapeHtml(copy[lang].homeSubtitle)}</p>
+        </div>
+        <span class="badge documented">DOCUMENTED</span>
+      </div>
+      ${VerificationMap(lang)}
+    </section>
+  `;
+
   const examines = section(copy[lang].whatExamines, `<div class="grid">${findings.examines.map((item, index) => `
     <article class="card">
       ${EvidenceBadge(item.status, lang)}
@@ -1873,7 +2432,6 @@ function homePage(lang = currentLang) {
 
   const replyNotice = section(tr(lang, { en: "Right of Reply Entry Point", ja: "反論・訂正の入口", es: "Entrada para derecho de respuesta", de: "Einstieg für Erwiderung und Korrektur", fr: "Point d'entrée du droit de réponse", sk: "Vstup pre právo na odpoveď" }), RightOfReplyNotice(lang), { id: "right-of-reply-entry", badge: "DOCUMENTED" });
   const transactionStructure = section(tr(lang, { en: "Transaction Structure", ja: "取引構造", es: "Estructura de la transacción", de: "Transaktionsstruktur", fr: "Structure transactionnelle", sk: "Transakčná štruktúra" }), TransactionStructure(lang), { id: "transaction-structure", badge: "OPEN_QUESTION" });
-  const mapPreview = section(tr(lang, { en: "Structure Maps", ja: "構造マップ", es: "Mapas de estructura", de: "Strukturkarten", fr: "Cartes de structure", sk: "Mapy štruktúry" }), MapPreview(lang), { id: "structure-maps", badge: "DOCUMENTED" });
   const questions = section(copy[lang].openQuestions, `<div class="grid two">${openQuestions.map((question, index) => OpenQuestionCard(homeText("openQuestions", lang, index, null, question), index, lang)).join("")}</div>`, { id: "open-questions" });
   const faq = section(
     tr(lang, { en: "Answer Engine FAQ", ja: "回答エンジン向けFAQ", es: "FAQ para motores de respuesta", de: "FAQ für Antwortmaschinen", fr: "FAQ pour moteurs de réponse", sk: "FAQ pre odpovedacie systémy" }),
@@ -1882,7 +2440,7 @@ function homePage(lang = currentLang) {
   );
   const navigation = section(copy[lang].detailPages, navCards(lang), { id: "pages" });
 
-  return `${hero}<main class="main">${subjectEntities}${counterpartyPeople}${replyNotice}${answerSummary}${thesis}${transactionStructure}${mapPreview}${examines}${summary}${sequence}${keyFindings}${questions}${faq}${searchIntent}${navigation}${PrivacyNotice(lang)}</main>`;
+  return `<main class="main">${verificationMap}${subjectEntities}${counterpartyPeople}${replyNotice}${answerSummary}${thesis}${transactionStructure}${examines}${summary}${sequence}${keyFindings}${questions}${faq}${searchIntent}${navigation}${PrivacyNotice(lang)}</main>`;
 }
 
 function chronologyPage(lang = currentLang) {
@@ -2063,12 +2621,12 @@ function methodologyPage(lang = currentLang) {
 function rightOfReplyPage(lang = currentLang) {
   const paragraphs = lang === "ja"
     ? [
-        "日音、VALSE及び本記録で役割により特定された人物又は組織は、訂正、文脈資料又は正式な回答を提出できます。",
+        "株式会社日音、株式会社ヴァルス及び本記録で役割により特定された人物又は組織は、訂正、文脈資料又は正式な回答を提出できます。",
         "提出内容は保存され、確認されます。検証済みの訂正は透明性をもって反映します。争いのある解釈は、適切な場合、既存記録と並べて掲載することがあります。",
         "個人データ、無関係な第三者情報及び根拠のない主張は含めないでください。"
       ]
     : [
-        "Nichion, VALSE and any person or organisation identified by role in this record may submit corrections, contextual documents or a formal response.",
+        "株式会社日音, 株式会社ヴァルス and any person or organisation identified by role in this record may submit corrections, contextual documents or a formal response.",
         "Submissions will be preserved and reviewed. Verified corrections will be incorporated transparently. Disputed interpretations may be published alongside the existing record where appropriate.",
         "Personal data, unrelated third-party information and unsupported allegations should not be included."
       ];
@@ -2178,11 +2736,11 @@ function layout(page, lang, body) {
   <meta name="theme-color" content="#16a34a">
   <link rel="icon" href="/records/assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script>
-  <link rel="stylesheet" href="${recordBase}/assets/css/main.css?v=20260620-record-light">
+  <link rel="stylesheet" href="${recordBase}/assets/css/main.css?v=20260620-map-dark">
 </head>
 <body>
   <div class="page">
-    ${navHtml(page, lang)}
+    ${page.id === "index" ? "" : navHtml(page, lang)}
     ${body}
     <footer class="footer">
       <p>${escapeHtml(copy[lang].generatedFrom)}</p>

@@ -63,7 +63,7 @@
       "ja": "記録は、発注構造が未解決のまま、著作権、出版権、原盤又はデモ使用に関する確認が行われたことを示しています。"
     },
     "participants": {
-      "en": ["Nichion Personnel", "Reporting Party", "External Creators"],
+      "en": ["株式会社日音-side personnel", "Reporting Party", "External Creators"],
       "ja": ["日音関係者", "申告者", "外部作家"]
     },
     "evidenceIds": ["E-003", "E-004"],
@@ -89,8 +89,8 @@
       "ja": "確認済み資料は、デモ、選定又は関連企画資料に関する調整を示しています。一方で、中止後の使用を定める最終書面は確認されていません。"
     },
     "participants": {
-      "en": ["Reporting Party", "Nichion Personnel", "VALSE Representative"],
-      "ja": ["申告者", "日音関係者", "VALSE担当者"]
+      "en": ["Reporting Party", "株式会社日音-side personnel", "株式会社ヴァルス representative"],
+      "ja": ["申告者", "株式会社日音関係者", "株式会社ヴァルス担当者"]
     },
     "evidenceIds": ["E-004", "E-005"],
     "status": "DOCUMENTED",
@@ -115,7 +115,7 @@
       "ja": "最終的な発注書面一式が確認される前に、海外送金を含む支払関連の実務事項が確認済み記録に現れています。"
     },
     "participants": {
-      "en": ["Reporting Party", "Nichion Administrative Personnel", "Commissioning-side personnel"],
+      "en": ["Reporting Party", "株式会社日音 administrative personnel", "Commissioning-side personnel"],
       "ja": ["申告者", "日音事務担当者", "発注側関係者"]
     },
     "evidenceIds": ["E-005", "E-006"],
