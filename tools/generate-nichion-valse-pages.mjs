@@ -8,7 +8,8 @@ const dataRoot = path.join(repoRoot, "src/data/nichion-valse/public");
 const outRoot = path.join(repoRoot, "records/nichion-valse-2021");
 const siteBase = "https://factualist.org";
 const recordBase = "/records/nichion-valse-2021";
-const lastmod = "2026-06-19";
+const datePublished = "2026-06-19";
+const lastmod = "2026-06-20";
 const languages = [
   { code: "en", path: "", label: "EN", name: "English" },
   { code: "ja", path: "ja", label: "JA", name: "日本語" },
@@ -988,6 +989,44 @@ function subjectEntityStrip(lang = currentLang) {
       </article>
     </div>
   `;
+}
+
+function subjectOrganizationNodes(lang = currentLang) {
+  const networkNodes = Object.fromEntries(entities.networkNodes.map((node) => [node.id, node]));
+  const nichion = networkNodes.nichion;
+  const valse = networkNodes.valse;
+  return [
+    {
+      "@type": "Organization",
+      "@id": `${siteBase}${recordBase}/#organization-nichion`,
+      name: local(nichion.label, lang),
+      alternateName: ["Nichion", "Nichion Co., Ltd.", "株式会社 日音", "株式会社日音"],
+      url: "https://www.nichion.co.jp/",
+      sameAs: ["https://www.nichion.co.jp/", nichion.sourceUrl],
+      description: local(nichion.description, lang)
+    },
+    {
+      "@type": "Organization",
+      "@id": `${siteBase}${recordBase}/#organization-valse`,
+      name: local(valse.label, lang),
+      alternateName: ["VALSE", "VALSE Inc.", "会社名 VALSE Inc."],
+      url: valse.sourceUrl,
+      sameAs: ["https://www.valse.jp/", valse.sourceUrl],
+      description: local(valse.description, lang)
+    }
+  ];
+}
+
+function schemaAbout(lang = currentLang) {
+  const topics = tr(lang, {
+    en: ["Music commissioning", "Music publishing", "Rights clearance", "Independent contractor risk"],
+    ja: ["音楽制作発注", "音楽出版", "権利処理", "独立事業者リスク"],
+    es: ["Encargo musical", "Edición musical", "Aclaración de derechos", "Riesgo para independientes"],
+    de: ["Musikbeauftragung", "Musikverlag", "Rechteklärung", "Risiko für unabhängige Beteiligte"],
+    fr: ["Commande musicale", "Édition musicale", "Clarification des droits", "Risque pour indépendants"],
+    sk: ["Hudobné zadanie", "Hudobné vydavateľstvo", "Vyjasnenie práv", "Riziko pre nezávislých účastníkov"]
+  }).map((name) => ({ "@type": "Thing", name }));
+  return [...subjectOrganizationNodes(lang), ...topics];
 }
 
 function CounterpartyPeople(lang = currentLang) {
@@ -2078,18 +2117,12 @@ function layout(page, lang, body) {
     name: title,
     url: canonical,
     mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
-    datePublished: lastmod,
+    datePublished,
     dateModified: lastmod,
     description: copy[lang].description,
     publisher: { "@type": "Organization", name: "Factualist", url: siteBase },
-    about: tr(lang, {
-      en: ["Music commissioning", "Music publishing", "Rights clearance", "Independent contractor risk"],
-      ja: ["音楽制作発注", "音楽出版", "権利処理", "独立事業者リスク"],
-      es: ["Encargo musical", "Edición musical", "Aclaración de derechos", "Riesgo para independientes"],
-      de: ["Musikbeauftragung", "Musikverlag", "Rechteklärung", "Risiko für unabhängige Beteiligte"],
-      fr: ["Commande musicale", "Édition musicale", "Clarification des droits", "Risque pour indépendants"],
-      sk: ["Hudobné zadanie", "Hudobné vydavateľstvo", "Vyjasnenie práv", "Riziko pre nezávislých účastníkov"]
-    }),
+    about: schemaAbout(lang),
+    mentions: subjectOrganizationNodes(lang),
     inLanguage: lang
   };
   const schema = page.id === "index"
@@ -2173,7 +2206,8 @@ async function writeSitemap() {
     "/records/music-commissioning-authority-2021/",
     "/records/ac55id-2025/",
     "/records/ac55id-2025/relationship-map/",
-    "/records/epm-music-2026/"
+    "/records/epm-music-2026/",
+    "/records/nichion-valse-2021/relationship-map/"
   ];
   const recordPaths = languageCodes.flatMap((lang) => pages.map((page) => urlFor(lang, page.slug)));
   const urls = [...otherPaths, ...recordPaths];
