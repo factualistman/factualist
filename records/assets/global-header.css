@@ -5,15 +5,15 @@
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:24px;
+  gap:18px;
   width:min(1760px,calc(100% - 48px));
-  margin:0 auto 34px;
-  padding:18px 24px;
-  background:rgba(255,255,255,.92);
+  margin:14px auto 24px;
+  padding:14px 18px;
+  background:rgba(255,255,255,.88);
   border:1px solid #e3e7e3;
   border-radius:8px;
-  box-shadow:0 20px 44px rgba(20,40,28,.10);
-  backdrop-filter:blur(16px);
+  box-shadow:0 18px 50px rgba(20,40,28,.06);
+  backdrop-filter:blur(14px);
 }
 
 .global-brand{
@@ -21,46 +21,47 @@
   align-items:center;
   gap:10px;
   flex:0 0 auto;
-  min-width:230px;
+  min-width:176px;
   color:#16a34a;
   text-decoration:none;
 }
 .global-brand:hover{text-decoration:none}
 .global-logo-icon{
-  width:56px;
-  height:34px;
+  width:44px;
+  height:28px;
   display:block;
   flex:0 0 auto;
 }
 .global-wordmark{
   color:#16a34a;
-  font-size:21px;
+  font-size:16px;
   font-weight:760;
   line-height:1;
-  letter-spacing:.16em;
+  letter-spacing:.15em;
 }
 
 .global-header-actions{
   display:flex;
+  flex-wrap:nowrap;
   align-items:center;
   justify-content:flex-end;
-  gap:14px;
+  gap:8px 12px;
   min-width:0;
 }
 .global-nav{
   display:flex;
   align-items:center;
   justify-content:flex-end;
-  flex-wrap:wrap;
-  gap:8px 18px;
+  flex-wrap:nowrap;
+  gap:4px;
 }
 .global-nav a{
   display:inline-flex;
   align-items:center;
-  min-height:34px;
-  padding:6px 4px;
+  min-height:30px;
+  padding:7px 6px;
   color:#5d6661;
-  font-size:15px;
+  font-size:12.5px;
   font-weight:760;
   line-height:1;
   text-decoration:none;
@@ -75,24 +76,24 @@
   display:flex;
   align-items:center;
   justify-content:flex-end;
-  flex-wrap:wrap;
-  gap:5px;
-  padding-left:18px;
+  flex-wrap:nowrap;
+  gap:4px;
+  padding-left:10px;
   border-left:1px solid #d9ded9;
 }
 .global-langbar a{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:6px;
-  min-height:34px;
+  gap:3px;
+  min-height:30px;
   border:1px solid transparent;
-  border-radius:8px;
+  border-radius:6px;
   color:#1f2a24;
-  font-size:12px;
+  font-size:11px;
   font-weight:850;
   line-height:1;
-  padding:7px 10px;
+  padding:4px 6px;
   text-decoration:none;
   white-space:nowrap;
 }
@@ -103,16 +104,18 @@
   box-shadow:0 2px 6px rgba(20,40,28,.04);
   text-decoration:none;
 }
-.global-flag{font-size:17px;line-height:1}
+.global-flag{font-size:15px;line-height:1}
 
 @supports ((mask:url("")) or (-webkit-mask:url(""))){
   .global-brand{
     gap:0;
-    min-width:242px;
+    min-width:148px;
+    width:148px;
+    height:28px;
   }
   .global-logo-icon{
-    width:230px;
-    height:42px;
+    width:148px;
+    height:28px;
     background:#16a34a;
     -webkit-mask:url("/img/factlogo_w.png?v=20260524-evidence1") center / contain no-repeat;
     mask:url("/img/factlogo_w.png?v=20260524-evidence1") center / contain no-repeat;
@@ -128,37 +131,41 @@
   }
 }
 
-@media (max-width:1040px){
+@media (max-width:1100px){
   .global-header{
     align-items:flex-start;
     flex-direction:column;
     width:min(100% - 28px,1760px);
-    margin-bottom:24px;
+    margin-bottom:22px;
     padding:16px;
   }
   .global-header-actions{
     width:100%;
     align-items:flex-start;
     flex-direction:column;
+    flex-wrap:wrap;
     gap:10px;
   }
-  .global-nav{justify-content:flex-start;gap:6px 14px}
+  .global-nav{justify-content:flex-start;flex-wrap:wrap;gap:6px 14px}
   .global-langbar{
     justify-content:flex-start;
+    flex-wrap:wrap;
     padding-left:0;
     border-left:0;
   }
 }
 
 @media (max-width:560px){
-  .global-header{width:min(100% - 20px,1760px);margin-bottom:16px}
+  .global-header{width:calc(100% - 16px);margin-top:8px;margin-bottom:16px;padding:12px}
   .global-brand{min-width:0}
   .global-logo-icon{width:46px;height:28px}
   .global-wordmark{font-size:17px;letter-spacing:.13em}
-  .global-nav a{font-size:13px;min-height:30px}
-  .global-langbar a{min-height:30px;padding:6px 8px;font-size:11px}
+  .global-nav{width:100%;gap:8px 22px;line-height:1.25}
+  .global-nav a{font-size:13px;min-height:0;padding:2px 0}
+  .global-langbar{width:100%;gap:6px}
+  .global-langbar a{min-height:28px;padding:4px 6px;font-size:11px}
   @supports ((mask:url("")) or (-webkit-mask:url(""))){
-    .global-brand{min-width:190px}
-    .global-logo-icon{width:190px;height:35px}
+    .global-brand{min-width:min(196px,68vw);width:min(196px,68vw);height:34px}
+    .global-logo-icon{width:min(196px,68vw);height:34px;-webkit-mask-position:left center;mask-position:left center}
   }
 }

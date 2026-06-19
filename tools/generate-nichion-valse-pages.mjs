@@ -10,6 +10,13 @@ const siteBase = "https://factualist.org";
 const recordBase = "/records/nichion-valse-2021";
 const datePublished = "2026-06-19";
 const lastmod = "2026-06-20";
+const recordCssVersion = "20260620-nichiva-hero2";
+const globalHeaderCssVersion = "20260620-header-compact";
+const heroImageBase = "/assets/records/nichion-valse-2021";
+const heroImage = `${heroImageBase}/nichiva.jpg`;
+const heroImageWebp = `${heroImageBase}/nichiva.webp`;
+const heroMobileImage = `${heroImageBase}/nichivam.jpg`;
+const heroMobileImageWebp = `${heroImageBase}/nichivam.webp`;
 const languages = [
   { code: "en", path: "", label: "EN", name: "English" },
   { code: "ja", path: "ja", label: "JA", name: "日本語" },
@@ -609,6 +616,24 @@ function jsonForScript(value) {
 
 let currentLang = "en";
 
+function companyLabel(id, lang = currentLang) {
+  const labels = {
+    nichion: { ja: "株式会社日音", default: "NICHION,INC." },
+    valse: { ja: "株式会社ヴァルス", default: "VALSE Inc." }
+  };
+  const label = labels[id];
+  return lang === "ja" ? label.ja : label.default;
+}
+
+function localizedCompanyText(html, lang = currentLang) {
+  if (lang === "ja") return html;
+  return html
+    .replaceAll("株式会社日音", companyLabel("nichion", lang))
+    .replaceAll("株式会社ヴァルス", companyLabel("valse", lang))
+    .replaceAll("VALSE Inc..", "VALSE Inc.")
+    .replaceAll("NICHION,INC..", "NICHION,INC.");
+}
+
 function urlFor(lang, slug = "") {
   const cleanSlug = slug ? `${slug}/` : "";
   const language = languageByCode[lang] || languageByCode.en;
@@ -995,8 +1020,8 @@ function subjectOrganizationNodes(lang = currentLang) {
     {
       "@type": "Organization",
       "@id": `${siteBase}${recordBase}/#organization-nichion`,
-      name: local(nichion.label, lang),
-      alternateName: ["Nichion", "Nichion Co., Ltd.", "株式会社日音"],
+      name: companyLabel("nichion", lang),
+      alternateName: lang === "ja" ? ["Nichion", "Nichion Co., Ltd.", "株式会社日音"] : ["Nichion", "Nichion Co., Ltd.", "NICHION,INC."],
       url: "https://www.nichion.co.jp/",
       sameAs: ["https://www.nichion.co.jp/", nichion.sourceUrl],
       description: local(nichion.description, lang)
@@ -1004,8 +1029,8 @@ function subjectOrganizationNodes(lang = currentLang) {
     {
       "@type": "Organization",
       "@id": `${siteBase}${recordBase}/#organization-valse`,
-      name: local(valse.label, lang),
-      alternateName: ["VALSE", "VALSE Inc.", "株式会社ヴァルス"],
+      name: companyLabel("valse", lang),
+      alternateName: lang === "ja" ? ["VALSE", "VALSE Inc.", "株式会社ヴァルス"] : ["VALSE", "VALSE Inc."],
       url: valse.sourceUrl,
       sameAs: ["https://www.valse.jp/", valse.sourceUrl],
       description: local(valse.description, lang)
@@ -1759,7 +1784,7 @@ function verificationMapNodes(lang = currentLang) {
       id: "nichion",
       cat: "org",
       r: 23,
-      label: tr(lang, { en: "株式会社日音", ja: "株式会社日音", es: "株式会社日音", de: "株式会社日音", fr: "株式会社日音", sk: "株式会社日音" }),
+      label: companyLabel("nichion", lang),
       role: tr(lang, { en: "Music publisher; commissioning and rights-side context.", ja: "音楽出版社。発注・権利処理側の背景。", es: "Editorial musical; contexto del lado de encargo y derechos.", de: "Musikverlag; Kontext der Beauftragung und Rechte.", fr: "Éditeur musical ; contexte côté commande et droits.", sk: "Hudobné vydavateľstvo; kontext zadania a práv." }),
       source: tr(lang, { en: "Public company site and reviewed correspondence", ja: "公式会社情報及び確認済み通信", es: "Sitio oficial y correspondencia revisada", de: "Öffentliche Unternehmensseite und geprüfte Korrespondenz", fr: "Site officiel et correspondance examinée", sk: "Verejná firemná stránka a skontrolovaná korešpondencia" }),
       q: tr(lang, { en: "Referenced as a public subject organisation. Context only unless supported by record-specific evidence.", ja: "公開上の対象組織として表示します。本件固有証拠に支えられない限り背景情報です。", es: "Se muestra como organización pública objeto del registro. Es contexto salvo respaldo específico del expediente.", de: "Als öffentlich benannte Gegenstandsorganisation aufgeführt. Kontext, sofern nicht durch fallspezifische Belege gestützt.", fr: "Affichée comme organisation publiquement concernée. Contexte sauf preuve propre au dossier.", sk: "Uvedená ako verejne uvedená predmetná organizácia. Ide o kontext, ak nie je podložená dôkazmi záznamu." }),
@@ -1769,10 +1794,10 @@ function verificationMapNodes(lang = currentLang) {
       id: "valse",
       cat: "org",
       r: 23,
-      label: "株式会社ヴァルス",
+      label: companyLabel("valse", lang),
       role: tr(lang, { en: "Broadcast audio-production company; introduction and coordination context.", ja: "放送音響制作会社。紹介・調整の背景。", es: "Empresa de producción de audio para emisión; contexto de introducción y coordinación.", de: "Broadcast-Audioproduktionsunternehmen; Kontext von Einführung und Koordination.", fr: "Société de production audio pour diffusion ; contexte d'introduction et de coordination.", sk: "Spoločnosť pre broadcast audio produkciu; kontext predstavenia a koordinácie." }),
       source: tr(lang, { en: "Public company site and reviewed correspondence", ja: "公式会社情報及び確認済み通信", es: "Sitio oficial y correspondencia revisada", de: "Öffentliche Unternehmensseite und geprüfte Korrespondenz", fr: "Site officiel et correspondance examinée", sk: "Verejná firemná stránka a skontrolovaná korešpondencia" }),
-      q: tr(lang, { en: "The official company profile lists VALSE Inc. and 株式会社ヴァルス. The primary public label here is 株式会社ヴァルス.", ja: "公式会社概要には VALSE Inc. 株式会社ヴァルス と記載されています。本記録の主表示は株式会社ヴァルスです。", es: "El perfil oficial indica VALSE Inc. y 株式会社ヴァルス. La etiqueta principal aquí es 株式会社ヴァルス.", de: "Das offizielle Profil nennt VALSE Inc. und 株式会社ヴァルス. Die primäre Bezeichnung hier ist 株式会社ヴァルス.", fr: "Le profil officiel indique VALSE Inc. et 株式会社ヴァルス. L'intitulé principal ici est 株式会社ヴァルス.", sk: "Oficiálny profil uvádza VALSE Inc. a 株式会社ヴァルス. Hlavné označenie tu je 株式会社ヴァルス." }),
+      q: tr(lang, { en: "The official company profile identifies VALSE Inc. The public label here follows that company profile.", ja: "公式会社概要には VALSE Inc. 株式会社ヴァルス と記載されています。本記録の主表示は株式会社ヴァルスです。", es: "El perfil oficial identifica VALSE Inc. La etiqueta pública aquí sigue ese perfil de empresa.", de: "Das offizielle Unternehmensprofil identifiziert VALSE Inc. Die öffentliche Bezeichnung hier folgt diesem Profil.", fr: "Le profil officiel de l'entreprise identifie VALSE Inc. L'intitulé public ici suit ce profil.", sk: "Oficiálny firemný profil identifikuje VALSE Inc. Verejné označenie tu nadväzuje na tento profil." }),
       href: urlFor(lang)
     },
     {
@@ -2329,10 +2354,30 @@ function compensationTable(lang = currentLang) {
   `;
 }
 
+function HeroMedia(lang = currentLang, eager = false) {
+  const alt = tr(lang, {
+    en: "NICHION,INC. and VALSE Inc. public-safe 2021 music commissioning record hero image.",
+    ja: "株式会社日音及び株式会社ヴァルスの2021年音楽制作発注記録を示す公開安全なヒーロー画像。",
+    es: "Imagen principal pública y segura del registro de encargo musical 2021 de NICHION,INC. y VALSE Inc.",
+    de: "Öffentlich sichere Hero-Grafik zum Musikauftragsprotokoll 2021 von NICHION,INC. und VALSE Inc.",
+    fr: "Image principale publique et sûre du dossier de commande musicale 2021 de NICHION,INC. et VALSE Inc.",
+    sk: "Verejne bezpečný hlavný obrázok záznamu o hudobnom zadaní 2021 spoločností NICHION,INC. a VALSE Inc."
+  });
+  return `<figure class="record-hero-media">
+        <picture>
+          <source media="(max-width: 720px)" srcset="${heroMobileImageWebp}" type="image/webp">
+          <source media="(max-width: 720px)" srcset="${heroMobileImage}" type="image/jpeg">
+          <source srcset="${heroImageWebp}" type="image/webp">
+          <img src="${heroImage}" width="1600" height="900" alt="${escapeHtml(alt)}" loading="${eager ? "eager" : "lazy"}" decoding="async"${eager ? ' fetchpriority="high"' : ""}>
+        </picture>
+      </figure>`;
+}
+
 function pageHero(page, lang = currentLang, extra = "") {
   const title = local(page.title, lang);
   return `
     <header class="record-hero">
+      ${HeroMedia(lang)}
       <div class="hero-content">
         <p class="eyebrow">${escapeHtml(copy[lang].recordEyebrow)}</p>
         <h1 class="display">${escapeHtml(title)}</h1>
@@ -2389,6 +2434,7 @@ function homePage(lang = currentLang) {
 
   const verificationMap = `
     <section class="panel" id="relationship-map">
+      ${HeroMedia(lang, true)}
       <div class="panel-head">
         <div>
           <p class="eyebrow">${escapeHtml(copy[lang].recordEyebrow)}</p>
@@ -2659,8 +2705,21 @@ const globalLanguageMeta = {
   sk: { label: "SK", flag: "🇸🇰" },
   ja: { label: "JA", flag: "🇯🇵" }
 };
+const globalNavLabels = {
+  en: { methodology: "Methodology", records: "Records", editorial: "Editorial Standard", redaction: "Redaction Policy", correction: "Correction" },
+  es: { methodology: "Metodología", records: "Registros", editorial: "Estándar editorial", redaction: "Política de redacción", correction: "Corrección" },
+  de: { methodology: "Methodik", records: "Aufzeichnungen", editorial: "Redaktioneller Standard", redaction: "Redaktionsrichtlinie", correction: "Korrektur" },
+  fr: { methodology: "Méthodologie", records: "Dossiers", editorial: "Norme éditoriale", redaction: "Politique de rédaction", correction: "Correction" },
+  sk: { methodology: "Metodika", records: "Záznamy", editorial: "Redakčný štandard", redaction: "Politika redakcie", correction: "Oprava" },
+  ja: { methodology: "方法論", records: "記録", editorial: "編集基準", redaction: "匿名化方針", correction: "訂正" }
+};
+
+function localizedRootPath(lang, slug) {
+  return lang === "en" ? `/${slug}/` : `/${lang}/${slug}/`;
+}
 
 function globalHeader(lang, page) {
+  const nav = globalNavLabels[lang] || globalNavLabels.en;
   const languageLinks = globalLanguageOrder.map((code) => {
     const item = globalLanguageMeta[code];
     return `<a href="${urlFor(code, page.slug)}" hreflang="${code}" ${lang === code ? `aria-current="true"` : ""}><span class="global-flag">${item.flag}</span>${item.label}</a>`;
@@ -2677,11 +2736,11 @@ function globalHeader(lang, page) {
     `    </a>`,
     `    <div class="global-header-actions">`,
     `      <nav class="global-nav" aria-label="Primary navigation">`,
-    `        <a href="/methodology/">Methodology</a>`,
-    `        <a href="/records/">Records</a>`,
-    `        <a href="/editorial-standard/">Editorial Standard</a>`,
-    `        <a href="/redaction-policy/">Redaction Policy</a>`,
-    `        <a href="/correction/">Correction</a>`,
+    `        <a href="${localizedRootPath(lang, "methodology")}">${escapeHtml(nav.methodology)}</a>`,
+    `        <a href="${localizedRootPath(lang, "records")}">${escapeHtml(nav.records)}</a>`,
+    `        <a href="${localizedRootPath(lang, "editorial-standard")}">${escapeHtml(nav.editorial)}</a>`,
+    `        <a href="${localizedRootPath(lang, "redaction-policy")}">${escapeHtml(nav.redaction)}</a>`,
+    `        <a href="${localizedRootPath(lang, "correction")}">${escapeHtml(nav.correction)}</a>`,
     `      </nav>`,
     `      <nav class="global-langbar" aria-label="Language">`,
     `        ${languageLinks}`,
@@ -2766,19 +2825,21 @@ function layout(page, lang, body) {
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(copy[lang].description)}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${siteBase}${recordBase}/assets/og/nichion-valse-og.svg">
-  <meta property="og:image:alt" content="${escapeHtml(tr(lang, { en: "Abstract network representing commissioning, music rights and unresolved documentary links.", ja: "発注、音楽権利、未解決の書面上のつながりを示す抽象的なネットワーク。", es: "Red abstracta que representa encargos, derechos musicales y vínculos documentales no resueltos.", de: "Abstraktes Netzwerk für Beauftragung, Musikrechte und ungelöste dokumentarische Verbindungen.", fr: "Réseau abstrait représentant la commande, les droits musicaux et les liens documentaires non résolus.", sk: "Abstraktná sieť znázorňujúca zadanie, hudobné práva a nevyriešené dokumentačné väzby." }))}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image" content="${siteBase}${heroImage}">
+  <meta property="og:image:secure_url" content="${siteBase}${heroImage}">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="${escapeHtml(tr(lang, { en: "NICHION,INC. and VALSE Inc. public-safe 2021 music commissioning record hero image.", ja: "株式会社日音及び株式会社ヴァルスの2021年音楽制作発注記録を示す公開安全なヒーロー画像。", es: "Imagen principal pública y segura del registro de encargo musical 2021 de NICHION,INC. y VALSE Inc.", de: "Öffentlich sichere Hero-Grafik zum Musikauftragsprotokoll 2021 von NICHION,INC. und VALSE Inc.", fr: "Image principale publique et sûre du dossier de commande musicale 2021 de NICHION,INC. et VALSE Inc.", sk: "Verejne bezpečný hlavný obrázok záznamu o hudobnom zadaní 2021 spoločností NICHION,INC. a VALSE Inc." }))}">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(copy[lang].description)}">
-  <meta name="twitter:image" content="${siteBase}${recordBase}/assets/og/nichion-valse-og.svg">
+  <meta name="twitter:image" content="${siteBase}${heroImage}">
   <meta name="theme-color" content="#16a34a">
   <link rel="icon" href="/records/assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script>
-  <link rel="stylesheet" href="${recordBase}/assets/css/main.css?v=20260620-map-dark">
-  <link rel="stylesheet" href="/records/assets/global-header.css?v=20260620-header-unified">
+  <link rel="stylesheet" href="${recordBase}/assets/css/main.css?v=${recordCssVersion}">
+  <link rel="stylesheet" href="/records/assets/global-header.css?v=${globalHeaderCssVersion}">
 </head>
 <body>
 ${globalHeader(lang, page)}
@@ -2826,7 +2887,7 @@ for (const lang of languageCodes) {
     const file = outputPath(lang, page.slug);
     await fs.mkdir(path.dirname(file), { recursive: true });
     const body = renderers[page.id](lang);
-    await fs.writeFile(file, layout(page, lang, body), "utf8");
+    await fs.writeFile(file, localizedCompanyText(layout(page, lang, body), lang), "utf8");
   }
 }
 

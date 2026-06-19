@@ -83,6 +83,21 @@ img{display:block;max-width:100%}
   border-radius:18px;
   box-shadow:var(--shadow);
 }
+.record-hero-media{
+  margin:0 0 22px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  background:var(--surface-2);
+}
+.record-hero-media img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+  object-fit:cover;
+}
+.record-hero > .record-hero-media{margin:0 0 20px}
 .hero-content{max-width:1180px}
 .eyebrow{
   margin:0 0 12px;
@@ -186,7 +201,21 @@ html:not(:lang(ja)) .display{
   gap:12px;
   margin-bottom:18px;
 }
+.panel-head > div{min-width:0;max-width:100%}
 h1,h2,h3{letter-spacing:0}
+html:not(:lang(ja)) h1,
+html:not(:lang(ja)) h2,
+html:not(:lang(ja)) h3{
+  overflow-wrap:anywhere;
+  hyphens:auto;
+}
+html:lang(ja) h1,
+html:lang(ja) h2,
+html:lang(ja) h3{
+  word-break:keep-all;
+  overflow-wrap:break-word;
+  line-break:strict;
+}
 .section-title{
   margin:0;
   font-size:clamp(24px,3vw,36px);
@@ -648,6 +677,7 @@ textarea{min-height:140px;resize:vertical}
 @media (max-width:820px){
   .site-nav{position:static;align-items:flex-start;flex-direction:column}
   .record-hero{width:min(100% - 24px,1100px);padding:24px}
+  .record-hero-media img{aspect-ratio:900/643}
   .display{font-size:clamp(26px,9vw,38px)}
   html:not(:lang(ja)) .display{overflow-wrap:anywhere}
   .main,.footer{width:min(100% - 24px,1100px)}
