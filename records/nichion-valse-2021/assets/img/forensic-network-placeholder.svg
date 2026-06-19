@@ -1,36 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
   <title id="title">Abstract network representing commissioning, music rights and unresolved documentary links.</title>
-  <desc id="desc">Dark forensic network visual with abstract document nodes, signal lines and amber markers. No people, logos, company names or readable email content.</desc>
+  <desc id="desc">Light network visual with abstract document nodes, signal lines and green markers. No people, logos, company names or readable email content.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#0b1013"/>
-      <stop offset=".48" stop-color="#182229"/>
-      <stop offset="1" stop-color="#070a0c"/>
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".48" stop-color="#f3f5f2"/>
+      <stop offset="1" stop-color="#eef2ee"/>
     </linearGradient>
     <radialGradient id="glow" cx=".62" cy=".38" r=".55">
-      <stop offset="0" stop-color="#8fb6c2" stop-opacity=".34"/>
-      <stop offset=".48" stop-color="#8fb6c2" stop-opacity=".08"/>
-      <stop offset="1" stop-color="#8fb6c2" stop-opacity="0"/>
+      <stop offset="0" stop-color="#16a34a" stop-opacity=".16"/>
+      <stop offset=".48" stop-color="#16a34a" stop-opacity=".06"/>
+      <stop offset="1" stop-color="#16a34a" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
-      <path d="M56 0H0v56" fill="none" stroke="#465860" stroke-opacity=".22" stroke-width="1"/>
+      <path d="M56 0H0v56" fill="none" stroke="#bcd8c4" stroke-opacity=".32" stroke-width="1"/>
     </pattern>
   </defs>
   <rect width="1600" height="900" fill="url(#bg)"/>
   <rect width="1600" height="900" fill="url(#grid)"/>
   <rect width="1600" height="900" fill="url(#glow)"/>
-  <g fill="none" stroke="#8fb6c2" stroke-opacity=".62" stroke-width="2">
+  <g fill="none" stroke="#0f7a3a" stroke-opacity=".45" stroke-width="2">
     <path d="M164 636C338 492 516 440 702 474S1017 628 1220 521 1427 338 1516 366"/>
     <path d="M214 222C390 308 472 298 650 214S982 128 1156 232 1372 273 1490 186"/>
     <path d="M270 735 514 612 786 640 1032 474 1292 553"/>
     <path d="M412 161 535 344 772 312 964 414 1244 300"/>
   </g>
-  <g stroke="#d6a33d" stroke-width="2" stroke-opacity=".9">
-    <path d="M795 197h136v86H795z" fill="#151d22"/>
-    <path d="M1011 555h128v78h-128z" fill="#151d22"/>
-    <path d="M505 512h150v92H505z" fill="#151d22"/>
+  <g stroke="#16a34a" stroke-width="2" stroke-opacity=".9">
+    <path d="M795 197h136v86H795z" fill="#ffffff"/>
+    <path d="M1011 555h128v78h-128z" fill="#ffffff"/>
+    <path d="M505 512h150v92H505z" fill="#ffffff"/>
   </g>
-  <g fill="#8fb6c2" fill-opacity=".95">
+  <g fill="#16a34a" fill-opacity=".95">
     <circle cx="164" cy="636" r="7"/>
     <circle cx="514" cy="612" r="8"/>
     <circle cx="786" cy="640" r="6"/>
@@ -39,17 +39,17 @@
     <circle cx="650" cy="214" r="7"/>
     <circle cx="1156" cy="232" r="8"/>
   </g>
-  <g fill="#d6a33d">
+  <g fill="#725f12">
     <circle cx="702" cy="474" r="8"/>
     <circle cx="964" cy="414" r="8"/>
     <circle cx="1220" cy="521" r="8"/>
   </g>
-  <g fill="none" stroke="#d6a33d" stroke-dasharray="8 7" stroke-width="2" stroke-opacity=".8">
+  <g fill="none" stroke="#725f12" stroke-dasharray="8 7" stroke-width="2" stroke-opacity=".55">
     <path d="M690 474h282"/>
     <path d="M864 283v264"/>
     <path d="M576 512 864 240 1075 555"/>
   </g>
-  <g opacity=".18" fill="#f2f5f2">
+  <g opacity=".38" fill="#5d6f64">
     <rect x="86" y="114" width="260" height="12" rx="6"/>
     <rect x="86" y="144" width="190" height="10" rx="5"/>
     <rect x="1210" y="694" width="276" height="12" rx="6"/>

@@ -2175,10 +2175,10 @@ function layout(page, lang, body) {
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(copy[lang].description)}">
   <meta name="twitter:image" content="${siteBase}${recordBase}/assets/og/nichion-valse-og.svg">
-  <meta name="theme-color" content="#080b0d">
+  <meta name="theme-color" content="#16a34a">
   <link rel="icon" href="/records/assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script>
-  <link rel="stylesheet" href="${recordBase}/assets/css/main.css?v=20260619-nichion-valse-multilang">
+  <link rel="stylesheet" href="${recordBase}/assets/css/main.css?v=20260620-record-light">
 </head>
 <body>
   <div class="page">
