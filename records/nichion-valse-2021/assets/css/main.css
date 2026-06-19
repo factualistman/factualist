@@ -101,6 +101,11 @@ img{display:block;max-width:100%}
   overflow-wrap:normal;
   line-break:strict;
 }
+html:not(:lang(ja)) .display{
+  word-break:normal;
+  overflow-wrap:break-word;
+  hyphens:auto;
+}
 .lede{
   max-width:980px;
   margin:18px 0 0;
@@ -392,6 +397,7 @@ textarea{min-height:140px;resize:vertical}
   .site-nav{position:static;align-items:flex-start;flex-direction:column}
   .record-hero{min-height:0}
   .display{font-size:clamp(34px,12vw,54px)}
+  html:not(:lang(ja)) .display{overflow-wrap:anywhere}
   .main,.footer{width:min(100% - 24px,1360px)}
   .relationship-svg,.network-svg,.flow-svg{min-height:360px}
 }
