@@ -81,7 +81,7 @@ img{display:block;max-width:100%}
     url("/records/nichion-valse-2021/assets/img/forensic-network-placeholder.svg") center/cover no-repeat;
   border-bottom:1px solid var(--line);
 }
-.hero-content{max-width:980px}
+.hero-content{max-width:1180px}
 .eyebrow{
   margin:0 0 12px;
   color:var(--amber);
@@ -91,15 +91,18 @@ img{display:block;max-width:100%}
   text-transform:uppercase;
 }
 .display{
-  max-width:980px;
+  max-width:1180px;
   margin:0;
-  font-size:clamp(38px,7vw,88px);
+  font-size:clamp(36px,6.2vw,82px);
   line-height:1.02;
   letter-spacing:0;
   font-weight:900;
+  word-break:keep-all;
+  overflow-wrap:normal;
+  line-break:strict;
 }
 .lede{
-  max-width:840px;
+  max-width:980px;
   margin:18px 0 0;
   color:#d8dfdd;
   font-size:clamp(15px,1.7vw,19px);
@@ -156,7 +159,7 @@ img{display:block;max-width:100%}
 .btn.primary:hover{background:#d4a03f}
 
 .main{
-  width:min(1180px,calc(100% - 32px));
+  width:min(1360px,calc(100% - 40px));
   margin:0 auto;
   padding:28px 0 68px;
 }
@@ -189,9 +192,11 @@ p{margin:0}
 .grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:14px}
 .grid.two{grid-template-columns:repeat(1,minmax(0,1fr))}
 .grid.four{grid-template-columns:repeat(1,minmax(0,1fr))}
-@media (min-width:720px){
+@media (min-width:900px){
   .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:1120px){
   .grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
 
@@ -287,14 +292,29 @@ tr:last-child td{border-bottom:0}
   padding:16px;
 }
 
+.map-preview-stack{display:grid;gap:18px}
+.map-preview{
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:rgba(8,11,13,.36);
+  padding:16px;
+}
+.map-preview-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
 .relationship-svg,.network-svg,.flow-svg{
   width:100%;
-  min-height:420px;
+  min-height:500px;
   border:1px solid var(--line);
   border-radius:8px;
   background:#0b1013;
 }
-.flow-svg{min-height:260px}
+.flow-svg{min-height:310px}
 .svg-node rect,.svg-node circle{stroke:var(--line-strong);stroke-width:1.5;fill:#172027}
 .svg-node.open rect,.svg-node.open circle{fill:#0b1013;stroke-dasharray:6 5}
 .svg-node text{fill:#f2f5f2;font-size:13px;font-weight:780}
@@ -361,7 +381,7 @@ input,textarea,select{
 textarea{min-height:140px;resize:vertical}
 
 .footer{
-  width:min(1180px,calc(100% - 32px));
+  width:min(1360px,calc(100% - 40px));
   margin:0 auto;
   padding:0 0 42px;
   color:var(--muted);
@@ -372,6 +392,8 @@ textarea{min-height:140px;resize:vertical}
   .site-nav{position:static;align-items:flex-start;flex-direction:column}
   .record-hero{min-height:0}
   .display{font-size:clamp(34px,12vw,54px)}
+  .main,.footer{width:min(100% - 24px,1360px)}
+  .relationship-svg,.network-svg,.flow-svg{min-height:360px}
 }
 
 @media (prefers-reduced-motion: reduce){

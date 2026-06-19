@@ -670,7 +670,7 @@ function wrapSvgText(text, maxChars = 18) {
 }
 
 function svgNode(id, x, y, w, h, label, status) {
-  const lines = wrapSvgText(label, currentLang === "ja" ? 10 : 18);
+  const lines = wrapSvgText(label, currentLang === "ja" ? 14 : 22);
   const className = status === "OPEN_QUESTION" ? "svg-node open" : "svg-node";
   const textY = y + h / 2 - ((lines.length - 1) * 9);
   return `
@@ -760,6 +760,39 @@ function lineLegend(lang = currentLang) {
       <span><i class="line-key"></i>${lang === "ja" ? "実線 = 記録済み連絡" : "solid line = documented communication"}</span>
       <span><i class="line-key dashed"></i>${lang === "ja" ? "破線 = 推認又は背景関係" : "dashed line = inferred or contextual relationship"}</span>
       <span><i class="line-key dotted"></i>${lang === "ja" ? "点線 = 未解決又は争点" : "dotted line = unresolved or disputed relationship"}</span>
+    </div>
+  `;
+}
+
+function MapPreview(lang = currentLang) {
+  const chainText = lang === "ja"
+    ? "紹介、依頼、作家連絡、権利確認、支払協議、書面未解決を同じ画面で確認できる発注経路図です。"
+    : "A commissioning-chain map showing introduction, request, creator outreach, rights enquiry, payment discussion and unresolved documentation in one view.";
+  const networkText = lang === "ja"
+    ? "所有関係、施設所在地、番組背景、本件連絡を線種で分けた組織的背景図です。"
+    : "An institutional-context map separating ownership, facility location, programme background and record-specific communication by line type.";
+  return `
+    <div class="map-preview-stack">
+      <article class="map-preview">
+        <div class="map-preview-head">
+          <div>
+            <h3>${lang === "ja" ? "発注経路図" : "Commissioning Chain Map"}</h3>
+            <p class="muted">${escapeHtml(chainText)}</p>
+          </div>
+          ${EvidenceBadge("OPEN_QUESTION", lang)}
+        </div>
+        ${RelationshipGraph(lang)}
+      </article>
+      <article class="map-preview">
+        <div class="map-preview-head">
+          <div>
+            <h3>${lang === "ja" ? "組織ネットワーク図" : "Institutional Network Map"}</h3>
+            <p class="muted">${escapeHtml(networkText)}</p>
+          </div>
+          ${EvidenceBadge("CONTEXT_ONLY", lang)}
+        </div>
+        ${NetworkGraph(lang)}
+      </article>
     </div>
   `;
 }
@@ -952,10 +985,11 @@ function homePage(lang = currentLang) {
 
   const replyNotice = section(lang === "ja" ? "反論・訂正の入口" : "Right of Reply Entry Point", RightOfReplyNotice(lang), { id: "right-of-reply-entry", badge: "DOCUMENTED" });
   const transactionStructure = section(lang === "ja" ? "取引構造" : "Transaction Structure", TransactionStructure(lang), { id: "transaction-structure", badge: "OPEN_QUESTION" });
+  const mapPreview = section(lang === "ja" ? "構造マップ" : "Structure Maps", MapPreview(lang), { id: "structure-maps", badge: "DOCUMENTED" });
   const questions = section(copy[lang].openQuestions, `<div class="grid two">${openQuestions.map((question, index) => OpenQuestionCard(question, index, lang)).join("")}</div>`, { id: "open-questions" });
   const navigation = section(copy[lang].detailPages, navCards(lang), { id: "pages" });
 
-  return `${hero}<main class="main">${subjectEntities}${counterpartyPeople}${replyNotice}${thesis}${transactionStructure}${examines}${summary}${sequence}${keyFindings}${questions}${navigation}${PrivacyNotice(lang)}</main>`;
+  return `${hero}<main class="main">${subjectEntities}${counterpartyPeople}${replyNotice}${thesis}${transactionStructure}${mapPreview}${examines}${summary}${sequence}${keyFindings}${questions}${navigation}${PrivacyNotice(lang)}</main>`;
 }
 
 function chronologyPage(lang = currentLang) {

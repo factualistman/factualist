@@ -241,6 +241,130 @@
   
     </section>
   
+    <section class="panel" id="structure-maps">
+      <div class="panel-head">
+        <div>
+          <h2>Structure Maps</h2>
+          
+        </div>
+        <span class="badge documented">DOCUMENTED</span>
+      </div>
+      
+    <div class="map-preview-stack">
+      <article class="map-preview">
+        <div class="map-preview-head">
+          <div>
+            <h3>Commissioning Chain Map</h3>
+            <p class="muted">A commissioning-chain map showing introduction, request, creator outreach, rights enquiry, payment discussion and unresolved documentation in one view.</p>
+          </div>
+          <span class="badge open-question">OPEN QUESTION</span>
+        </div>
+        
+    <svg class="relationship-svg" viewBox="0 0 1000 500" role="img" aria-label="Commissioning chain diagram">
+      <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#8fb6c2"/></marker></defs>
+      <path class="svg-line solid" d="M250 96 C310 96 330 166 390 166" marker-end="url(#arrow)"/><text class="svg-label" x="300" y="92">Introduction / communication</text><path class="svg-line solid" d="M250 266 C310 266 330 184 390 184" marker-end="url(#arrow)"/><text class="svg-label" x="300" y="258">Request / coordination</text><path class="svg-line solid" d="M590 166 C650 166 675 96 740 96" marker-end="url(#arrow)"/><text class="svg-label" x="630" y="92">Creator outreach</text><path class="svg-line dashed" d="M250 266 C420 304 590 304 740 266" marker-end="url(#arrow)"/><text class="svg-label" x="480" y="300">Rights enquiry</text><path class="svg-line solid" d="M390 205 C330 220 310 246 250 246" marker-end="url(#arrow)"/><text class="svg-label" x="305" y="226">Demo / material coordination</text><path class="svg-line dotted" d="M390 366 C305 358 285 286 250 286" marker-end="url(#arrow)"/><text class="svg-label" x="282" y="350">Budget approval unresolved</text><path class="svg-line dotted" d="M740 396 C650 386 620 224 590 205" marker-end="url(#arrow)"/><text class="svg-label" x="650" y="350">Written terms unresolved</text>
+      
+    <g class="svg-node">
+      <rect x="60" y="60" width="190" height="72" rx="10"/>
+      <text x="155" y="96" text-anchor="middle">VALSE Representative</text>
+    </g>
+  
+    <g class="svg-node">
+      <rect x="60" y="230" width="190" height="72" rx="10"/>
+      <text x="155" y="266" text-anchor="middle">Nichion Personnel</text>
+    </g>
+  
+    <g class="svg-node">
+      <rect x="390" y="145" width="200" height="80" rx="10"/>
+      <text x="490" y="185" text-anchor="middle">Reporting Party</text>
+    </g>
+  
+    <g class="svg-node">
+      <rect x="740" y="60" width="190" height="72" rx="10"/>
+      <text x="835" y="96" text-anchor="middle">External Creators</text>
+    </g>
+  
+    <g class="svg-node open">
+      <rect x="740" y="230" width="190" height="72" rx="10"/>
+      <text x="835" y="266" text-anchor="middle">Rights Administration</text>
+    </g>
+  
+    <g class="svg-node open">
+      <rect x="390" y="330" width="200" height="72" rx="10"/>
+      <text x="490" y="366" text-anchor="middle">Budget Approval</text>
+    </g>
+  
+    <g class="svg-node open">
+      <rect x="740" y="360" width="190" height="72" rx="10"/>
+      <text x="835" y="396" text-anchor="middle">Contract Documentation</text>
+    </g>
+  
+    </svg>
+    
+    <div class="legend">
+      <span><i class="line-key"></i>solid line = documented communication</span>
+      <span><i class="line-key dashed"></i>dashed line = inferred or contextual relationship</span>
+      <span><i class="line-key dotted"></i>dotted line = unresolved or disputed relationship</span>
+    </div>
+  
+  
+      </article>
+      <article class="map-preview">
+        <div class="map-preview-head">
+          <div>
+            <h3>Institutional Network Map</h3>
+            <p class="muted">An institutional-context map separating ownership, facility location, programme background and record-specific communication by line type.</p>
+          </div>
+          <span class="badge context-only">CONTEXT ONLY</span>
+        </div>
+        
+    <svg class="network-svg" viewBox="0 0 1000 460" role="img" aria-label="Institutional context network diagram">
+      <path class="svg-line dashed" d="M165 102 V146"/><text class="svg-label" x="178" y="128">100% ownership context</text><path class="svg-line solid" d="M260 182 C330 190 350 232 405 242"/><text class="svg-label" x="318" y="198">Record communication</text><path class="svg-line solid" d="M260 346 C330 330 350 266 405 250"/><text class="svg-label" x="316" y="330">Introduction / project context</text><path class="svg-line dashed" d="M260 346 C430 402 590 402 740 346"/><text class="svg-label" x="480" y="398">Facility reference</text><path class="svg-line dashed" d="M260 328 C430 238 560 128 740 106"/><text class="svg-label" x="462" y="224">Public work context</text><path class="svg-line dashed" d="M260 182 C430 86 570 54 740 106"/><text class="svg-label" x="470" y="78">Music-publishing context</text>
+      
+    <g class="svg-node">
+      <rect x="70" y="36" width="190" height="66" rx="10"/>
+      <text x="165" y="69" text-anchor="middle">TBS Holdings</text>
+    </g>
+  
+    <g class="svg-node">
+      <rect x="70" y="146" width="190" height="72" rx="10"/>
+      <text x="165" y="182" text-anchor="middle">Nichion Co., Ltd.</text>
+    </g>
+  
+    <g class="svg-node">
+      <rect x="70" y="310" width="190" height="72" rx="10"/>
+      <text x="165" y="346" text-anchor="middle">VALSE Inc.</text>
+    </g>
+  
+    <g class="svg-node">
+      <rect x="405" y="205" width="210" height="82" rx="10"/>
+      <text x="510" y="246" text-anchor="middle">Proposed Music Project</text>
+    </g>
+  
+    <g class="svg-node">
+      <rect x="740" y="70" width="190" height="72" rx="10"/>
+      <text x="835" y="106" text-anchor="middle">Broadcast Context</text>
+    </g>
+  
+    <g class="svg-node">
+      <rect x="740" y="310" width="190" height="72" rx="10"/>
+      <text x="835" y="346" text-anchor="middle">Facility Context</text>
+    </g>
+  
+    </svg>
+    
+    <div class="legend">
+      <span><i class="line-key"></i>solid line = documented communication</span>
+      <span><i class="line-key dashed"></i>dashed line = inferred or contextual relationship</span>
+      <span><i class="line-key dotted"></i>dotted line = unresolved or disputed relationship</span>
+    </div>
+  
+  
+      </article>
+    </div>
+  
+    </section>
+  
     <section class="panel" id="examines">
       <div class="panel-head">
         <div>
