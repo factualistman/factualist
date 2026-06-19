@@ -1,0 +1,9 @@
+.records-directory .hero-inner > *{
+  opacity:1;
+  transform:none;
+  animation:none;
+}
+
+.records-directory .display{color:#16201a}
+.records-directory .lede{color:#5d6f64}
+.records-directory .eyebrow{color:#0f7a3a}

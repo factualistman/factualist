@@ -2650,6 +2650,47 @@ const renderers = {
   "right-of-reply": rightOfReplyPage
 };
 
+const globalLanguageOrder = ["en", "es", "de", "fr", "sk", "ja"];
+const globalLanguageMeta = {
+  en: { label: "EN", flag: "🇺🇸" },
+  es: { label: "ES", flag: "🇪🇸" },
+  de: { label: "DE", flag: "🇩🇪" },
+  fr: { label: "FR", flag: "🇫🇷" },
+  sk: { label: "SK", flag: "🇸🇰" },
+  ja: { label: "JA", flag: "🇯🇵" }
+};
+
+function globalHeader(lang, page) {
+  const languageLinks = globalLanguageOrder.map((code) => {
+    const item = globalLanguageMeta[code];
+    return `<a href="${urlFor(code, page.slug)}" hreflang="${code}" ${lang === code ? `aria-current="true"` : ""}><span class="global-flag">${item.flag}</span>${item.label}</a>`;
+  }).join("");
+  return [
+    `  <header class="global-header">`,
+    `    <a class="global-brand" href="/" aria-label="Factualist home">`,
+    `      <svg class="global-logo-icon" viewBox="0 0 84 48" role="img" aria-label="Factualist">`,
+    `        <circle cx="8" cy="30" r="7" fill="#16a34a"/>`,
+    `        <rect x="24" y="10" width="10" height="30" rx="5" fill="#16a34a"/>`,
+    `        <path d="M41 10h31c4 0 7 3 7 7s-3 7-7 7H55v5h13c4 0 7 3 7 7s-3 7-7 7H41V10z" fill="#16a34a"/>`,
+    `      </svg>`,
+    `      <span class="global-wordmark">FACTUALIST</span>`,
+    `    </a>`,
+    `    <div class="global-header-actions">`,
+    `      <nav class="global-nav" aria-label="Primary navigation">`,
+    `        <a href="/methodology/">Methodology</a>`,
+    `        <a href="/records/">Records</a>`,
+    `        <a href="/editorial-standard/">Editorial Standard</a>`,
+    `        <a href="/redaction-policy/">Redaction Policy</a>`,
+    `        <a href="/correction/">Correction</a>`,
+    `      </nav>`,
+    `      <nav class="global-langbar" aria-label="Language">`,
+    `        ${languageLinks}`,
+    `      </nav>`,
+    `    </div>`,
+    `  </header>`
+  ].join("\n");
+}
+
 function navHtml(page, lang) {
   return `
     <nav class="site-nav" aria-label="${escapeHtml(tr(lang, { en: "Record navigation", ja: "記録ナビゲーション", es: "Navegación del registro", de: "Protokollnavigation", fr: "Navigation du dossier", sk: "Navigácia záznamu" }))}">
@@ -2737,8 +2778,10 @@ function layout(page, lang, body) {
   <link rel="icon" href="/records/assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script>
   <link rel="stylesheet" href="${recordBase}/assets/css/main.css?v=20260620-map-dark">
+  <link rel="stylesheet" href="/records/assets/global-header.css?v=20260620-header-unified">
 </head>
 <body>
+${globalHeader(lang, page)}
   <div class="page">
     ${page.id === "index" ? "" : navHtml(page, lang)}
     ${body}
