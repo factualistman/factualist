@@ -1,0 +1,281 @@
+[
+  {
+    "id": "E-001",
+    "period": "Early April 2021",
+    "senderCategory": {
+      "en": "Introduction-side personnel",
+      "ja": "紹介側関係者"
+    },
+    "recipientCategory": {
+      "en": "Reporting Party",
+      "ja": "申告者"
+    },
+    "subjectCategory": {
+      "en": "Project introduction and initial communication",
+      "ja": "企画紹介及び初期連絡"
+    },
+    "summary": {
+      "en": "The record indicates that the Reporting Party was contacted about a proposed music project and included in early project communications.",
+      "ja": "記録は、申告者が音楽制作企画について連絡を受け、初期の企画連絡に含まれていたことを示しています。"
+    },
+    "establishes": {
+      "en": ["Project-related contact occurred.", "The Reporting Party was part of the early communication chain."],
+      "ja": ["企画に関する連絡が行われました。", "申告者は初期連絡経路に含まれていました。"]
+    },
+    "limitations": {
+      "en": ["Does not establish final commissioning authority.", "Does not publish the original message or subject line."],
+      "ja": ["最終的な発注権限は確定しません。", "原文メール又は件名全文は公開していません。"]
+    },
+    "status": "DOCUMENTED",
+    "sourceType": "Private Email Record",
+    "sourcePublicationStatus": "Not Published"
+  },
+  {
+    "id": "E-002",
+    "period": "Mid-April 2021",
+    "senderCategory": {
+      "en": "Reporting Party",
+      "ja": "申告者"
+    },
+    "recipientCategory": {
+      "en": "External creator category",
+      "ja": "外部作家カテゴリ"
+    },
+    "subjectCategory": {
+      "en": "Creator outreach",
+      "ja": "作家連絡"
+    },
+    "summary": {
+      "en": "The public-safe record indicates creator-related outreach or coordination during the project period.",
+      "ja": "公開安全化された記録は、企画期間中に作家関連の連絡又は調整が行われたことを示しています。"
+    },
+    "establishes": {
+      "en": ["Creator-related coordination was part of the workflow.", "External creator participation was contemplated."],
+      "ja": ["作家関連の調整が進行の一部でした。", "外部作家の参加が想定されていました。"]
+    },
+    "limitations": {
+      "en": ["Does not identify creators.", "Does not establish final creator compensation or rights transfer."],
+      "ja": ["作家は特定していません。", "作家報酬又は権利移転の最終合意は確定しません。"]
+    },
+    "status": "DOCUMENTED",
+    "sourceType": "Private Email Record",
+    "sourcePublicationStatus": "Not Published"
+  },
+  {
+    "id": "E-003",
+    "period": "Mid-April 2021",
+    "senderCategory": {
+      "en": "Commissioning-side personnel",
+      "ja": "発注側関係者"
+    },
+    "recipientCategory": {
+      "en": "Reporting Party",
+      "ja": "申告者"
+    },
+    "subjectCategory": {
+      "en": "Rights enquiry and creator coordination",
+      "ja": "権利確認及び作家調整"
+    },
+    "summary": {
+      "en": "The record indicates that rights-related questions and creator coordination were under discussion during the project period.",
+      "ja": "記録は、企画期間中に権利関連の確認及び作家調整が協議されていたことを示しています。"
+    },
+    "establishes": {
+      "en": ["Rights-related questions were raised.", "The Reporting Party was included in relevant communications."],
+      "ja": ["権利関連の確認が行われました。", "申告者は関連連絡に含まれていました。"]
+    },
+    "limitations": {
+      "en": ["Does not establish a final rights agreement.", "Does not establish signed commissioning terms."],
+      "ja": ["最終的な権利合意は確定しません。", "署名済み発注条件は確定しません。"]
+    },
+    "status": "DOCUMENTED",
+    "sourceType": "Private Email Record",
+    "sourcePublicationStatus": "Not Published"
+  },
+  {
+    "id": "E-004",
+    "period": "Late April 2021",
+    "senderCategory": {
+      "en": "Reporting Party or external creator category",
+      "ja": "申告者又は外部作家カテゴリ"
+    },
+    "recipientCategory": {
+      "en": "Commissioning-side personnel",
+      "ja": "発注側関係者"
+    },
+    "subjectCategory": {
+      "en": "Demo and selection coordination",
+      "ja": "デモ及び選定調整"
+    },
+    "summary": {
+      "en": "The reviewed record indicates coordination concerning demos, selection or related project materials.",
+      "ja": "確認済み記録は、デモ、選定又は関連企画資料に関する調整を示しています。"
+    },
+    "establishes": {
+      "en": ["Demo-related coordination occurred.", "Commissioning-side recipients were part of the workflow."],
+      "ja": ["デモ関連の調整が行われました。", "発注側の受領者が進行に含まれていました。"]
+    },
+    "limitations": {
+      "en": ["Does not publish demos.", "Does not establish post-cancellation use rights."],
+      "ja": ["デモは公開していません。", "中止後の使用権限は確定しません。"]
+    },
+    "status": "DOCUMENTED",
+    "sourceType": "Private Email Record",
+    "sourcePublicationStatus": "Not Published"
+  },
+  {
+    "id": "E-005",
+    "period": "Late April 2021",
+    "senderCategory": {
+      "en": "Administrative or commissioning-side personnel",
+      "ja": "事務又は発注側関係者"
+    },
+    "recipientCategory": {
+      "en": "Reporting Party",
+      "ja": "申告者"
+    },
+    "subjectCategory": {
+      "en": "Payment method and international transfer coordination",
+      "ja": "支払方法及び海外送金調整"
+    },
+    "summary": {
+      "en": "The record indicates that payment logistics, including international transfer considerations, were discussed.",
+      "ja": "記録は、海外送金を含む支払実務が協議されたことを示しています。"
+    },
+    "establishes": {
+      "en": ["Payment arrangements were being discussed.", "Administrative payment questions were active during the project period."],
+      "ja": ["支払手配が協議されていました。", "企画期間中に管理上の支払確認が行われていました。"]
+    },
+    "limitations": {
+      "en": ["Does not establish final fee approval.", "Does not establish final tax or withholding treatment."],
+      "ja": ["最終的な報酬承認は確定しません。", "最終的な税務又は源泉処理は確定しません。"]
+    },
+    "status": "DOCUMENTED",
+    "sourceType": "Private Email Record",
+    "sourcePublicationStatus": "Not Published"
+  },
+  {
+    "id": "E-006",
+    "period": "May 2021",
+    "senderCategory": {
+      "en": "Commissioning-side personnel",
+      "ja": "発注側関係者"
+    },
+    "recipientCategory": {
+      "en": "Reporting Party",
+      "ja": "申告者"
+    },
+    "subjectCategory": {
+      "en": "Fee proposal and payment basis",
+      "ja": "報酬提示及び支払根拠"
+    },
+    "summary": {
+      "en": "The public-safe record reflects a fee proposal, while its approval authority, calculation basis and acceptance status remain unresolved.",
+      "ja": "公開安全化された記録には報酬提示が反映されていますが、その承認権限、算定根拠及び受諾状況は未解決です。"
+    },
+    "establishes": {
+      "en": ["A fee proposal was communicated.", "The proposal became part of the later dispute record."],
+      "ja": ["報酬提示が伝達されました。", "その提示は後の紛争記録の一部となりました。"]
+    },
+    "limitations": {
+      "en": ["Does not establish mutual acceptance.", "Does not publish any amount unless independently safe for publication."],
+      "ja": ["双方の受諾は確定しません。", "独立して公開安全と判断されない限り金額は公開しません。"]
+    },
+    "status": "DISPUTED",
+    "sourceType": "Private Email Record",
+    "sourcePublicationStatus": "Not Published"
+  },
+  {
+    "id": "E-007",
+    "period": "May 2021",
+    "senderCategory": {
+      "en": "Commissioning-side personnel and Reporting Party",
+      "ja": "発注側関係者及び申告者"
+    },
+    "recipientCategory": {
+      "en": "Project communication chain",
+      "ja": "企画連絡経路"
+    },
+    "subjectCategory": {
+      "en": "Contract discussion and written terms",
+      "ja": "契約協議及び書面条件"
+    },
+    "summary": {
+      "en": "The reviewed corpus has not identified a final written order, statement of work or signed commissioning agreement for the Reporting Party.",
+      "ja": "確認済み資料内では、申告者に対する最終的な発注書、業務仕様書又は署名済み発注契約は確認されていません。"
+    },
+    "establishes": {
+      "en": ["A documentary gap exists in the reviewed corpus.", "Contract responsibility remains a material issue."],
+      "ja": ["確認済み資料内に書面上の空白があります。", "契約作成責任は重要な論点として残っています。"]
+    },
+    "limitations": {
+      "en": ["Absence of a located document does not prove none ever existed.", "Does not establish legal liability."],
+      "ja": ["確認されないことは、書面が一切存在しなかったことの証明ではありません。", "法的責任は確定しません。"]
+    },
+    "status": "OPEN_QUESTION",
+    "sourceType": "Private Document",
+    "sourcePublicationStatus": "Not Published"
+  },
+  {
+    "id": "E-008",
+    "period": "June 2021",
+    "senderCategory": {
+      "en": "Project participants by role",
+      "ja": "役割別の企画関係者"
+    },
+    "recipientCategory": {
+      "en": "Project participants by role",
+      "ja": "役割別の企画関係者"
+    },
+    "subjectCategory": {
+      "en": "Cancellation, dispute and post-project restrictions",
+      "ja": "中止、紛争化及び終了後制限"
+    },
+    "summary": {
+      "en": "The public-safe record indicates that cancellation treatment, compensation for work already performed and post-project restrictions were unresolved issues.",
+      "ja": "公開安全化された記録は、中止時の取扱い、既実施作業への補償及び終了後制限が未解決の論点であったことを示しています。"
+    },
+    "establishes": {
+      "en": ["The dispute included documentary and compensation questions.", "Post-project treatment remained material."],
+      "ja": ["紛争には書面及び報酬に関する論点が含まれていました。", "終了後の取扱いは重要な論点として残りました。"]
+    },
+    "limitations": {
+      "en": ["Does not establish wrongdoing.", "Does not publish private correspondence."],
+      "ja": ["不正行為は確定しません。", "非公開通信は掲載していません。"]
+    },
+    "status": "OPEN_QUESTION",
+    "sourceType": "Private Email Record",
+    "sourcePublicationStatus": "Not Published"
+  },
+  {
+    "id": "P-001",
+    "period": "Public background",
+    "senderCategory": {
+      "en": "Official public source",
+      "ja": "公式公開情報"
+    },
+    "recipientCategory": {
+      "en": "Public record reader",
+      "ja": "公開記録の閲覧者"
+    },
+    "subjectCategory": {
+      "en": "Institutional background",
+      "ja": "組織的背景"
+    },
+    "summary": {
+      "en": "Official public pages describe Nichion's music publishing services and VALSE's audio, selection, MA and music-production-related business activities. This context does not establish case-specific decision-making authority.",
+      "ja": "公式公開ページは、日音の音楽出版関連サービス及びVALSEの音響効果、選曲、MA、音楽制作プロデュース関連業務を説明しています。この背景情報は、本件固有の決裁権限を示すものではありません。"
+    },
+    "establishes": {
+      "en": ["Public institutional context.", "Business-capability background only."],
+      "ja": ["公開された組織的背景。", "事業能力に関する背景情報のみ。"]
+    },
+    "limitations": {
+      "en": ["Does not establish involvement in disputed commissioning decisions.", "Does not establish corporate affiliation beyond what the source says."],
+      "ja": ["争点となる発注判断への関与は確定しません。", "出典が示す範囲を超える企業関係は確定しません。"]
+    },
+    "status": "CONTEXT_ONLY",
+    "sourceType": "Public Source",
+    "sourcePublicationStatus": "Public Source"
+  }
+]

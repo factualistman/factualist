@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Nichion–VALSE 2021 Commissioning Record</title>
+  <desc id="desc">Public-safe abstract OG image for authority, scope, compensation and rights questions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#080b0d"/>
+      <stop offset=".55" stop-color="#172027"/>
+      <stop offset="1" stop-color="#0b1013"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#465860" stroke-opacity=".24"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <g fill="none" stroke="#8fb6c2" stroke-width="3" stroke-opacity=".66">
+    <path d="M126 444C292 338 442 354 600 318s300-134 474 5"/>
+    <path d="M240 182C380 252 476 192 628 152s312 20 418 110"/>
+  </g>
+  <g fill="#8fb6c2">
+    <circle cx="126" cy="444" r="9"/>
+    <circle cx="600" cy="318" r="10"/>
+    <circle cx="1074" cy="323" r="9"/>
+    <circle cx="628" cy="152" r="9"/>
+  </g>
+  <g fill="#d6a33d">
+    <circle cx="438" cy="354" r="9"/>
+    <circle cx="812" cy="234" r="9"/>
+  </g>
+  <text x="70" y="118" fill="#d6a33d" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="4">FACTUALIST RECORD</text>
+  <text x="70" y="224" fill="#f2f5f2" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="900">Nichion–VALSE</text>
+  <text x="70" y="308" fill="#f2f5f2" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="900">2021 Commissioning Record</text>
+  <text x="70" y="394" fill="#cbd6d3" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Authority / Scope / Compensation / Rights</text>
+  <rect x="70" y="464" width="800" height="58" rx="8" fill="#d6a33d" fill-opacity=".12" stroke="#d6a33d"/>
+  <text x="94" y="502" fill="#f0d39d" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">A documented commissioning record</text>
+</svg>

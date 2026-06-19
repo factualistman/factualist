@@ -1,0 +1,184 @@
+[
+  {
+    "id": "C-001",
+    "period": "Early April 2021",
+    "title": {
+      "en": "Initial contact and project discussion",
+      "ja": "初期連絡と企画協議"
+    },
+    "summary": {
+      "en": "The available records indicate that a proposed music project was introduced and discussed with the Reporting Party at an early stage.",
+      "ja": "確認済みの記録は、音楽制作企画が初期段階で申告者に紹介され、協議されたことを示しています。"
+    },
+    "participants": {
+      "en": ["VALSE Representative", "Reporting Party"],
+      "ja": ["VALSE担当者", "申告者"]
+    },
+    "evidenceIds": ["E-001"],
+    "status": "DOCUMENTED",
+    "establishes": {
+      "en": ["Project-related contact occurred.", "The Reporting Party was included in early project communications."],
+      "ja": ["企画に関する連絡が行われました。", "申告者は初期の企画連絡に含まれていました。"]
+    },
+    "doesNotEstablish": {
+      "en": ["Final commissioning authority.", "A written order or final scope."],
+      "ja": ["最終的な発注権限。", "書面による発注又は最終的な業務範囲。"]
+    }
+  },
+  {
+    "id": "C-002",
+    "period": "Mid-April 2021",
+    "title": {
+      "en": "Creator outreach and coordination activity",
+      "ja": "作家連絡と調整作業"
+    },
+    "summary": {
+      "en": "The records reviewed show that creator-related outreach and coordination were discussed or performed before final written terms for the Reporting Party were located.",
+      "ja": "確認済みの記録は、申告者の最終的な書面条件が確認される前に、作家関連の連絡及び調整が協議又は実施されたことを示しています。"
+    },
+    "participants": {
+      "en": ["Reporting Party", "External Creators", "Commissioning-side personnel"],
+      "ja": ["申告者", "外部作家", "発注側関係者"]
+    },
+    "evidenceIds": ["E-002", "E-003"],
+    "status": "DOCUMENTED",
+    "establishes": {
+      "en": ["Creator-related coordination took place during the project period.", "External creator involvement was part of the contemplated workflow."],
+      "ja": ["企画期間中に作家関連の調整が行われました。", "外部作家の関与は想定された進行の一部でした。"]
+    },
+    "doesNotEstablish": {
+      "en": ["That all creator terms were finalised.", "That the Reporting Party's compensation was approved before outreach began."],
+      "ja": ["すべての作家条件が確定していたこと。", "作家連絡の開始前に申告者の報酬が承認されていたこと。"]
+    }
+  },
+  {
+    "id": "C-003",
+    "period": "Mid-April 2021",
+    "title": {
+      "en": "Rights-related questions raised",
+      "ja": "権利関連事項の確認"
+    },
+    "summary": {
+      "en": "The records indicate that copyright, publishing, master or demo-use questions were raised while the commissioning structure remained unresolved.",
+      "ja": "記録は、発注構造が未解決のまま、著作権、出版権、原盤又はデモ使用に関する確認が行われたことを示しています。"
+    },
+    "participants": {
+      "en": ["Nichion Personnel", "Reporting Party", "External Creators"],
+      "ja": ["日音関係者", "申告者", "外部作家"]
+    },
+    "evidenceIds": ["E-003", "E-004"],
+    "status": "DOCUMENTED",
+    "establishes": {
+      "en": ["Rights-related questions were raised.", "Rights matters were part of the project discussion before final written terms were located."],
+      "ja": ["権利関連の確認が行われました。", "最終的な書面条件が確認される前に、権利事項が企画協議に含まれていました。"]
+    },
+    "doesNotEstablish": {
+      "en": ["A final rights agreement.", "A final licence, assignment or publishing arrangement."],
+      "ja": ["最終的な権利合意。", "最終的なライセンス、譲渡又は出版契約。"]
+    }
+  },
+  {
+    "id": "C-004",
+    "period": "Late April 2021",
+    "title": {
+      "en": "Demo and project coordination",
+      "ja": "デモ及び企画調整"
+    },
+    "summary": {
+      "en": "The reviewed materials show coordination concerning demos, selection or related project materials. The records do not identify a final written document governing post-cancellation use.",
+      "ja": "確認済み資料は、デモ、選定又は関連企画資料に関する調整を示しています。一方で、中止後の使用を定める最終書面は確認されていません。"
+    },
+    "participants": {
+      "en": ["Reporting Party", "Nichion Personnel", "VALSE Representative"],
+      "ja": ["申告者", "日音関係者", "VALSE担当者"]
+    },
+    "evidenceIds": ["E-004", "E-005"],
+    "status": "DOCUMENTED",
+    "establishes": {
+      "en": ["Demo or project-material coordination was part of the record.", "Recipients on the commissioning side were included in the workflow."],
+      "ja": ["デモ又は企画資料の調整が記録に含まれています。", "発注側の受領者が進行に含まれていました。"]
+    },
+    "doesNotEstablish": {
+      "en": ["A final licence to use demos after cancellation.", "A final acceptance of deliverables."],
+      "ja": ["中止後にデモを使用する最終許諾。", "成果物の最終受領。"]
+    }
+  },
+  {
+    "id": "C-005",
+    "period": "Late April 2021",
+    "title": {
+      "en": "Payment method and international transfer discussion",
+      "ja": "支払方法及び海外送金の協議"
+    },
+    "summary": {
+      "en": "Payment-related logistics, including international transfer considerations, appear in the reviewed records before a final written commissioning package was identified.",
+      "ja": "最終的な発注書面一式が確認される前に、海外送金を含む支払関連の実務事項が確認済み記録に現れています。"
+    },
+    "participants": {
+      "en": ["Reporting Party", "Nichion Administrative Personnel", "Commissioning-side personnel"],
+      "ja": ["申告者", "日音事務担当者", "発注側関係者"]
+    },
+    "evidenceIds": ["E-005", "E-006"],
+    "status": "DOCUMENTED",
+    "establishes": {
+      "en": ["Payment logistics were discussed.", "Administrative payment questions formed part of the project record."],
+      "ja": ["支払実務が協議されました。", "管理上の支払確認が企画記録の一部でした。"]
+    },
+    "doesNotEstablish": {
+      "en": ["Final approval of compensation.", "Tax or withholding treatment agreed by all relevant parties."],
+      "ja": ["報酬の最終承認。", "関係者全員が合意した税務又は源泉処理。"]
+    }
+  },
+  {
+    "id": "C-006",
+    "period": "May 2021",
+    "title": {
+      "en": "Fee proposal and unresolved basis",
+      "ja": "報酬提示と根拠未解決"
+    },
+    "summary": {
+      "en": "A fee proposal is reflected in the public-safe record, but the timing, authority and basis of approval remain unresolved in the reviewed corpus.",
+      "ja": "公開安全化された記録には報酬提示が反映されていますが、その時期、権限及び承認根拠は確認済み資料内では未解決です。"
+    },
+    "participants": {
+      "en": ["Commissioning-side personnel", "Reporting Party"],
+      "ja": ["発注側関係者", "申告者"]
+    },
+    "evidenceIds": ["E-006", "E-007"],
+    "status": "DISPUTED",
+    "establishes": {
+      "en": ["Compensation was discussed.", "The basis for the amount requires separate verification."],
+      "ja": ["報酬が協議されました。", "金額の根拠は別途確認を要します。"]
+    },
+    "doesNotEstablish": {
+      "en": ["Mutual acceptance of a final fee.", "A signed contract or purchase order."],
+      "ja": ["最終報酬についての双方合意。", "署名済み契約又は発注書。"]
+    }
+  },
+  {
+    "id": "C-007",
+    "period": "June 2021",
+    "title": {
+      "en": "Contract discussion, cancellation and dispute",
+      "ja": "契約協議、中止及び紛争化"
+    },
+    "summary": {
+      "en": "No final written document has been identified in the reviewed corpus. Contract responsibility, cancellation treatment and post-project restrictions remain open questions.",
+      "ja": "確認済み資料内では最終書面は確認されていません。契約作成責任、中止時の取扱い及び終了後の制限は未解決の論点です。"
+    },
+    "participants": {
+      "en": ["Reporting Party", "Commissioning-side personnel"],
+      "ja": ["申告者", "発注側関係者"]
+    },
+    "evidenceIds": ["E-007", "E-008"],
+    "status": "OPEN_QUESTION",
+    "establishes": {
+      "en": ["The documentation gap remained material to the later dispute.", "Responsibility allocation was not resolved by the public-safe record."],
+      "ja": ["書面上の空白は後の紛争において重要な論点として残りました。", "責任分担は公開安全化された記録では解決されていません。"]
+    },
+    "doesNotEstablish": {
+      "en": ["That no document ever existed outside the reviewed corpus.", "Legal liability, intent or wrongdoing."],
+      "ja": ["確認済み資料外にも書面が存在しなかったこと。", "法的責任、故意又は不正行為。"]
+    }
+  }
+]

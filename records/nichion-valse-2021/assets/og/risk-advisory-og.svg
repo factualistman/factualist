@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Prospective Collaborator Risk Advisory</title>
+  <desc id="desc">Public-safe risk advisory image listing pre-work confirmation points.</desc>
+  <rect width="1200" height="630" fill="#080b0d"/>
+  <rect x="54" y="54" width="1092" height="522" rx="18" fill="#121a1f" stroke="#465860" stroke-width="2"/>
+  <text x="92" y="134" fill="#d6a33d" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="900" letter-spacing="3">NO WORK BEFORE:</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900" fill="#f2f5f2">
+    <text x="92" y="226">ENTITY</text>
+    <text x="92" y="306">AUTHORITY</text>
+    <text x="92" y="386">SCOPE</text>
+    <text x="92" y="466">FEE</text>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900" fill="#f2f5f2">
+    <text x="618" y="226">RIGHTS</text>
+    <text x="618" y="306">PAYMENT</text>
+    <text x="618" y="386">CANCELLATION</text>
+  </g>
+  <g stroke="#d6a33d" stroke-width="4">
+    <path d="M520 188h46"/>
+    <path d="M520 268h46"/>
+    <path d="M520 348h46"/>
+    <path d="M520 428h46"/>
+  </g>
+</svg>

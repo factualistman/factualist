@@ -7,8 +7,9 @@
 /ja/  /  301
 /ja  /  301
 /ja/*  /  301
-/records/ac55id-2025/relationship-map/  /records/ac55id-2025/  301
-/records/ac55id-2025/relationship-map  /records/ac55id-2025/  301
+/records/nichion-valse-2021/ja  /records/nichion-valse-2021/ja/  301
+/records/nichion-valse-2021/ja/  /records/nichion-valse-2021/ja/  200
+/records/nichion-valse-2021/ja/*  /records/nichion-valse-2021/ja/:splat  200
 /records/ac55id-2025/ja/  /records/ac55id-2025/  301
 /records/ac55id-2025/ja  /records/ac55id-2025/  301
 /records/epm-music-2026/ja/  /records/  301

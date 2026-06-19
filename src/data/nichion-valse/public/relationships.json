@@ -1,0 +1,186 @@
+{
+  "commissioning": [
+    {
+      "from": "valse-representative",
+      "to": "reporting-party",
+      "type": "Introduction",
+      "line": "solid",
+      "status": "DOCUMENTED",
+      "label": {
+        "en": "Introduction / communication",
+        "ja": "紹介 / 連絡"
+      },
+      "note": {
+        "en": "Project contact is reflected in the public-safe record.",
+        "ja": "企画連絡は公開安全化された記録に反映されています。"
+      }
+    },
+    {
+      "from": "nichion-personnel",
+      "to": "reporting-party",
+      "type": "Request",
+      "line": "solid",
+      "status": "DOCUMENTED",
+      "label": {
+        "en": "Request / coordination",
+        "ja": "依頼 / 調整"
+      },
+      "note": {
+        "en": "Request and coordination communications are documented by category.",
+        "ja": "依頼及び調整の連絡はカテゴリ単位で記録されています。"
+      }
+    },
+    {
+      "from": "reporting-party",
+      "to": "external-creators",
+      "type": "Creator Outreach",
+      "line": "solid",
+      "status": "DOCUMENTED",
+      "label": {
+        "en": "Creator outreach",
+        "ja": "作家連絡"
+      },
+      "note": {
+        "en": "Creator identities are withheld.",
+        "ja": "作家の身元は非公開です。"
+      }
+    },
+    {
+      "from": "nichion-personnel",
+      "to": "rights-administration",
+      "type": "Rights Enquiry",
+      "line": "dashed",
+      "status": "OPEN_QUESTION",
+      "label": {
+        "en": "Rights enquiry",
+        "ja": "権利確認"
+      },
+      "note": {
+        "en": "Rights questions are documented; final authority remains unresolved.",
+        "ja": "権利確認は記録されていますが、最終権限は未解決です。"
+      }
+    },
+    {
+      "from": "reporting-party",
+      "to": "nichion-personnel",
+      "type": "Demo Delivery",
+      "line": "solid",
+      "status": "DOCUMENTED",
+      "label": {
+        "en": "Demo / material coordination",
+        "ja": "デモ / 資料調整"
+      },
+      "note": {
+        "en": "Demos and private materials are not published.",
+        "ja": "デモ及び非公開資料は掲載していません。"
+      }
+    },
+    {
+      "from": "budget-approval",
+      "to": "nichion-personnel",
+      "type": "Payment Discussion",
+      "line": "dotted",
+      "status": "OPEN_QUESTION",
+      "label": {
+        "en": "Budget approval unresolved",
+        "ja": "予算承認は未解決"
+      },
+      "note": {
+        "en": "Final approval authority has not been established by a located written order.",
+        "ja": "最終承認権限は確認済みの書面発注では確定していません。"
+      }
+    },
+    {
+      "from": "contract-documentation",
+      "to": "reporting-party",
+      "type": "Contract Discussion",
+      "line": "dotted",
+      "status": "OPEN_QUESTION",
+      "label": {
+        "en": "Written terms unresolved",
+        "ja": "書面条件は未解決"
+      },
+      "note": {
+        "en": "No final written document has been identified in the reviewed corpus.",
+        "ja": "確認済み資料内では最終書面は確認されていません。"
+      }
+    }
+  ],
+  "institutional": [
+    {
+      "from": "nichion",
+      "to": "proposed-project",
+      "type": "Documented Communication",
+      "line": "solid",
+      "status": "DOCUMENTED",
+      "label": {
+        "en": "Case communication",
+        "ja": "本件連絡"
+      },
+      "note": {
+        "en": "Case-specific communication is recorded by role.",
+        "ja": "本件固有の連絡は役割単位で記録されています。"
+      }
+    },
+    {
+      "from": "valse",
+      "to": "proposed-project",
+      "type": "Introduction",
+      "line": "solid",
+      "status": "DOCUMENTED",
+      "label": {
+        "en": "Introduction / project context",
+        "ja": "紹介 / 企画背景"
+      },
+      "note": {
+        "en": "The introduction context does not establish final budget approval.",
+        "ja": "紹介の背景は最終的な予算承認を示すものではありません。"
+      }
+    },
+    {
+      "from": "valse",
+      "to": "facility-context",
+      "type": "Facility Location",
+      "line": "dashed",
+      "status": "CONTEXT_ONLY",
+      "label": {
+        "en": "Facility reference",
+        "ja": "施設参照"
+      },
+      "note": {
+        "en": "Facility location is not treated as ownership or subsidiary status.",
+        "ja": "施設所在地は所有関係又は子会社関係として扱いません。"
+      }
+    },
+    {
+      "from": "valse",
+      "to": "broadcast-context",
+      "type": "Programme Credit",
+      "line": "dashed",
+      "status": "CONTEXT_ONLY",
+      "label": {
+        "en": "Public work context",
+        "ja": "公開業務背景"
+      },
+      "note": {
+        "en": "Programme or broadcast-sector context does not establish involvement in disputed commissioning decisions.",
+        "ja": "番組又は放送関連の背景は、争点となる発注判断への関与を示すものではありません。"
+      }
+    },
+    {
+      "from": "nichion",
+      "to": "broadcast-context",
+      "type": "Publicly Listed Business Activity",
+      "line": "dashed",
+      "status": "CONTEXT_ONLY",
+      "label": {
+        "en": "Music-publishing context",
+        "ja": "音楽出版背景"
+      },
+      "note": {
+        "en": "Business capability is context only unless supported by case-specific evidence.",
+        "ja": "事業能力は、本件固有の証拠がない限り背景情報に限られます。"
+      }
+    }
+  ]
+}

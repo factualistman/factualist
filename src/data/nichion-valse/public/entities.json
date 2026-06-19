@@ -1,0 +1,331 @@
+{
+  "caseRoles": [
+    {
+      "id": "valse-representative",
+      "label": {
+        "en": "VALSE Representative",
+        "ja": "VALSE担当者"
+      },
+      "role": {
+        "en": "Introducer or project-side communicator",
+        "ja": "紹介者又は企画側連絡者"
+      },
+      "description": {
+        "en": "Role-based label used for project communication. It does not identify an individual.",
+        "ja": "企画連絡に使用する役割ベースの表示です。個人を特定しません。"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "id": "nichion-personnel",
+      "label": {
+        "en": "Nichion Personnel",
+        "ja": "日音関係者"
+      },
+      "role": {
+        "en": "Requesting, rights or administrative-side personnel by role",
+        "ja": "依頼、権利確認又は事務側の役割別関係者"
+      },
+      "description": {
+        "en": "Grouped role label for communications attributed to Nichion-side personnel in the public-safe record.",
+        "ja": "公開安全化された記録における日音側関係者の連絡をまとめる役割表示です。"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "id": "reporting-party",
+      "label": {
+        "en": "Reporting Party",
+        "ja": "申告者"
+      },
+      "role": {
+        "en": "Independent business participant",
+        "ja": "独立事業者"
+      },
+      "description": {
+        "en": "Public label used for the reporting side. Personal identity, label name, artist identity, email, domain and related identifiers are withheld.",
+        "ja": "申告側を示す公開表示です。氏名、レーベル名、アーティスト名義、メール、ドメイン及び関連識別情報は非公開です。"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "id": "external-creators",
+      "label": {
+        "en": "External Creators",
+        "ja": "外部作家"
+      },
+      "role": {
+        "en": "Creators contacted or discussed in anonymised form",
+        "ja": "匿名化して表示する連絡又は協議対象の作家"
+      },
+      "description": {
+        "en": "Grouped label. Creator identities and demo titles are not published.",
+        "ja": "一括表示です。作家名及びデモ名は公開していません。"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "id": "budget-approval",
+      "label": {
+        "en": "Budget Approval",
+        "ja": "予算承認"
+      },
+      "role": {
+        "en": "Unresolved approval function",
+        "ja": "未解決の承認機能"
+      },
+      "description": {
+        "en": "The final budget approver has not been established by a located written order in the reviewed corpus.",
+        "ja": "確認済み資料内の書面発注では、最終的な予算承認者は確定していません。"
+      },
+      "status": "OPEN_QUESTION"
+    },
+    {
+      "id": "contract-documentation",
+      "label": {
+        "en": "Contract Documentation",
+        "ja": "契約書面"
+      },
+      "role": {
+        "en": "Unresolved drafting and issuance function",
+        "ja": "作成及び発行責任が未解決の機能"
+      },
+      "description": {
+        "en": "No final written order, statement of work or signed commissioning agreement has been identified in the reviewed corpus.",
+        "ja": "確認済み資料内では、最終的な発注書、業務仕様書又は署名済み発注契約は確認されていません。"
+      },
+      "status": "OPEN_QUESTION"
+    },
+    {
+      "id": "rights-administration",
+      "label": {
+        "en": "Rights Administration",
+        "ja": "権利管理"
+      },
+      "role": {
+        "en": "Rights enquiry and clearance function",
+        "ja": "権利確認及び処理機能"
+      },
+      "description": {
+        "en": "Rights-related questions were raised; final licence or assignment terms have not been identified in the reviewed material.",
+        "ja": "権利関連の確認は行われましたが、最終的なライセンス又は譲渡条件は確認済み資料内では特定されていません。"
+      },
+      "status": "OPEN_QUESTION"
+    }
+  ],
+  "counterpartyPeople": [
+    {
+      "id": "masato-toudoh",
+      "name": {
+        "en": "Masato Toudoh",
+        "ja": "東藤雅人"
+      },
+      "organisation": {
+        "en": "VALSE Inc.",
+        "ja": "VALSE Inc."
+      },
+      "publicRole": {
+        "en": "VALSE representative / intermediary-side executive",
+        "ja": "VALSE側代表者 / 仲介側役員"
+      },
+      "caseRole": {
+        "en": "Introducer and project-side communicator",
+        "ja": "紹介者及び企画側連絡者"
+      },
+      "status": "DOCUMENTED",
+      "sourceBasis": {
+        "en": "Reviewed communications and public company context. No private email address is published.",
+        "ja": "確認済み通信及び公開会社情報に基づく表示です。非公開メールアドレスは掲載しません。"
+      }
+    },
+    {
+      "id": "tsutomu-muto",
+      "name": {
+        "en": "Tsutomu Muto",
+        "ja": "武藤勉"
+      },
+      "organisation": {
+        "en": "Nichion Co., Ltd.",
+        "ja": "株式会社 日音"
+      },
+      "publicRole": {
+        "en": "Nichion representative / project and contract-side personnel",
+        "ja": "日音側担当者 / 企画・契約側関係者"
+      },
+      "caseRole": {
+        "en": "Requesting, coordination or contract-discussion personnel",
+        "ja": "依頼、調整又は契約協議に関わる担当者"
+      },
+      "status": "DOCUMENTED",
+      "sourceBasis": {
+        "en": "Reviewed communications. No signature block, private email address or exact message time is published.",
+        "ja": "確認済み通信に基づく表示です。署名欄、非公開メールアドレス、正確な送受信時刻は掲載しません。"
+      }
+    },
+    {
+      "id": "daisuke-mizuta",
+      "name": {
+        "en": "Daisuke Mizuta",
+        "ja": "水田大介"
+      },
+      "organisation": {
+        "en": "Nichion Co., Ltd.",
+        "ja": "株式会社 日音"
+      },
+      "publicRole": {
+        "en": "Nichion production-side representative",
+        "ja": "日音側制作担当者"
+      },
+      "caseRole": {
+        "en": "Rights, production or fee-discussion personnel",
+        "ja": "権利、制作又は報酬協議に関わる担当者"
+      },
+      "status": "DOCUMENTED",
+      "sourceBasis": {
+        "en": "Reviewed communications. No signature block, private email address or exact message time is published.",
+        "ja": "確認済み通信に基づく表示です。署名欄、非公開メールアドレス、正確な送受信時刻は掲載しません。"
+      }
+    },
+    {
+      "id": "hitoko-kanabo",
+      "name": {
+        "en": "Hitoko Kanabo",
+        "ja": "金房仁子"
+      },
+      "organisation": {
+        "en": "Nichion Co., Ltd.",
+        "ja": "株式会社 日音"
+      },
+      "publicRole": {
+        "en": "Nichion administrative or production-side personnel",
+        "ja": "日音側事務又は制作関係者"
+      },
+      "caseRole": {
+        "en": "Administrative communication participant",
+        "ja": "事務連絡上の関係者"
+      },
+      "status": "DOCUMENTED",
+      "sourceBasis": {
+        "en": "Name appears in reviewed communications. Email addresses and CC fields are not published.",
+        "ja": "確認済み通信上で確認される氏名です。メールアドレス及びCC欄は掲載しません。"
+      }
+    },
+    {
+      "id": "haruna-sagara",
+      "name": {
+        "en": "Haruna Sagara",
+        "ja": "相楽春奈"
+      },
+      "organisation": {
+        "en": "Nichion Co., Ltd.",
+        "ja": "株式会社 日音"
+      },
+      "publicRole": {
+        "en": "Nichion administrative or production-side personnel",
+        "ja": "日音側事務又は制作関係者"
+      },
+      "caseRole": {
+        "en": "Administrative communication participant",
+        "ja": "事務連絡上の関係者"
+      },
+      "status": "DOCUMENTED",
+      "sourceBasis": {
+        "en": "Name appears in reviewed communications. Email addresses and CC fields are not published.",
+        "ja": "確認済み通信上で確認される氏名です。メールアドレス及びCC欄は掲載しません。"
+      }
+    },
+    {
+      "id": "akemi-hayase",
+      "name": {
+        "en": "Akemi Hayase",
+        "ja": "早瀬暁美"
+      },
+      "organisation": {
+        "en": "Nichion Co., Ltd.",
+        "ja": "株式会社 日音"
+      },
+      "publicRole": {
+        "en": "Nichion administrative or production-side personnel",
+        "ja": "日音側事務又は制作関係者"
+      },
+      "caseRole": {
+        "en": "Administrative communication participant",
+        "ja": "事務連絡上の関係者"
+      },
+      "status": "DOCUMENTED",
+      "sourceBasis": {
+        "en": "Name appears in reviewed communications. Email addresses and CC fields are not published.",
+        "ja": "確認済み通信上で確認される氏名です。メールアドレス及びCC欄は掲載しません。"
+      }
+    }
+  ],
+  "networkNodes": [
+    {
+      "id": "nichion",
+      "label": {
+        "en": "Nichion Co., Ltd.",
+        "ja": "株式会社 日音"
+      },
+      "category": "Music Publisher",
+      "description": {
+        "en": "Public institutional context for music publishing and rights-related services.",
+        "ja": "音楽出版及び権利関連サービスに関する公開上の組織的背景です。"
+      },
+      "status": "CONTEXT_ONLY",
+      "sourceUrl": "https://www.nichion.co.jp/"
+    },
+    {
+      "id": "valse",
+      "label": {
+        "en": "VALSE Inc.",
+        "ja": "VALSE Inc."
+      },
+      "category": "Production Company",
+      "description": {
+        "en": "Public institutional context for audio, music-selection, MA and music-production-related business activities.",
+        "ja": "音響効果、選曲、MA及び音楽制作プロデュース関連業務に関する公開上の組織的背景です。"
+      },
+      "status": "CONTEXT_ONLY",
+      "sourceUrl": "https://www.valse.jp/sp/company/"
+    },
+    {
+      "id": "broadcast-context",
+      "label": {
+        "en": "Broadcast Context",
+        "ja": "放送関連背景"
+      },
+      "category": "Broadcaster",
+      "description": {
+        "en": "Context node for public broadcast-sector work or facility references. It is not treated as proof of decision-making authority.",
+        "ja": "公開された放送関連業務又は施設参照の背景ノードです。決裁権限の証明として扱いません。"
+      },
+      "status": "CONTEXT_ONLY"
+    },
+    {
+      "id": "facility-context",
+      "label": {
+        "en": "Facility Context",
+        "ja": "施設背景"
+      },
+      "category": "Facility",
+      "description": {
+        "en": "Facility-location context only. Facility location is not corporate ownership.",
+        "ja": "施設所在地に関する背景のみです。施設所在地は企業所有関係ではありません。"
+      },
+      "status": "CONTEXT_ONLY"
+    },
+    {
+      "id": "proposed-project",
+      "label": {
+        "en": "Proposed Music Project",
+        "ja": "対象音楽制作企画"
+      },
+      "category": "Project",
+      "description": {
+        "en": "An anonymised project label used for the 2021 commissioning record.",
+        "ja": "2021年の発注記録で使用する匿名化された企画表示です。"
+      },
+      "status": "DOCUMENTED"
+    }
+  ]
+}

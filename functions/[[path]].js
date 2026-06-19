@@ -49,16 +49,20 @@ function redirectTarget(requestUrl) {
     return url;
   }
 
-  if (path === "/records/ac55id-2025/relationship-map" || path === "/records/ac55id-2025/relationship-map/") {
+  if (path === "/records/ac55id-2025/ja" || path === "/records/ac55id-2025/ja/") {
     url.pathname = "/records/ac55id-2025/";
     url.search = "";
     return url;
   }
 
-  if (path === "/records/ac55id-2025/ja" || path === "/records/ac55id-2025/ja/") {
-    url.pathname = "/records/ac55id-2025/";
+  if (path === "/records/nichion-valse-2021/ja") {
+    url.pathname = "/records/nichion-valse-2021/ja/";
     url.search = "";
     return url;
+  }
+
+  if (path === "/records/nichion-valse-2021/ja/" || path.startsWith("/records/nichion-valse-2021/ja/")) {
+    return null;
   }
 
   if (/^\/records\/[^/]+\/ja(?:\/|$)/.test(path)) {

@@ -1,0 +1,462 @@
+{
+  "examines": [
+    {
+      "title": {
+        "en": "Commissioning Authority",
+        "ja": "発注権限"
+      },
+      "body": {
+        "en": "Who had authority to request and approve work?",
+        "ja": "誰が作業を依頼し、承認する権限を持っていたのか。"
+      },
+      "status": "OPEN_QUESTION"
+    },
+    {
+      "title": {
+        "en": "Scope",
+        "ja": "業務範囲"
+      },
+      "body": {
+        "en": "What work was requested, performed or discussed?",
+        "ja": "どの作業が依頼、実施又は協議されたのか。"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "title": {
+        "en": "Compensation",
+        "ja": "報酬"
+      },
+      "body": {
+        "en": "When and how was payment proposed?",
+        "ja": "支払はいつ、どのように提示されたのか。"
+      },
+      "status": "DISPUTED"
+    },
+    {
+      "title": {
+        "en": "Rights",
+        "ja": "権利"
+      },
+      "body": {
+        "en": "When were copyright, publishing and master-related matters raised?",
+        "ja": "著作権、出版権、原盤関連事項はいつ確認されたのか。"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "title": {
+        "en": "Documentation",
+        "ja": "書面"
+      },
+      "body": {
+        "en": "Which written terms were present, absent or unresolved?",
+        "ja": "どの書面条件が存在し、不在又は未解決だったのか。"
+      },
+      "status": "OPEN_QUESTION"
+    }
+  ],
+  "caseSummary": [
+    {
+      "status": "DOCUMENTED",
+      "text": {
+        "en": "The available records indicate that a 2021 music commissioning process involved project discussion, creator outreach, rights-related enquiries and coordination before the Reporting Party's scope, compensation and written terms were finalised in the reviewed corpus.",
+        "ja": "確認済みの記録は、2021年の音楽制作発注過程において、申告者の業務範囲、報酬及び書面条件が確認済み資料内で確定する前に、企画協議、作家連絡、権利関連の確認及び調整が行われたことを示しています。"
+      }
+    },
+    {
+      "status": "DOCUMENTED",
+      "text": {
+        "en": "The records reviewed show that creator-related coordination, rights questions, demo or project-material handling and payment logistics were active during the project period.",
+        "ja": "確認済み資料は、企画期間中に作家関連の調整、権利確認、デモ又は企画資料の取扱い、支払実務が進行していたことを示しています。"
+      }
+    },
+    {
+      "status": "OPEN_QUESTION",
+      "text": {
+        "en": "The available materials do not establish who held final commissioning authority, who approved the project budget or who was responsible for issuing a written order or statement of work.",
+        "ja": "確認済み資料では、最終的な発注権限者、企画予算の承認者、発注書又は業務仕様書の発行責任者は確定していません。"
+      }
+    },
+    {
+      "status": "OPEN_QUESTION",
+      "text": {
+        "en": "No final written document has been identified in the reviewed corpus. That absence does not prove no document ever existed outside the reviewed materials.",
+        "ja": "確認済み資料内では最終書面は確認されていません。ただし、その不存在は、確認済み資料外に書面が存在しなかったことの証明ではありません。"
+      }
+    },
+    {
+      "status": "DISPUTED",
+      "text": {
+        "en": "The allocation of authority remains an open question, and the record does not make a legal determination about liability, intent or wrongdoing.",
+        "ja": "権限分担は未解決の論点であり、本記録は責任、故意又は不正行為について法的判断を行いません。"
+      }
+    }
+  ],
+  "coreSequence": [
+    {
+      "label": {
+        "en": "Initial Contact",
+        "ja": "初期連絡"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "label": {
+        "en": "Project Discussion",
+        "ja": "企画協議"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "label": {
+        "en": "Creator Outreach",
+        "ja": "作家連絡"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "label": {
+        "en": "Rights Enquiries",
+        "ja": "権利確認"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "label": {
+        "en": "Demo / Coordination Activity",
+        "ja": "デモ / 調整作業"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "label": {
+        "en": "Payment Discussion",
+        "ja": "支払協議"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "label": {
+        "en": "Fee Proposal",
+        "ja": "報酬提示"
+      },
+      "status": "DISPUTED"
+    },
+    {
+      "label": {
+        "en": "Contract Discussion",
+        "ja": "契約協議"
+      },
+      "status": "OPEN_QUESTION"
+    },
+    {
+      "label": {
+        "en": "Dispute",
+        "ja": "紛争化"
+      },
+      "status": "OPEN_QUESTION"
+    }
+  ],
+  "keyFindings": [
+    {
+      "status": "DOCUMENTED",
+      "text": {
+        "en": "Creator-related coordination took place during the project period.",
+        "ja": "企画期間中に作家関連の調整が行われました。"
+      }
+    },
+    {
+      "status": "DOCUMENTED",
+      "text": {
+        "en": "Rights and payment-related matters were discussed.",
+        "ja": "権利及び支払関連事項が協議されました。"
+      }
+    },
+    {
+      "status": "OPEN_QUESTION",
+      "text": {
+        "en": "The precise commissioning authority has not been established by a located written order.",
+        "ja": "確認済みの書面発注によって、正確な発注権限は確定していません。"
+      }
+    },
+    {
+      "status": "OPEN_QUESTION",
+      "text": {
+        "en": "The timing and basis of the Reporting Party's compensation remain disputed.",
+        "ja": "申告者の報酬の時期及び根拠は争点として残っています。"
+      }
+    },
+    {
+      "status": "CONTEXT_ONLY",
+      "text": {
+        "en": "The organisations involved operate within established music, broadcast and production networks.",
+        "ja": "関係組織は、音楽、放送及び制作の既存ネットワーク内で活動しています。"
+      }
+    }
+  ],
+  "workBeforeTerms": [
+    {
+      "activity": {
+        "en": "Creator outreach",
+        "ja": "作家連絡"
+      },
+      "requestedOrDiscussed": true,
+      "workPerformed": true,
+      "recipient": {
+        "en": "External Creators / commissioning-side personnel",
+        "ja": "外部作家 / 発注側関係者"
+      },
+      "scopeConfirmed": {
+        "en": "Not established",
+        "ja": "確定せず"
+      },
+      "feeConfirmed": {
+        "en": "Open question",
+        "ja": "未解決"
+      },
+      "writtenOrderLocated": {
+        "en": "Not located",
+        "ja": "未確認"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "activity": {
+        "en": "Rights enquiries",
+        "ja": "権利確認"
+      },
+      "requestedOrDiscussed": true,
+      "workPerformed": true,
+      "recipient": {
+        "en": "Commissioning-side personnel / External Creators",
+        "ja": "発注側関係者 / 外部作家"
+      },
+      "scopeConfirmed": {
+        "en": "Not established",
+        "ja": "確定せず"
+      },
+      "feeConfirmed": {
+        "en": "Open question",
+        "ja": "未解決"
+      },
+      "writtenOrderLocated": {
+        "en": "Not located",
+        "ja": "未確認"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "activity": {
+        "en": "Demo coordination",
+        "ja": "デモ調整"
+      },
+      "requestedOrDiscussed": true,
+      "workPerformed": true,
+      "recipient": {
+        "en": "Commissioning-side personnel",
+        "ja": "発注側関係者"
+      },
+      "scopeConfirmed": {
+        "en": "Not established",
+        "ja": "確定せず"
+      },
+      "feeConfirmed": {
+        "en": "Open question",
+        "ja": "未解決"
+      },
+      "writtenOrderLocated": {
+        "en": "Not located",
+        "ja": "未確認"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "activity": {
+        "en": "International payment coordination",
+        "ja": "海外送金調整"
+      },
+      "requestedOrDiscussed": true,
+      "workPerformed": true,
+      "recipient": {
+        "en": "Administrative or commissioning-side personnel",
+        "ja": "事務又は発注側関係者"
+      },
+      "scopeConfirmed": {
+        "en": "Not established",
+        "ja": "確定せず"
+      },
+      "feeConfirmed": {
+        "en": "Open question",
+        "ja": "未解決"
+      },
+      "writtenOrderLocated": {
+        "en": "Not located",
+        "ja": "未確認"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "activity": {
+        "en": "Compilation / selection",
+        "ja": "編成 / 選定"
+      },
+      "requestedOrDiscussed": true,
+      "workPerformed": true,
+      "recipient": {
+        "en": "Commissioning-side personnel",
+        "ja": "発注側関係者"
+      },
+      "scopeConfirmed": {
+        "en": "Not established",
+        "ja": "確定せず"
+      },
+      "feeConfirmed": {
+        "en": "Open question",
+        "ja": "未解決"
+      },
+      "writtenOrderLocated": {
+        "en": "Not located",
+        "ja": "未確認"
+      },
+      "status": "DOCUMENTED"
+    },
+    {
+      "activity": {
+        "en": "Project communication",
+        "ja": "企画連絡"
+      },
+      "requestedOrDiscussed": true,
+      "workPerformed": true,
+      "recipient": {
+        "en": "Project communication chain",
+        "ja": "企画連絡経路"
+      },
+      "scopeConfirmed": {
+        "en": "Not established",
+        "ja": "確定せず"
+      },
+      "feeConfirmed": {
+        "en": "Open question",
+        "ja": "未解決"
+      },
+      "writtenOrderLocated": {
+        "en": "Not located",
+        "ja": "未確認"
+      },
+      "status": "DOCUMENTED"
+    }
+  ],
+  "compensation": [
+    {
+      "item": {
+        "en": "Reporting Party fee",
+        "ja": "申告者報酬"
+      },
+      "status": "DISPUTED",
+      "note": {
+        "en": "Amount, timing, approval basis and acceptance status remain unresolved in the public-safe record.",
+        "ja": "金額、時期、承認根拠及び受諾状況は公開安全化された記録では未解決です。"
+      }
+    },
+    {
+      "item": {
+        "en": "External creator fees",
+        "ja": "外部作家報酬"
+      },
+      "status": "OPEN_QUESTION",
+      "note": {
+        "en": "No final creator budget is published.",
+        "ja": "最終的な作家予算は公開していません。"
+      }
+    },
+    {
+      "item": {
+        "en": "Demo or production costs",
+        "ja": "デモ又は制作費"
+      },
+      "status": "OPEN_QUESTION",
+      "note": {
+        "en": "Cost treatment requires a final written basis not identified in the reviewed corpus.",
+        "ja": "費用処理には、確認済み資料内で特定されていない最終書面上の根拠が必要です。"
+      }
+    },
+    {
+      "item": {
+        "en": "International transfer costs",
+        "ja": "海外送金費用"
+      },
+      "status": "DOCUMENTED",
+      "note": {
+        "en": "International payment logistics were discussed; final cost allocation is not established.",
+        "ja": "海外送金実務は協議されていますが、最終的な費用負担は確定していません。"
+      }
+    },
+    {
+      "item": {
+        "en": "Taxes or withholding",
+        "ja": "税務又は源泉処理"
+      },
+      "status": "OPEN_QUESTION",
+      "note": {
+        "en": "Final tax or withholding treatment is not established.",
+        "ja": "最終的な税務又は源泉処理は確定していません。"
+      }
+    },
+    {
+      "item": {
+        "en": "Administrative costs",
+        "ja": "管理費用"
+      },
+      "status": "OPEN_QUESTION",
+      "note": {
+        "en": "No separate final allocation has been identified.",
+        "ja": "別個の最終負担は確認されていません。"
+      }
+    },
+    {
+      "item": {
+        "en": "Cancellation payment",
+        "ja": "中止時支払"
+      },
+      "status": "OPEN_QUESTION",
+      "note": {
+        "en": "Cancellation treatment remains unresolved.",
+        "ja": "中止時の取扱いは未解決です。"
+      }
+    },
+    {
+      "item": {
+        "en": "Kill fee",
+        "ja": "キルフィー"
+      },
+      "status": "OPEN_QUESTION",
+      "note": {
+        "en": "No final kill-fee clause has been identified in the reviewed corpus.",
+        "ja": "確認済み資料内では最終的なキルフィー条項は確認されていません。"
+      }
+    }
+  ],
+  "rights": [
+    "Copyright",
+    "Publishing",
+    "Master rights",
+    "Demo use",
+    "Adaptation / arrangement",
+    "Exclusivity",
+    "Post-cancellation use",
+    "Retention and deletion",
+    "Third-party sharing"
+  ],
+  "rightsJa": [
+    "著作権",
+    "出版権",
+    "原盤権",
+    "デモ使用",
+    "翻案 / 編曲",
+    "独占性",
+    "中止後の使用",
+    "保持及び削除",
+    "第三者共有"
+  ]
+}

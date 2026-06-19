@@ -1,0 +1,166 @@
+{
+  "checklist": [
+    {
+      "en": "Confirm the legal commissioning entity.",
+      "ja": "法的な発注主体を確認する。"
+    },
+    {
+      "en": "Confirm the authorised decision-maker.",
+      "ja": "権限ある意思決定者を確認する。"
+    },
+    {
+      "en": "Obtain a written statement of work.",
+      "ja": "書面の業務仕様書を取得する。"
+    },
+    {
+      "en": "Agree fees before creator outreach begins.",
+      "ja": "作家連絡を開始する前に報酬を合意する。"
+    },
+    {
+      "en": "Define external creator budgets separately.",
+      "ja": "外部作家の予算を別枠で定める。"
+    },
+    {
+      "en": "Confirm international transfer costs and tax treatment.",
+      "ja": "海外送金費用及び税務処理を確認する。"
+    },
+    {
+      "en": "Set a cancellation fee or kill fee.",
+      "ja": "中止時支払又はキルフィーを設定する。"
+    },
+    {
+      "en": "Prohibit use of demos after cancellation unless separately licensed.",
+      "ja": "別途許諾がない限り、中止後のデモ使用を禁止する。"
+    },
+    {
+      "en": "Make rights transfer conditional on full payment.",
+      "ja": "権利移転を全額支払の完了に条件付ける。"
+    },
+    {
+      "en": "Require written confirmation of telephone or meeting instructions.",
+      "ja": "電話又は会議での指示について書面確認を求める。"
+    },
+    {
+      "en": "Define who is responsible for issuing contracts and purchase orders.",
+      "ja": "契約書及び発注書の発行責任者を定める。"
+    },
+    {
+      "en": "Specify deletion or return of unused demos and confidential materials.",
+      "ja": "未使用デモ及び秘密資料の削除又は返却を定める。"
+    }
+  ],
+  "table": [
+    {
+      "issue": {
+        "en": "Commissioning entity",
+        "ja": "発注主体"
+      },
+      "risk": {
+        "en": "Introducer and payer may differ",
+        "ja": "紹介者と支払者が異なる可能性"
+      },
+      "protection": {
+        "en": "Written legal entity confirmation",
+        "ja": "法的主体の書面確認"
+      }
+    },
+    {
+      "issue": {
+        "en": "Authority",
+        "ja": "権限"
+      },
+      "risk": {
+        "en": "Contact person may lack final approval",
+        "ja": "連絡担当者に最終承認権限がない可能性"
+      },
+      "protection": {
+        "en": "Authorised signatory confirmation",
+        "ja": "権限ある署名者の確認"
+      }
+    },
+    {
+      "issue": {
+        "en": "Scope",
+        "ja": "業務範囲"
+      },
+      "risk": {
+        "en": "Work may expand informally",
+        "ja": "作業が非公式に拡大する可能性"
+      },
+      "protection": {
+        "en": "Signed SOW",
+        "ja": "署名済み業務仕様書"
+      }
+    },
+    {
+      "issue": {
+        "en": "Fee",
+        "ja": "報酬"
+      },
+      "risk": {
+        "en": "Fee may be discussed after work starts",
+        "ja": "作業開始後に報酬協議となる可能性"
+      },
+      "protection": {
+        "en": "Written fee approval",
+        "ja": "報酬承認の書面化"
+      }
+    },
+    {
+      "issue": {
+        "en": "External creators",
+        "ja": "外部作家"
+      },
+      "risk": {
+        "en": "Third-party commitments may arise",
+        "ja": "第三者への約束が発生する可能性"
+      },
+      "protection": {
+        "en": "Approved creator budget",
+        "ja": "承認済み作家予算"
+      }
+    },
+    {
+      "issue": {
+        "en": "Rights",
+        "ja": "権利"
+      },
+      "risk": {
+        "en": "Rights enquiries may begin early",
+        "ja": "権利確認が早期に始まる可能性"
+      },
+      "protection": {
+        "en": "Rights terms before outreach",
+        "ja": "連絡前の権利条件確定"
+      }
+    },
+    {
+      "issue": {
+        "en": "Cancellation",
+        "ja": "中止"
+      },
+      "risk": {
+        "en": "Work may end without settlement",
+        "ja": "精算なしで作業が終了する可能性"
+      },
+      "protection": {
+        "en": "Kill fee",
+        "ja": "キルフィー"
+      }
+    },
+    {
+      "issue": {
+        "en": "Demo use",
+        "ja": "デモ使用"
+      },
+      "risk": {
+        "en": "Unused demos may remain accessible",
+        "ja": "未使用デモにアクセス可能な状態が残る可能性"
+      },
+      "protection": {
+        "en": "Deletion and non-use clause",
+        "ja": "削除及び不使用条項"
+      }
+    }
+  ]
+}
