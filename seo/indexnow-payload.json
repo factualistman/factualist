@@ -1,7 +1,7 @@
 {
   "host": "factualist.org",
-  "key": "7f1f1a1e23c04c8fbbadfb919ac09d81c8f0ad38d768e3e862cab98cf7d1a92f",
-  "keyLocation": "https://factualist.org/7f1f1a1e23c04c8fbbadfb919ac09d81c8f0ad38d768e3e862cab98cf7d1a92f.txt",
+  "key": "5897a45f21a4dfbe45db5d741f74dade",
+  "keyLocation": "https://factualist.org/5897a45f21a4dfbe45db5d741f74dade.txt",
   "urlList": [
     "https://factualist.org/records/",
     "https://factualist.org/records/music-commissioning-authority-2021/",

@@ -21,9 +21,9 @@
 
 ## Bing Webmaster Tools / IndexNow
 
-After the IndexNow key file is live at:
+After the verified IndexNow key file is live at:
 
-`https://factualist.org/7f1f1a1e23c04c8fbbadfb919ac09d81c8f0ad38d768e3e862cab98cf7d1a92f.txt`
+`https://factualist.org/5897a45f21a4dfbe45db5d741f74dade.txt`
 
 submit:
 
