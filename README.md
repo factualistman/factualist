@@ -74,7 +74,7 @@ requested at that time, not as new demands.
   - Record-specific monitoring jobs should publish reviewed outputs under
     `/records/<record-id>/`.
   - EPM Music monitoring is represented under
-    `/records/epm-music-2026/cron-job/`.
+    the server-side EPM Music cron job.
 - Languages:
   - Primary content: **English**
   - Public Japanese pages are provided where the record requires them.

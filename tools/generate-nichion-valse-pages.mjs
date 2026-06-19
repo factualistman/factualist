@@ -2173,8 +2173,7 @@ async function writeSitemap() {
     "/records/music-commissioning-authority-2021/",
     "/records/ac55id-2025/",
     "/records/ac55id-2025/relationship-map/",
-    "/records/epm-music-2026/",
-    "/records/epm-music-2026/cron-job/"
+    "/records/epm-music-2026/"
   ];
   const recordPaths = languageCodes.flatMap((lang) => pages.map((page) => urlFor(lang, page.slug)));
   const urls = [...otherPaths, ...recordPaths];

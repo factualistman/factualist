@@ -48,6 +48,15 @@
 /records/epm-music-2026/*
   X-Robots-Tag: index, follow
 
+/records/epm-music-2026/cron-job/
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+
+/records/epm-music-2026/cron-job/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+
+/records/epm-music-2026/scripts/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+
 /records/ac55id-2025/relationship-map/
   X-Robots-Tag: index, follow
   Cache-Control: no-cache, max-age=60, must-revalidate
