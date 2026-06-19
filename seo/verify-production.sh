@@ -2,12 +2,13 @@
 set -eu
 
 urls='
-https://factualist.org/ja/records/
-https://factualist.org/ja/methodology/
-https://factualist.org/records/ac55id-2025/relationship-map/?lang=ja
-https://factualist.org/cases/
-https://factualist.org/cases/ac55id/
+https://factualist.org/records/
 https://factualist.org/records/ac55id-2025/
+https://factualist.org/records/ac55id-2025/relationship-map/
+https://factualist.org/records/nichion-valse-2021/
+https://factualist.org/records/nichion-valse-2021/ja/
+https://factualist.org/records/epm-music-2026/
+https://factualist.org/records/epm-music-2026/cron-job/
 '
 
 for url in $urls; do

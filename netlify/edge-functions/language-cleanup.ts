@@ -55,6 +55,12 @@ function redirectTarget(requestUrl: string) {
     return url;
   }
 
+  if (path === "/records/epm-music-2026/ja" || path === "/records/epm-music-2026/ja/") {
+    url.pathname = "/records/epm-music-2026/";
+    url.search = "";
+    return url;
+  }
+
   if (path === "/records/nichion-valse-2021/ja") {
     url.pathname = "/records/nichion-valse-2021/ja/";
     url.search = "";
@@ -67,30 +73,6 @@ function redirectTarget(requestUrl: string) {
 
   if (/^\/records\/[^/]+\/ja(?:\/|$)/.test(path)) {
     url.pathname = "/records/";
-    url.search = "";
-    return url;
-  }
-
-  if (path === "/cases" || path === "/cases/") {
-    url.pathname = "/records/";
-    url.search = "";
-    return url;
-  }
-
-  if (path === "/cases/ac55id" || path === "/cases/ac55id/") {
-    url.pathname = "/records/ac55id-2025/";
-    url.search = "";
-    return url;
-  }
-
-  if (path.startsWith("/cases/ac55id/")) {
-    url.pathname = path.replace(/^\/cases\/ac55id/, "/records/ac55id-2025");
-    url.search = "";
-    return url;
-  }
-
-  if (path.startsWith("/cases/")) {
-    url.pathname = path.replace(/^\/cases/, "/records");
     url.search = "";
     return url;
   }

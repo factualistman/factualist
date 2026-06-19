@@ -1,5 +1,5 @@
 {
-  "caseRoles": [
+  "recordRoles": [
     {
       "id": "valse-representative",
       "label": {
@@ -128,7 +128,7 @@
         "en": "VALSE representative / intermediary-side executive",
         "ja": "VALSE側代表者 / 仲介側役員"
       },
-      "caseRole": {
+      "recordRole": {
         "en": "Introducer and project-side communicator",
         "ja": "紹介者及び企画側連絡者"
       },
@@ -152,7 +152,7 @@
         "en": "Nichion representative / project and contract-side personnel",
         "ja": "日音側担当者 / 企画・契約側関係者"
       },
-      "caseRole": {
+      "recordRole": {
         "en": "Requesting, coordination or contract-discussion personnel",
         "ja": "依頼、調整又は契約協議に関わる担当者"
       },
@@ -176,7 +176,7 @@
         "en": "Nichion production-side representative",
         "ja": "日音側制作担当者"
       },
-      "caseRole": {
+      "recordRole": {
         "en": "Rights, production or fee-discussion personnel",
         "ja": "権利、制作又は報酬協議に関わる担当者"
       },
@@ -200,7 +200,7 @@
         "en": "Nichion administrative or production-side personnel",
         "ja": "日音側事務又は制作関係者"
       },
-      "caseRole": {
+      "recordRole": {
         "en": "Administrative communication participant",
         "ja": "事務連絡上の関係者"
       },
@@ -224,7 +224,7 @@
         "en": "Nichion administrative or production-side personnel",
         "ja": "日音側事務又は制作関係者"
       },
-      "caseRole": {
+      "recordRole": {
         "en": "Administrative communication participant",
         "ja": "事務連絡上の関係者"
       },
@@ -248,7 +248,7 @@
         "en": "Nichion administrative or production-side personnel",
         "ja": "日音側事務又は制作関係者"
       },
-      "caseRole": {
+      "recordRole": {
         "en": "Administrative communication participant",
         "ja": "事務連絡上の関係者"
       },

@@ -47,7 +47,7 @@ const copy = {
     thesis2: "The record focuses on commissioning authority, allocation of responsibility, compensation, rights clearance and the documentary gaps that remained unresolved.",
     description: "A documented review of commissioning authority, scope, compensation, rights clearance and unresolved documentary gaps in a 2021 music production process.",
     whatExamines: "What This Record Examines",
-    caseSummary: "Case Summary",
+    recordSummary: "Record Summary",
     coreSequence: "Core Sequence",
     keyFindings: "Key Findings",
     openQuestions: "Open Questions",
@@ -91,7 +91,7 @@ const copy = {
     thesis2: "主な検証対象は、発注権限、責任分担、報酬、権利処理及び未解決の書面上の空白です。",
     description: "2021年の音楽制作過程における発注権限、業務範囲、報酬、権利処理及び未解決の書面上の空白を検証する文書化された記録。",
     whatExamines: "本記録が検証する事項",
-    caseSummary: "案件概要",
+    recordSummary: "案件概要",
     coreSequence: "中核的な流れ",
     keyFindings: "主要所見",
     openQuestions: "未解決の論点",
@@ -371,7 +371,7 @@ function MethodologyNote(lang = currentLang) {
     ["INFERRED", { en: "A reasoned inference from the records, clearly marked as such.", ja: "記録からの合理的推認であり、その旨を明示します。" }],
     ["DISPUTED", { en: "The parties or records provide conflicting interpretations.", ja: "当事者又は記録の解釈が対立しています。" }],
     ["OPEN_QUESTION", { en: "The reviewed materials do not resolve the issue.", ja: "確認済み資料では当該論点は解決しません。" }],
-    ["CONTEXT_ONLY", { en: "Public background information that does not establish case-specific conduct.", ja: "本件固有の行為を示さない公開背景情報です。" }]
+    ["CONTEXT_ONLY", { en: "Public background information that does not establish record-specific conduct.", ja: "本件固有の行為を示さない公開背景情報です。" }]
   ];
   return `<div class="grid two">${items.map(([status, text]) => `
     <article class="card">
@@ -468,7 +468,7 @@ function CounterpartyPeople(lang = currentLang) {
           <h3>${escapeHtml(local(person.name, lang))}</h3>
           <p>${escapeHtml(local(person.organisation, lang))}</p>
           <p>${escapeHtml(local(person.publicRole, lang))}</p>
-          <p class="muted">${escapeHtml(local(person.caseRole, lang))}</p>
+          <p class="muted">${escapeHtml(local(person.recordRole, lang))}</p>
           <p class="muted">${escapeHtml(local(person.sourceBasis, lang))}</p>
         </article>
       `).join("")}
@@ -544,7 +544,7 @@ function svgNode(id, x, y, w, h, label, status) {
 }
 
 function RelationshipGraph(lang = currentLang) {
-  const roleById = Object.fromEntries(entities.caseRoles.map((role) => [role.id, role]));
+  const roleById = Object.fromEntries(entities.recordRoles.map((role) => [role.id, role]));
   const nodes = {
     "valse-representative": [60, 60, 190, 72],
     "nichion-personnel": [60, 230, 190, 72],
@@ -788,7 +788,7 @@ function homePage(lang = currentLang) {
     </article>
   `).join("")}</div>`, { id: "examines" });
 
-  const summary = section(copy[lang].caseSummary, `<div class="summary-stack">${findings.caseSummary.map((item) => `
+  const summary = section(copy[lang].recordSummary, `<div class="summary-stack">${findings.recordSummary.map((item) => `
     <article class="summary-item">
       ${EvidenceBadge(item.status, lang)}
       <p>${escapeHtml(local(item.text, lang))}</p>
@@ -852,7 +852,7 @@ function chronologyPage(lang = currentLang) {
 }
 
 function commissioningChainPage(lang = currentLang) {
-  const roles = `<div class="grid">${entities.caseRoles.map((role) => `
+  const roles = `<div class="grid">${entities.recordRoles.map((role) => `
     <article class="card">
       ${EvidenceBadge(role.status, lang)}
       <h3>${escapeHtml(local(role.label, lang))}</h3>
@@ -912,7 +912,7 @@ function compensationAndRightsPage(lang = currentLang) {
 function networkPage(lang = currentLang) {
   const note = lang === "ja"
     ? "このネットワーク図は組織的背景のみを示します。ここに示す関係は、本件固有の証拠で別途支えられない限り、争点となる発注判断への関与を示すものではありません。"
-    : "This network map provides institutional context only. A relationship shown here does not establish involvement in the disputed commissioning decisions unless separately supported by case-specific evidence.";
+    : "This network map provides institutional context only. A relationship shown here does not establish involvement in the disputed commissioning decisions unless separately supported by record-specific evidence.";
   const doNotEquate = lang === "ja"
     ? ["所有関係 ≠ 番組クレジット", "施設所在地 ≠ 子会社関係", "取引関係 ≠ 企業系列", "メール連絡 ≠ 決裁権限"]
     : ["ownership does not equal programme credit", "facility location does not equal subsidiary relationship", "business relationship does not equal corporate affiliation", "email communication does not equal decision-making authority"];
@@ -1074,7 +1074,7 @@ function layout(page, lang, body) {
   <meta name="twitter:description" content="${escapeHtml(copy[lang].description)}">
   <meta name="twitter:image" content="${siteBase}${recordBase}/assets/og/nichion-valse-og.svg">
   <meta name="theme-color" content="#080b0d">
-  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/records/assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script>
   <link rel="stylesheet" href="${recordBase}/assets/css/main.css?v=20260619-nichion-valse">
 </head>

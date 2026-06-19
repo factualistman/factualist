@@ -114,11 +114,11 @@
       "line": "solid",
       "status": "DOCUMENTED",
       "label": {
-        "en": "Case communication",
+        "en": "Record communication",
         "ja": "本件連絡"
       },
       "note": {
-        "en": "Case-specific communication is recorded by role.",
+        "en": "Record-specific communication is recorded by role.",
         "ja": "本件固有の連絡は役割単位で記録されています。"
       }
     },
@@ -178,7 +178,7 @@
         "ja": "音楽出版背景"
       },
       "note": {
-        "en": "Business capability is context only unless supported by case-specific evidence.",
+        "en": "Business capability is context only unless supported by record-specific evidence.",
         "ja": "事業能力は、本件固有の証拠がない限り背景情報に限られます。"
       }
     }

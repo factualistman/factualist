@@ -14,6 +14,3 @@ https://factualist.org/records/ac55id-2025/?lang=ja
 https://factualist.org/records/ac55id-2025/?hl=ja
 https://factualist.org/records/ac55id-2025/?locale=ja
 https://factualist.org/records/ac55id-2025/?language=ja
-https://factualist.org/cases/
-https://factualist.org/cases/ac55id/
-https://factualist.org/cases/ac55id/evidence.html

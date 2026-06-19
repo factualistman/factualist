@@ -1,10 +1,9 @@
 # factualist.org — Evidence-based risk notes for music & fintech
 
 This repository hosts the static site sources for **factualist.org**, a small,
-evidence-driven “fact hub” operated by an independent label.
+evidence-driven public record hub.
 
-The first live record focuses on **AC55ID / “Acid Nation”** and their vinyl
-pre-order campaign.
+Current public records live under `/records/`.
 
 The goal is *not* to attack individuals, but to:
 
@@ -24,17 +23,12 @@ The focus is **disclosure + platform risk reporting**, not negotiation.
 
 Static files are organised roughly as:
 
-- `/docs` — Markdown / HTML sources for GitHub Pages.
-  - `index.md` → site landing page
-  - `ac55id-vinyl-facts.md` → AC55ID / Acid Nation facts & timeline
-  - `evidence-index.md` → Evidence list for the AC55ID record
-  - `principles.md` → Notes on “free project” claims & reliance damages
-  - `for-artists.md` → Guidance for artists / labels
-  - `for-platforms.md` → Signals for Stripe / PayPal / AWS / UPS / BBB / IC3
-- `/data`
-  - `/infra/ac55id/` → daily infrastructure snapshots
-    (mirroring `ac55id-logs` from the Nipponeer server)
-  - (future) other machine-readable inventories
+- `/records` — public record pages and record-scoped assets.
+  - `/records/nichion-valse-2021/` → Nichion / VALSE commissioning record.
+  - `/records/ac55id-2025/` → AC55ID record and relationship map.
+  - `/records/epm-music-2026/` → EPM Music monitoring record container.
+- `/src/data` — public-safe structured data used to generate record pages.
+- `/tools` — local generators and public-safety checks.
 
 ---
 
@@ -44,8 +38,8 @@ The AC55ID record is built from the following source sets:
 
 - **Evidence bundle (Dropbox)** — emails, PDFs, screenshots, memos  
   *(restricted share link, not mirrored here)*
-- **Infrastructure logs (Dropbox)** — `ac55id-logs/latest.log` and dated
-  `infra_YYYYMMDDTHHMMSSZ.log` files from a Nipponeer server cron job.
+- **Infrastructure logs (restricted)** — dated infrastructure snapshots
+  retained privately and summarized only when public-safe.
 - **Google Docs**
   - `ac55id_risk_report_index` — narrative index of all evidence
   - `Stripe_PayPal_Fraud_Report_FINAL_EN` — report already submitted to
@@ -75,24 +69,21 @@ requested at that time, not as new demands.
 
 ## Tech notes
 
-- Deployment: GitHub Pages (static HTML + CSS, no framework required).
+- Deployment: static HTML + CSS through the configured production host.
 - Data refresh:
-  - AC55ID infrastructure snapshots are pulled from `ac55id-logs` via
-    Nipponeer’s cron job and converted into human-readable tables
-    under `/docs/ac55id-vinyl-facts.md`.
+  - Record-specific monitoring jobs should publish reviewed outputs under
+    `/records/<record-id>/`.
+  - EPM Music monitoring is represented under
+    `/records/epm-music-2026/cron-job/`.
 - Languages:
   - Primary content: **English**
-  - Selected sections (`principles`, `for-artists`, `for-platforms`) may
-    include **Spanish** translations where useful.
+  - Public Japanese pages are provided where the record requires them.
 
 ---
 
 ## Roadmap
 
-- [ ] Phase 1 — Internal index:
-      timeline, evidence inventory, organisation matrix.
-- [ ] Phase 2 — Public drafts:
-      `/ac55id-vinyl-facts`, `/evidence-index`, `/principles`,
-      `/for-artists`, `/for-platforms`.
-- [ ] Phase 3 — Styling + publishing via GitHub Pages.
-- [ ] Phase 4 — Optional additional records (other labels, platforms, etc.).
+- [ ] Add record-specific structured data for new records before publication.
+- [ ] Keep raw correspondence, private identities and unreviewed attachments
+      out of the public tree.
+- [ ] Run public-safety checks before deployment.
