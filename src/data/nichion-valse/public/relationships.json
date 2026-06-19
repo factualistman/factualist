@@ -108,6 +108,21 @@
   ],
   "institutional": [
     {
+      "from": "tbs-holdings",
+      "to": "nichion",
+      "type": "Ownership",
+      "line": "dashed",
+      "status": "CONTEXT_ONLY",
+      "label": {
+        "en": "100% ownership context",
+        "ja": "100%所有関係背景"
+      },
+      "note": {
+        "en": "Nichion's company profile states TBS Holdings as 100% shareholder. This is ownership context, not project-specific authority.",
+        "ja": "日音の会社概要はTBSホールディングスを100%株主と示しています。これは所有関係の背景であり、企画固有の権限ではありません。"
+      }
+    },
+    {
       "from": "nichion",
       "to": "proposed-project",
       "type": "Documented Communication",

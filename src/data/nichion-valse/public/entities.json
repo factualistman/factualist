@@ -261,6 +261,20 @@
   ],
   "networkNodes": [
     {
+      "id": "tbs-holdings",
+      "label": {
+        "en": "TBS Holdings",
+        "ja": "TBSホールディングス"
+      },
+      "category": "Holding Company",
+      "description": {
+        "en": "Public ownership context stated on Nichion's company profile. It is not treated as proof of record-specific decision-making.",
+        "ja": "日音の会社概要に示された公開上の所有関係背景です。本件固有の決裁を示すものとして扱いません。"
+      },
+      "status": "CONTEXT_ONLY",
+      "sourceUrl": "https://www.nichion.co.jp/corporate/"
+    },
+    {
       "id": "nichion",
       "label": {
         "en": "Nichion Co., Ltd.",
@@ -272,7 +286,7 @@
         "ja": "音楽出版及び権利関連サービスに関する公開上の組織的背景です。"
       },
       "status": "CONTEXT_ONLY",
-      "sourceUrl": "https://www.nichion.co.jp/"
+      "sourceUrl": "https://www.nichion.co.jp/corporate/"
     },
     {
       "id": "valse",

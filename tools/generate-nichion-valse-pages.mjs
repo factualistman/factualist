@@ -21,6 +21,7 @@ const relationships = await readJson("relationships.json");
 const findings = await readJson("findings.json");
 const openQuestions = await readJson("openQuestions.json");
 const riskAdvisory = await readJson("riskAdvisory.json");
+const explainer = await readJson("explainer.json");
 
 const pages = [
   { id: "index", slug: "", nav: { en: "Record", ja: "記録" }, title: { en: "Nichion–VALSE 2021 Commissioning Record", ja: "日音・VALSE 2021年発注記録" } },
@@ -167,6 +168,7 @@ const sourceTypeLabels = {
 const relationshipTypeLabels = {
   en: {},
   ja: {
+    Ownership: "所有関係",
     Introduction: "紹介",
     Communication: "連絡",
     Request: "依頼",
@@ -422,6 +424,142 @@ function SourceLimitationCard(lang = currentLang) {
   `;
 }
 
+function RightOfReplyNotice(lang = currentLang) {
+  return `
+    <div class="summary-stack">
+      <p class="notice">${escapeHtml(local(explainer.rightOfReplyNotice, lang))}</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="${urlFor(lang, "right-of-reply")}">${escapeHtml(local(pageById["right-of-reply"].title, lang))}</a>
+        <a class="btn" href="${urlFor(lang, "methodology")}">${escapeHtml(local(pageById.methodology.title, lang))}</a>
+      </div>
+    </div>
+  `;
+}
+
+function TransactionStructure(lang = currentLang) {
+  return `
+    <div class="summary-stack">
+      <p class="notice">${escapeHtml(local(explainer.centralQuestion, lang))}</p>
+      <div class="sequence">
+        ${explainer.transactionStructure.map((item, index) => `
+          <article class="step">
+            ${EvidenceBadge(item.status, lang)}
+            <strong>${String(index + 1).padStart(2, "0")} ${escapeHtml(local(item.label, lang))}</strong>
+            <p class="muted">${escapeHtml(local(item.body, lang))}</p>
+          </article>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function ControlGapTable(lang = currentLang) {
+  return `
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>${lang === "ja" ? "論点" : "Issue"}</th>
+            <th>${lang === "ja" ? "記録済みの範囲" : "Documented Scope"}</th>
+            <th>${lang === "ja" ? "未解決事項" : "Unresolved Point"}</th>
+            <th>${lang === "ja" ? "状態" : "Status"}</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${explainer.controlGaps.map((row) => `
+            <tr>
+              <td>${escapeHtml(local(row.issue, lang))}</td>
+              <td>${escapeHtml(local(row.documented, lang))}</td>
+              <td>${escapeHtml(local(row.unresolved, lang))}</td>
+              <td>${EvidenceBadge(row.status, lang)}</td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function AuthorityMatrix(lang = currentLang) {
+  return `
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>${lang === "ja" ? "役割" : "Role"}</th>
+            <th>${lang === "ja" ? "記録上の機能" : "Documented Function"}</th>
+            <th>${lang === "ja" ? "示さないこと" : "Does Not Establish"}</th>
+            <th>${lang === "ja" ? "状態" : "Status"}</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${explainer.authorityMatrix.map((row) => `
+            <tr>
+              <td>${escapeHtml(local(row.role, lang))}</td>
+              <td>${escapeHtml(local(row.documentedFunction, lang))}</td>
+              <td>${escapeHtml(local(row.doesNotEstablish, lang))}</td>
+              <td>${EvidenceBadge(row.status, lang)}</td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function NetworkHighlights(lang = currentLang) {
+  return `
+    <div class="grid two">
+      ${explainer.networkHighlights.map((item) => `
+        <article class="card">
+          ${EvidenceBadge(item.status, lang)}
+          <h3>${escapeHtml(local(item.title, lang))}</h3>
+          <p>${escapeHtml(local(item.body, lang))}</p>
+          <p class="muted">${escapeHtml(copy[lang].publicSource)}: <a href="${escapeHtml(item.sourceUrl)}" rel="noopener">${escapeHtml(item.sourceUrl)}</a></p>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
+function EvidenceProtocol(lang = currentLang) {
+  return `
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>${lang === "ja" ? "処理" : "Process"}</th>
+            <th>${lang === "ja" ? "公開上の扱い" : "Public Handling"}</th>
+            <th>${lang === "ja" ? "状態" : "Status"}</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${explainer.evidenceProtocol.map((row) => `
+            <tr>
+              <td>${escapeHtml(local(row.step, lang))}</td>
+              <td>${escapeHtml(local(row.publicHandling, lang))}</td>
+              <td>${EvidenceBadge(row.status, lang)}</td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function PublicationCheckCards(lang = currentLang) {
+  return `
+    <div class="grid two">
+      ${explainer.publicationChecks.map((item) => `
+        <article class="card">
+          ${EvidenceBadge("DOCUMENTED", lang)}
+          <p>${escapeHtml(local(item, lang))}</p>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
 function navCards(lang = currentLang) {
   return `<div class="grid">${pages.filter((page) => page.id !== "index").map((page) => `
     <a class="card card-link" href="${urlFor(lang, page.slug)}">
@@ -584,18 +722,20 @@ function RelationshipGraph(lang = currentLang) {
 function NetworkGraph(lang = currentLang) {
   const nodeById = Object.fromEntries(entities.networkNodes.map((node) => [node.id, node]));
   const nodes = {
-    nichion: [70, 70, 190, 72],
-    valse: [70, 300, 190, 72],
-    "proposed-project": [405, 185, 210, 82],
+    "tbs-holdings": [70, 36, 190, 66],
+    nichion: [70, 146, 190, 72],
+    valse: [70, 310, 190, 72],
+    "proposed-project": [405, 205, 210, 82],
     "broadcast-context": [740, 70, 190, 72],
-    "facility-context": [740, 300, 190, 72]
+    "facility-context": [740, 310, 190, 72]
   };
   const lineData = [
-    ["nichion", "proposed-project", "M260 106 C330 120 350 206 405 214", 318, 132],
-    ["valse", "proposed-project", "M260 336 C330 320 350 240 405 232", 316, 322],
-    ["valse", "facility-context", "M260 336 C430 392 590 392 740 336", 480, 388],
-    ["valse", "broadcast-context", "M260 318 C430 230 560 128 740 106", 462, 214],
-    ["nichion", "broadcast-context", "M260 106 C430 54 570 54 740 106", 470, 62]
+    ["tbs-holdings", "nichion", "M165 102 V146", 178, 128],
+    ["nichion", "proposed-project", "M260 182 C330 190 350 232 405 242", 318, 198],
+    ["valse", "proposed-project", "M260 346 C330 330 350 266 405 250", 316, 330],
+    ["valse", "facility-context", "M260 346 C430 402 590 402 740 346", 480, 398],
+    ["valse", "broadcast-context", "M260 328 C430 238 560 128 740 106", 462, 224],
+    ["nichion", "broadcast-context", "M260 182 C430 86 570 54 740 106", 470, 78]
   ];
   const relMap = new Map(relationships.institutional.map((rel) => [`${rel.from}->${rel.to}`, rel]));
   return `
@@ -758,6 +898,7 @@ function homePage(lang = currentLang) {
   const thesis = section(
     lang === "ja" ? "中心命題" : "Record Thesis",
     `<div class="summary-stack">
+      <p class="notice">${escapeHtml(local(explainer.centralQuestion, lang))}</p>
       <p class="notice">${escapeHtml(copy[lang].thesis1)}</p>
       <p class="notice">${escapeHtml(copy[lang].thesis2)}</p>
       <details class="notice">
@@ -809,10 +950,12 @@ function homePage(lang = currentLang) {
     </article>
   `).join("")}</div>`, { id: "findings" });
 
+  const replyNotice = section(lang === "ja" ? "反論・訂正の入口" : "Right of Reply Entry Point", RightOfReplyNotice(lang), { id: "right-of-reply-entry", badge: "DOCUMENTED" });
+  const transactionStructure = section(lang === "ja" ? "取引構造" : "Transaction Structure", TransactionStructure(lang), { id: "transaction-structure", badge: "OPEN_QUESTION" });
   const questions = section(copy[lang].openQuestions, `<div class="grid two">${openQuestions.map((question, index) => OpenQuestionCard(question, index, lang)).join("")}</div>`, { id: "open-questions" });
   const navigation = section(copy[lang].detailPages, navCards(lang), { id: "pages" });
 
-  return `${hero}<main class="main">${subjectEntities}${counterpartyPeople}${thesis}${examines}${summary}${sequence}${keyFindings}${questions}${navigation}${PrivacyNotice(lang)}</main>`;
+  return `${hero}<main class="main">${subjectEntities}${counterpartyPeople}${replyNotice}${thesis}${transactionStructure}${examines}${summary}${sequence}${keyFindings}${questions}${navigation}${PrivacyNotice(lang)}</main>`;
 }
 
 function chronologyPage(lang = currentLang) {
@@ -870,6 +1013,8 @@ function commissioningChainPage(lang = currentLang) {
   return `${pageHero(pageById["commissioning-chain"], lang, lang === "ja" ? "紹介、連絡、依頼、権利確認、デモ受領、支払協議及び契約協議を役割単位で表示します。" : "Role-based view of introduction, communication, request, rights enquiry, demo delivery, payment discussion and contract discussion.")}
     <main class="main">
       ${section(lang === "ja" ? "相手方の人物・組織" : "Counterparty People and Organisations", CounterpartyPeople(lang), { id: "counterparty-people", badge: "DOCUMENTED" })}
+      ${section(lang === "ja" ? "権限・責任マトリクス" : "Authority and Responsibility Matrix", AuthorityMatrix(lang), { id: "authority-matrix", badge: "OPEN_QUESTION" })}
+      ${section(lang === "ja" ? "書面管理上の空白" : "Documentation Control Gaps", ControlGapTable(lang), { id: "control-gaps", badge: "OPEN_QUESTION" })}
       ${section(lang === "ja" ? "役割" : "Roles", roles, { id: "roles" })}
       ${section(lang === "ja" ? "発注経路図" : "Commissioning Chain Diagram", RelationshipGraph(lang), { id: "diagram", badge: "OPEN_QUESTION" })}
       ${section(lang === "ja" ? "関係の意味" : "Relationship Meaning", relTable, { id: "relationships" })}
@@ -883,8 +1028,10 @@ function workBeforeTermsPage(lang = currentLang) {
     : "This is the central page for the record. It separates work activity from final confirmation of scope, fee and written order.";
   return `${pageHero(pageById["work-before-terms"], lang, intro)}
     <main class="main">
+      ${section(lang === "ja" ? "取引リスク構造" : "Transaction Risk Structure", TransactionStructure(lang), { id: "transaction-structure", badge: "OPEN_QUESTION" })}
       ${section(lang === "ja" ? "流れ" : "Sequence", WorkBeforeTermsFlow(lang), { id: "flow", badge: "DOCUMENTED" })}
       ${section(local(pageById["work-before-terms"].title, lang), workTable(lang), { id: "work-table", badge: "OPEN_QUESTION" })}
+      ${section(lang === "ja" ? "管理上の未解決事項" : "Unresolved Control Points", ControlGapTable(lang), { id: "control-gaps", badge: "OPEN_QUESTION" })}
       ${section(lang === "ja" ? "書面上の空白" : "Documentary Gap", `<div class="grid two">${SourceLimitationCard(lang)}<article class="card">${EvidenceBadge("OPEN_QUESTION", lang)}<h3>${escapeHtml(copy[lang].openQuestion)}</h3><p>${escapeHtml(lang === "ja" ? "範囲、報酬、発注書面、中止時支払及びデモの終了後使用は、確認済み資料内では未解決です。" : "Scope, fee, written order, cancellation payment and post-project demo use remain unresolved in the reviewed material.")}</p></article></div>`, { id: "gap" })}
       ${PrivacyNotice(lang)}
     </main>`;
@@ -929,6 +1076,7 @@ function networkPage(lang = currentLang) {
   return `${pageHero(pageById.network, lang, note)}
     <main class="main">
       ${section(lang === "ja" ? "重要な注記" : "Important Note", `<p class="notice">${escapeHtml(note)}</p><div class="grid four">${doNotEquate.map((item) => `<article class="card"><p>${escapeHtml(item)}</p></article>`).join("")}</div>`, { id: "note", badge: "CONTEXT_ONLY" })}
+      ${section(lang === "ja" ? "公式公開情報による背景" : "Official Public-Source Context", NetworkHighlights(lang), { id: "official-context", badge: "CONTEXT_ONLY" })}
       ${section(lang === "ja" ? "ネットワーク図" : "Network Map", NetworkGraph(lang), { id: "map", badge: "CONTEXT_ONLY" })}
       ${section(lang === "ja" ? "ノード" : "Nodes", nodes, { id: "nodes" })}
       ${section(lang === "ja" ? "相手方人物" : "Counterparty People", CounterpartyPeople(lang), { id: "counterparty-people", badge: "DOCUMENTED" })}
@@ -940,6 +1088,7 @@ function networkPage(lang = currentLang) {
 function evidencePage(lang = currentLang) {
   return `${pageHero(pageById.evidence, lang, lang === "ja" ? "公開版には原本、メール画面、本文、件名全文、署名、ヘッダーを掲載しません。" : "The public version does not publish originals, email screenshots, bodies, full subject lines, signatures or headers.")}
     <main class="main">
+      ${section(lang === "ja" ? "証拠処理プロトコル" : "Evidence Handling Protocol", EvidenceProtocol(lang), { id: "protocol", badge: "DOCUMENTED" })}
       ${section(local(pageById.evidence.title, lang), `${SourceLimitation(lang)}<div class="evidence-grid">${evidence.map((item) => EvidenceCard(item, lang)).join("")}</div>`, { id: "ledger", badge: "DOCUMENTED" })}
       ${PrivacyNotice(lang)}
     </main>`;
@@ -977,6 +1126,7 @@ function methodologyPage(lang = currentLang) {
   return `${pageHero(pageById.methodology, lang, lang === "ja" ? "資料範囲、匿名化、推認、訂正の方針を明示します。" : "Corpus boundaries, redaction, inference and correction policies are stated here.")}
     <main class="main">
       ${section(lang === "ja" ? "方法論項目" : "Methodology Items", itemCards, { id: "items", badge: "DOCUMENTED" })}
+      ${section(lang === "ja" ? "公開前チェック" : "Publication Checks", PublicationCheckCards(lang), { id: "publication-checks", badge: "DOCUMENTED" })}
       ${section(lang === "ja" ? "証拠分類" : "Evidence Classification", MethodologyNote(lang), { id: "classification" })}
       ${section(lang === "ja" ? "重要な限定" : "Material Limitation", `<div class="grid two">${SourceLimitationCard(lang)}<article class="card">${EvidenceBadge("DOCUMENTED", lang)}<h3>${lang === "ja" ? "引用と原本" : "Quotes and originals"}</h3><p>${escapeHtml(lang === "ja" ? "メール本文、件名全文、署名、ヘッダー及び添付ファイル名の原文は公開しません。" : "Email bodies, full subject lines, signatures, headers and original attachment names are not published.")}</p></article></div>`, { id: "limitation", badge: "OPEN_QUESTION" })}
       ${PrivacyNotice(lang)}
