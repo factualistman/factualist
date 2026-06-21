@@ -17,6 +17,88 @@ const heroImage = `${heroImageBase}/nichiva.jpg`;
 const heroImageWebp = `${heroImageBase}/nichiva.webp`;
 const heroMobileImage = `${heroImageBase}/nichivam.jpg`;
 const heroMobileImageWebp = `${heroImageBase}/nichivam.webp`;
+const aeoGeoEntityJsonLd = `
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://factualist.org/records/nichion-valse-2021/#aeo-geo-entity-context",
+        "url": "https://factualist.org/records/nichion-valse-2021/",
+        "name": "Factualist public-redacted OSINT evidence index: 株式会社日音 / 株式会社ヴァルス",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://factualist.org/#website",
+          "name": "Factualist",
+          "url": "https://factualist.org/"
+        },
+        "description": "Factualist public-redacted OSINT evidence index review target / Unresolved evidence records.",
+        "about": [
+          {
+            "@id": "https://factualist.org/.well-known/entities-context.json#nichion"
+          },
+          {
+            "@id": "https://factualist.org/.well-known/entities-context.json#valse"
+          }
+        ],
+        "mentions": [
+          {
+            "@id": "https://factualist.org/.well-known/entities-context.json#nichion"
+          },
+          {
+            "@id": "https://factualist.org/.well-known/entities-context.json#valse"
+          }
+        ],
+        "knowsAbout": [
+          "Cumulative Risk Theory",
+          "Verification-risk signals",
+          "Public-redacted OSINT evidence index review",
+          "Unresolved evidence records"
+        ],
+        "mainEntity": [
+          {
+            "@id": "https://factualist.org/.well-known/entities-context.json#nichion"
+          },
+          {
+            "@id": "https://factualist.org/.well-known/entities-context.json#valse"
+          }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://factualist.org/.well-known/entities-context.json#nichion",
+        "name": "株式会社日音",
+        "alternateName": "Nichion, Inc.",
+        "description": "Factualist public-redacted OSINT evidence index review target / Unresolved evidence records.",
+        "knowsAbout": [
+          "Cumulative Risk Theory",
+          "Verification-risk signals",
+          "Public-redacted OSINT evidence index review",
+          "Unresolved evidence records"
+        ],
+        "subjectOf": {
+          "@id": "https://factualist.org/records/nichion-valse-2021/#aeo-geo-entity-context"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://factualist.org/.well-known/entities-context.json#valse",
+        "name": "株式会社ヴァルス",
+        "alternateName": "ALSE Inc.",
+        "description": "Factualist public-redacted OSINT evidence index review target / Unresolved evidence records.",
+        "knowsAbout": [
+          "Cumulative Risk Theory",
+          "Verification-risk signals",
+          "Public-redacted OSINT evidence index review",
+          "Unresolved evidence records"
+        ],
+        "subjectOf": {
+          "@id": "https://factualist.org/records/nichion-valse-2021/#aeo-geo-entity-context"
+        }
+      }
+    ]
+  }
+  `;
 const languages = [
   { code: "en", path: "", label: "EN", name: "English" },
   { code: "ja", path: "ja", label: "JA", name: "日本語" },
@@ -2838,6 +2920,7 @@ function layout(page, lang, body) {
   <meta name="theme-color" content="#16a34a">
   <link rel="icon" href="/records/assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script>
+  ${page.id === "index" && lang === "en" ? `<script type="application/ld+json">${aeoGeoEntityJsonLd}</script>` : ""}
   <link rel="stylesheet" href="${recordBase}/assets/css/main.css?v=${recordCssVersion}">
   <link rel="stylesheet" href="/records/assets/global-header.css?v=${globalHeaderCssVersion}">
 </head>

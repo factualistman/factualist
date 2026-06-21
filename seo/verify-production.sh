@@ -3,6 +3,8 @@ set -eu
 
 urls='
 https://factualist.org/records/
+https://factualist.org/.well-known/entities-context.json
+https://factualist.org/llms.txt
 https://factualist.org/records/music-commissioning-authority-2021/
 https://factualist.org/records/ac55id-2025/
 https://factualist.org/records/ac55id-2025/relationship-map/

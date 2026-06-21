@@ -6,6 +6,8 @@
    `https://factualist.org/sitemap.xml`
 2. Use URL Inspection and request indexing for:
    - `https://factualist.org/records/`
+   - `https://factualist.org/.well-known/entities-context.json`
+   - `https://factualist.org/llms.txt`
    - `https://factualist.org/records/music-commissioning-authority-2021/`
    - `https://factualist.org/records/nichion-valse-2021/`
    - `https://factualist.org/records/nichion-valse-2021/ja/`

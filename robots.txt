@@ -1,3 +1,15 @@
+User-agent: GPTBot
+Allow: /.well-known/entities-context.json
+Allow: /llms.txt
+
+User-agent: OAI-SearchBot
+Allow: /.well-known/entities-context.json
+Allow: /llms.txt
+
+User-agent: PerplexityBot
+Allow: /.well-known/entities-context.json
+Allow: /llms.txt
+
 User-agent: *
 Disallow: /index.html
 Disallow: /404.html

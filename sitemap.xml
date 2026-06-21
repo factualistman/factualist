@@ -5,6 +5,14 @@
     <lastmod>2026-06-20</lastmod>
   </url>
   <url>
+    <loc>https://factualist.org/.well-known/entities-context.json</loc>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://factualist.org/llms.txt</loc>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
     <loc>https://factualist.org/records/music-commissioning-authority-2021/</loc>
     <lastmod>2026-06-20</lastmod>
   </url>
@@ -26,7 +34,7 @@
   </url>
   <url>
     <loc>https://factualist.org/records/nichion-valse-2021/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-22</lastmod>
   </url>
   <url>
     <loc>https://factualist.org/records/nichion-valse-2021/chronology/</loc>
